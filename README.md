@@ -12,3 +12,7 @@
     - This class is designed to provide an overlay for a group of LCD Panels.  This allows for consistancy across multiple panels that fall into this same LCD Group.
   - [CameraGroup](https://github.com/tkottke90/Space-Engineers-Scripts/blob/master/lib/CameraGroup.class.cs)
     - This class is designed to handle a group of cameras in conjunction with the Raycast feature.  This class **requires** the GPSLocation class as it uses that class to record found entities in the game.
+
+## Currently Working On:
+  - Mining Drone AI
+  - Interior Light Color Manager
