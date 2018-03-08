@@ -20,6 +20,8 @@ namespace IngameScript
     {
         public class GPSlocation
         {
+            private System.Text.RegularExpressions.Regex StoreFormat = new System.Text.RegularExpressions.Regex(@"([a-zA-Z\s0-9:{}$]*)");
+
             public string name;
             public Vector3D gps;
             public int fitness = 0;
@@ -39,10 +41,9 @@ namespace IngameScript
 
                 // "<Origin^{X:0 Y:0 Z:0}^0^OriginType:Stationary$OriginComm:none>"
 
-                char[] charsToTrim = { '<', '>', ' ' };
-                string storeGPS = storedGPS.Trim();
-                storeGPS = storeGPS.Trim(charsToTrim);
-                string[] attr = storeGPS.Split('^');
+                System.Text.RegularExpressions.MatchCollection matches = StoreFormat.Matches(storedGPS); //storeGPS.Split('^');
+                string[] attr = new string[matches.Count];
+                matches.CopyTo(attr, 0);
 
                 // Name
                 name = attr[0];
@@ -55,7 +56,7 @@ namespace IngameScript
                 if (fitCheck) { fitness = fit; } else { fitness = 0; }
 
                 // Custom Info
-                if (attr.Length == 4)
+                if (attr.Length == 2)
                 {
                     string[] customAttr = attr[3].Split('$');
                     foreach (string str in customAttr)
@@ -139,6 +140,25 @@ namespace IngameScript
                 string rtnString = String.Format("<{0}^{1}^{2}^{3}>", name, gps.ToString(), fitness, custom);
                 return rtnString;
             }
+        }
+
+        public class Asteriod : GPSlocation {
+            public Asteriod(string newName, Vector3D newGPS) : base(newName, newGPS) { }
+
+            public Asteriod(string storedGPS) : base(storedGPS) { }
+
+
+        }
+
+        public class ShipStation : GPSlocation
+        {
+
+
+            public ShipStation(string newName, Vector3D newGPS) : base(newName, newGPS) { }
+
+            public ShipStation(string storedGPS) : base(storedGPS) { }
+
+
         }
     }
 }
