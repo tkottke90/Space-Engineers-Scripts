@@ -18,14 +18,15 @@ namespace IngameScript
 {
     partial class Program
     {
+        [Flags]
+        public enum Ores { None=0, Fe=1, Ni=2, Co=4, Ma=8, Si=16, Ag=32, Au=64, Pl=128, U=256, H20=512 };
+
         public class GPSlocation
         {
             private System.Text.RegularExpressions.Regex StoreFormat = new System.Text.RegularExpressions.Regex(@"([a-zA-Z\s0-9:{}$]*)");
 
             public string name;
             public Vector3D gps;
-            public int fitness = 0;
-            public int fitnessType = 0;
             public Dictionary<string, string> customInfo = new Dictionary<string, string>();
 
             public string eventLog = "";
@@ -39,7 +40,7 @@ namespace IngameScript
             public GPSlocation(string storedGPS)
             {
 
-                // "<Origin^{X:0 Y:0 Z:0}^0^OriginType:Stationary$OriginComm:none>"
+                // "<Origin^{X:0 Y:0 Z:0}^OriginType:Stationary$OriginComm:none>"
 
                 System.Text.RegularExpressions.MatchCollection matches = StoreFormat.Matches(storedGPS); //storeGPS.Split('^');
                 string[] attr = new string[matches.Count];
@@ -51,14 +52,10 @@ namespace IngameScript
                 // GPS
                 gps = recoverGPS(attr[1]);
 
-                // Fitness
-                int fit; bool fitCheck = Int32.TryParse(attr[2], out fit);
-                if (fitCheck) { fitness = fit; } else { fitness = 0; }
-
                 // Custom Info
-                if (attr.Length == 2)
+                if (attr.Length == 3)
                 {
-                    string[] customAttr = attr[3].Split('$');
+                    string[] customAttr = attr[2].Split('$');
                     foreach (string str in customAttr)
                     {
                         str.Trim(' ');
@@ -137,17 +134,34 @@ namespace IngameScript
                 }
                 else { custom = "0"; }
 
-                string rtnString = String.Format("<{0}^{1}^{2}^{3}>", name, gps.ToString(), fitness, custom);
+                string rtnString = String.Format("<{0}^{1}^{2}>", name, gps.ToString(), custom);
                 return rtnString;
             }
         }
 
-        public class Asteriod : GPSlocation {
+        public class Asteriod : GPSlocation
+        {
+            public string size;
+            public Ores myOres;
+
             public Asteriod(string newName, Vector3D newGPS) : base(newName, newGPS) { }
 
             public Asteriod(string storedGPS) : base(storedGPS) { }
 
+            public bool hasOre(Ores o)
+            {
+                return myOres.HasFlag(o);
+            }
+            
+            public void addOre(Ores o)
+            {
+                myOres |= o;
+            }
 
+            public void removeOre(Ores o)
+            {
+                myOres &= ~o;
+            }
         }
 
         public class ShipStation : GPSlocation
