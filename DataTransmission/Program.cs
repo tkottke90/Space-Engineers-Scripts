@@ -34,6 +34,7 @@ namespace IngameScript
         // Logging
         StringBuilder debugSB = new StringBuilder();
         StringBuilder notifySB = new StringBuilder();
+        Dictionary<int, string> eventLog = new Dictionary<int, string>();
         List<IMyTerminalBlock> OddBlocks = new List<IMyTerminalBlock>();
 
         // Script Tags
@@ -41,19 +42,12 @@ namespace IngameScript
         System.Text.RegularExpressions.Regex tag_match;
 
         // Block Groups
+        // Antenna
+
 
         public Program()
         {
-            // The constructor, called only once every session and
-            // always before any other method is called. Use it to
-            // initialize your script. 
-            //     
-            // The constructor is optional and can be removed if not
-            // needed.
-            // 
-            // It's recommended to set RuntimeInfo.UpdateFrequency 
-            // here, which will allow your script to run itself without a 
-            // timer block.
+            
         }
 
         public void Save()
@@ -68,7 +62,36 @@ namespace IngameScript
 
         public void Main(string argument, UpdateType updateSource)
         {
-            
+            // Check Update Source:
+            if ((updateSource & UpdateType.Antenna) != 0)
+            {
+
+            } else if((updateSource & UpdateType.Terminal) != 0)
+            { 
+                
+            } else if ((updateSource & (UpdateType.Update1 | UpdateType.Update10)) != 0)
+            {
+
+            }
+        }
+
+        public void handleMessage(string message)
+        {
+
+        }
+
+        public void handleCommand(string argument)
+        {
+            eventLog.Add(eventLog.Count, argument);
+            switch (argument)
+            {
+                case "transmit":
+                    
+                    break;
+                default:
+                    eventLog.Add(eventLog.Count, "**** NO COMMAND FOUND: " + argument + " ****");
+                    break;  
+            }
         }
 
         public void getScriptBlocks()
