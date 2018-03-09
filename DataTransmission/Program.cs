@@ -49,10 +49,12 @@ namespace IngameScript
         }
 
         // Logging
-        StringBuilder debugSB = new StringBuilder();
-        StringBuilder notifySB = new StringBuilder();
+        //StringBuilder debugSB = new StringBuilder();
+        //StringBuilder notifySB = new StringBuilder();
         Dictionary<int, string> eventLog = new Dictionary<int, string>();
         List<IMyTerminalBlock> OddBlocks = new List<IMyTerminalBlock>();
+
+        MyLogger logs = new MyLogger();
 
         // Script Tags
         string tag_pattern = @"(\[" + SCRIPT_TAG + @")(\s\b[a-zA-z-]*\b)*(\s?\])";
@@ -63,12 +65,17 @@ namespace IngameScript
         // Data
         Queue<string> messages;
 
+        
 
         public Program()
         {
             // Setup System:
             scriptStartTime = DateTime.Now;
             status = CustomDataStatus.Settings;
+
+            logs.AddLog("Debug");
+            logs.AddLog("Notify");
+            logs.AddLog("Event");
 
             // Init Script Tags
             tag_match = new System.Text.RegularExpressions.Regex(tag_pattern);
@@ -106,8 +113,10 @@ namespace IngameScript
 
             }
 
-            if (debugSB.Length == 0 & OddBlocks.Count == 0) { Echo(DrawApp()); } else { Echo(DrawAppErrors()); }
+            if (logs.LogSize("Notify") == 0 & OddBlocks.Count == 0) { Echo(DrawApp()); } else { Echo(DrawAppErrors()); }
             Echo(DrawDev());
+
+            runTimeCount++;
         }
 
         public void handleMessage(string message)
@@ -122,10 +131,6 @@ namespace IngameScript
             string[] args = argument.Split(':');
             switch (args[0])
             {
-                case "SET-NAME":
-                    notifySB.AppendLine("Updated Grid Name: " + args[0]);
-                    GRID_NAME = args[0].ToUpper();
-                    break;
                 case "CONFIG":
                     status = CustomDataStatus.Settings;
                     Me.CustomData = DrawConfig();
@@ -139,6 +144,7 @@ namespace IngameScript
                 case "TRANSMIT":
                     
                     break;
+                
                 default:
                     eventLog.Add(eventLog.Count, "**** NO COMMAND FOUND: " + argument + " ****");
                     break;  
@@ -175,15 +181,15 @@ namespace IngameScript
                                     break;
                             }
                         }
-                        catch (Exception e) { debugSB.AppendLine("Error Adding Text Panel(" + (b.CustomName != null ? b.CustomName : "gyro") + ") : " + e.Message); }
+                        catch (Exception e) { logs.WriteLog( "Debug", "Error Adding Text Panel(" + (b.CustomName != null ? b.CustomName : "gyro") + ") : " + e.Message); }
                         break;
                     default:
                         OddBlocks.Add(b);
-                        debugSB.AppendLine(b.CustomName + " is not used by this script");
+                        logs.WriteLog("Debug", b.CustomName + " is not used by this script");
                         break;
                 }
             }
-            if (OddBlocks.Count > 0) { notifySB.AppendLine(OddBlocks.Count + " invalid blocks with tag"); }
+            if (OddBlocks.Count > 0) { logs.WriteLog("Notify", OddBlocks.Count + " invalid blocks with tag"); }
         }
     }
 }

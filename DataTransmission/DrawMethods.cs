@@ -18,10 +18,11 @@ namespace IngameScript
 {
     partial class Program
     {
+
         public string DrawApp()
         {
             StringBuilder output = new StringBuilder();
-            output.AppendLine("Info Transmission Script");
+            output.AppendLine("-- Info Transmission Script --");
             output.AppendLine("Script Version: " + VERSION);
             output.AppendLine("Script Start Time: " + scriptStartTime.ToString());
             output.AppendLine("Script Runcount: " + runTimeCount);
@@ -33,7 +34,7 @@ namespace IngameScript
         {
             StringBuilder output = new StringBuilder();
             output.AppendLine("### Script Error ###").AppendLine();
-            output.AppendLine(notifySB.ToString());
+            output.AppendLine(logs.ReadLog("Notify"));
             output.AppendLine().AppendLine("####################");
             output.AppendLine().AppendLine(DrawApp());
             return output.ToString();
@@ -43,8 +44,8 @@ namespace IngameScript
         {
             StringBuilder output = new StringBuilder();
             output.AppendLine().AppendLine("Dev Values:");
-            output.AppendLine("Instruction Count:" + Runtime.CurrentInstructionCount);
-            output.AppendLine("Last Run Time (milliseconds): " + Runtime.LastRunTimeMs);
+            output.AppendFormat("Instruction Count: {0,3}", Runtime.CurrentInstructionCount).AppendLine();
+            output.AppendFormat("Last Run Time (milliseconds): {0,5:N}", Runtime.LastRunTimeMs).AppendLine();
             return output.ToString();
         }
 
