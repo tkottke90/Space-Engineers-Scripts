@@ -96,6 +96,8 @@
     <Analyzer Include="C:\Users\Thomas\AppData\Local\Microsoft\VisualStudio\15.0_f7896ea2\Extensions\hjqjn2ve.u5n\Analyzers\MDKAnalyzer.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DrawMethods.cs" />
+    <Compile Include="EnergyGroup.cs" />
     <Compile Include="MDK\Bootstrapper.cs" />
     <AdditionalFiles Include="MDK\MDK.options">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>

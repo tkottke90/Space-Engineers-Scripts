@@ -31,6 +31,11 @@ namespace IngameScript
 
         // DO NOT EDIT BELOW THIS LINE!
 
+        // System
+        const string VERSION = "v0.1";
+        DateTime scriptStartTime;
+        int runTimeCount = 0;
+
         // Logging
         StringBuilder debugSB = new StringBuilder();
         StringBuilder notifySB = new StringBuilder();
@@ -47,7 +52,14 @@ namespace IngameScript
 
         public Program()
         {
-            
+            // Setup System:
+            scriptStartTime = DateTime.Now;
+
+            // Init Script Tags
+            tag_match = new System.Text.RegularExpressions.Regex(tag_pattern);
+
+            // Init Block Groups
+
         }
 
         public void Save()
@@ -108,10 +120,23 @@ namespace IngameScript
                 switch (BlockType[BlockType.Length - 1])
                 {
                     case "MyTextPanel":
-                        break;
-                    case "MyLaserAntenna":
-                        break;
-                    case "MyRadioAntenna":
+                        try
+                        {
+                            string args1 = BlockTags[1];
+                            string name = b.CustomName.Replace(tag_match.Match(b.CustomName).Value, "");
+                            name += "[" + SCRIPT_TAG + " " + args1 + "]";
+                            b.CustomName = name;
+                            switch (args1)
+                            {
+                                case "DEBUG":
+                                    LCDDebug.Add((IMyTextPanel)b);
+                                    break;
+                                case "DISPLAY":
+                                    LCDDisplay.Add((IMyTextPanel)b);
+                                    break;
+                            }
+                        }
+                        catch (Exception e) { debugSB.AppendLine("Error Adding Text Panel(" + (b.CustomName != null ? b.CustomName : "gyro") + ") : " + e.Message); }
                         break;
                     default:
                         OddBlocks.Add(b);
