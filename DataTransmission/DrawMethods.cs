@@ -48,6 +48,30 @@ namespace IngameScript
             return output.ToString();
         }
 
+        public string DrawMessageTemplate()
+        {
+            StringBuilder output = new StringBuilder();
+            output.AppendLine("From: " + GRID_NAME).AppendLine();
+            output.AppendLine("Message: (Start On Next Line Down)").AppendLine();
 
+            return output.ToString();
+        }
+
+        public string DrawConfig()
+        {
+            StringBuilder output = new StringBuilder();
+            output.AppendLine("--- Data Transmit Script Config ---");
+            output.AppendLine("Grid Name: " + GRID_NAME);
+
+            return output.ToString();
+        }
+
+        public void ReadConfig()
+        {
+            string[] config = Me.CustomData.Split('\n');
+
+            // Grid Name
+            GRID_NAME = config[1].Split(':')[1]; 
+        }
     }
 }

@@ -25,16 +25,28 @@ namespace IngameScript
          *   Edit these valiables to change how the script interacts with other blocks on your grid
          */
 
-        // Script Tag - Used to label blocks used by this script
+        // Grid Name - Used to let other grids know who is transmitting
+        string GRID_NAME = "";
+
+        // Script Tag - Used to label blocks used by this script (Recompile Required to Update)
         const string SCRIPT_TAG = "RADIO";
 
 
         // DO NOT EDIT BELOW THIS LINE!
+        /*----------------------------------------------------------------------------------------------------------------------------*/
+
 
         // System
         const string VERSION = "v0.1";
         DateTime scriptStartTime;
         int runTimeCount = 0;
+
+        CustomDataStatus status;
+        public enum CustomDataStatus
+        {
+            Settings,
+            Message
+        }
 
         // Logging
         StringBuilder debugSB = new StringBuilder();
@@ -47,19 +59,27 @@ namespace IngameScript
         System.Text.RegularExpressions.Regex tag_match;
 
         // Block Groups
-        // Antenna
+
+        // Data
+        Queue<string> messages;
 
 
         public Program()
         {
             // Setup System:
             scriptStartTime = DateTime.Now;
+            status = CustomDataStatus.Settings;
 
             // Init Script Tags
             tag_match = new System.Text.RegularExpressions.Regex(tag_pattern);
 
             // Init Block Groups
 
+            // Init Data
+            messages = new Queue<string>();
+
+            // Draw Screens
+            
         }
 
         public void Save()
@@ -77,14 +97,17 @@ namespace IngameScript
             // Check Update Source:
             if ((updateSource & UpdateType.Antenna) != 0)
             {
-
+                messages.Enqueue(argument);
             } else if((updateSource & UpdateType.Terminal) != 0)
-            { 
-                
+            {
+                handleCommand(argument);
             } else if ((updateSource & (UpdateType.Update1 | UpdateType.Update10)) != 0)
             {
 
             }
+
+            if (debugSB.Length == 0 & OddBlocks.Count == 0) { Echo(DrawApp()); } else { Echo(DrawAppErrors()); }
+            Echo(DrawDev());
         }
 
         public void handleMessage(string message)
@@ -95,9 +118,25 @@ namespace IngameScript
         public void handleCommand(string argument)
         {
             eventLog.Add(eventLog.Count, argument);
-            switch (argument)
+
+            string[] args = argument.Split(':');
+            switch (args[0])
             {
-                case "transmit":
+                case "SET-NAME":
+                    notifySB.AppendLine("Updated Grid Name: " + args[0]);
+                    GRID_NAME = args[0].ToUpper();
+                    break;
+                case "CONFIG":
+                    status = CustomDataStatus.Settings;
+                    Me.CustomData = DrawConfig();
+                    break;
+                case "Save":
+                    ReadConfig();
+                    break;
+                case "NEW":
+
+                    break;
+                case "TRANSMIT":
                     
                     break;
                 default:
@@ -129,10 +168,10 @@ namespace IngameScript
                             switch (args1)
                             {
                                 case "DEBUG":
-                                    LCDDebug.Add((IMyTextPanel)b);
+                                    //LCDDebug.Add((IMyTextPanel)b);
                                     break;
                                 case "DISPLAY":
-                                    LCDDisplay.Add((IMyTextPanel)b);
+                                    //LCDDisplay.Add((IMyTextPanel)b);
                                     break;
                             }
                         }
