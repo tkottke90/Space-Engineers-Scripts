@@ -2,6 +2,8 @@
  
  Space Engineers is a game developed by the Keen Software House.  This repo contains a collection of scripts and utility classes designed to be used with the ingame programming system.
  
+You can find what I am currently working in the [mdk branch](https://github.com/tkottke90/Space-Engineers-Scripts/tree/mdk)
+ 
  ## Disclamer
  I am a self taught engineer and as I develop my skills I am still learning all the syntatic and semantic standards for languages.  You may see inconsistancies between my code and standards (such as Types should use pascel case not camel case).  I hope to increase my proficiency I am hoping to continue to produce better and cleaner code.
  
