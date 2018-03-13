@@ -96,6 +96,7 @@
     <Analyzer Include="C:\Users\Thomas\AppData\Local\Microsoft\VisualStudio\15.0_f7896ea2\Extensions\hjqjn2ve.u5n\Analyzers\MDKAnalyzer.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="LCDGroup.class.cs" />
     <Compile Include="MyData.cs" />
     <Compile Include="DrawMethods.cs" />
     <Compile Include="EnergyGroup.cs" />
@@ -103,6 +104,7 @@
     <AdditionalFiles Include="MDK\MDK.options">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </AdditionalFiles>
+    <Compile Include="MyLogger.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Readme.cs" />
     <AdditionalFiles Include="thumb.png" />

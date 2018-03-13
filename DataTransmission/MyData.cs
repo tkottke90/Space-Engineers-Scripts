@@ -29,14 +29,16 @@ namespace IngameScript
             }
 
 
+
             override
             public string ToString()
             {
                 StringBuilder output = new StringBuilder();
 
                 // Add Data Name:
-                output.AppendFormat("[{0}]", name);
+                output.AppendFormat("<{0}>", name);
 
+                output.AppendFormat("</{0}>", name);
                 return output.ToString();
             }
         }

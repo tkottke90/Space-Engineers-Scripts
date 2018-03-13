@@ -61,6 +61,7 @@ namespace IngameScript
         System.Text.RegularExpressions.Regex tag_match;
 
         // Block Groups
+        LCDGroup display;
 
         // Data
         Queue<string> messages;
@@ -81,6 +82,7 @@ namespace IngameScript
             tag_match = new System.Text.RegularExpressions.Regex(tag_pattern);
 
             // Init Block Groups
+            display = new LCDGroup("Display", this);
 
             // Init Data
             messages = new Queue<string>();
@@ -121,6 +123,37 @@ namespace IngameScript
 
         public void handleMessage(string message)
         {
+            string data = Storage;
+            Echo(data);
+            Dictionary<string, string> test = new Dictionary<string, string>();
+
+            System.Text.RegularExpressions.Regex start = new System.Text.RegularExpressions.Regex(@"(<[a-zA-Z0-9]*>)");
+            string endTag = @"";
+            System.Text.RegularExpressions.Regex dat;
+
+            while (data.Length != 0)
+            {
+                // Find Next Tag
+                string tag = start.Match(data).Value;
+                // Generate End Tag
+                endTag = @"(</" + tag.Replace("<", "").Replace(">", "") + @">)";
+                // Build Regex for Data
+                dat = new System.Text.RegularExpressions.Regex(tag + @"[a-zA-Z0-9:\s<>/!?]*" + endTag);
+
+                string result = dat.Match(data).Value;
+
+                Me.CustomData += "Result: \n   " + result + "\n";
+                try
+                {
+                    Storage = data.Replace(result, "");
+                } catch (Exception e) { Echo("Empty Result"); }
+                Echo(runCount);
+                Echo("Pattern: " + dat.ToString());
+                Echo("Tag: " + tag);
+                Echo(Storage);
+            }
+            
+            
 
         }
 
@@ -128,7 +161,7 @@ namespace IngameScript
         {
             eventLog.Add(eventLog.Count, argument);
 
-            string[] args = argument.Split(':');
+            string[] args = argument.ToUpper().Split(':');
             switch (args[0])
             {
                 case "CONFIG":
@@ -177,7 +210,7 @@ namespace IngameScript
                                     //LCDDebug.Add((IMyTextPanel)b);
                                     break;
                                 case "DISPLAY":
-                                    //LCDDisplay.Add((IMyTextPanel)b);
+                                    display.Add((IMyTextPanel)b);
                                     break;
                             }
                         }

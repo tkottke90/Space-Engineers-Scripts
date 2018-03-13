@@ -37,7 +37,7 @@ namespace IngameScript
 
             public void WriteLog(string logName, string logData)
             {
-                logs[logName].AppendLine(logData);
+                logs[logName].AppendLine(DateTime.Now.ToString() + ": " + logData);
             }
 
             public string ReadLog(string logName)
