@@ -30,7 +30,7 @@ namespace IngameScript
 
         public Program()
         {
-            Runtime.UpdateFrequency = UpdateFrequency.Update1;
+            // Runtime.UpdateFrequency = UpdateFrequency.Update1;
 
             POWER = new EnergyGroup(this);
             getScriptBlocks();
@@ -71,13 +71,13 @@ namespace IngameScript
                 switch (BlockType[BlockType.Length - 1])
                 {
                     case "MyBatteryBlock":
-                        POWER.addBattery((IMyBatteryBlock)b);
+                        if (b.CubeGrid.ToString() == Me.CubeGrid.ToString()) { POWER.addBattery((IMyBatteryBlock)b); }
                         break;
                     case "MyReactor":
-                        POWER.addReactor((IMyReactor)b);
+                        if (b.CubeGrid.ToString() == Me.CubeGrid.ToString()) { POWER.addReactor((IMyReactor)b); }
                         break;
                     case "MySolarPanel":
-                        POWER.addSolar((IMySolarPanel)b);
+                        if (b.CubeGrid.ToString() == Me.CubeGrid.ToString()) { POWER.addSolar((IMySolarPanel)b); }
                         break;
                     default:
                         

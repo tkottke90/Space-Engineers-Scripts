@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SE Scripts", "SE Scripts\SE
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataTransmission", "DataTransmission\DataTransmission.csproj", "{2B1C58FC-D03E-403F-956A-056D7982406E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PowerDisplayUtility", "PowerDisplayUtility\PowerDisplayUtility.csproj", "{5631C5E8-2C14-4CFE-B592-6D9B93AD02D0}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -16,6 +18,8 @@ Global
 		{870BDB82-C492-4D95-9F9B-3C9B47EB850A}.Debug|x64.Build.0 = Debug|x64
 		{2B1C58FC-D03E-403F-956A-056D7982406E}.Debug|x64.ActiveCfg = Debug|x64
 		{2B1C58FC-D03E-403F-956A-056D7982406E}.Debug|x64.Build.0 = Debug|x64
+		{5631C5E8-2C14-4CFE-B592-6D9B93AD02D0}.Debug|x64.ActiveCfg = Debug|x64
+		{5631C5E8-2C14-4CFE-B592-6D9B93AD02D0}.Debug|x64.Build.0 = Debug|x64
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

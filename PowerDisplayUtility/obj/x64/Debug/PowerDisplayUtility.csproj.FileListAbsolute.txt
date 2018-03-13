@@ -25,3 +25,30 @@ C:\Users\Thomas\documents\visual studio 2017\Projects\DroneScriptv0.3\PowerDispl
 C:\Users\Thomas\documents\visual studio 2017\Projects\DroneScriptv0.3\PowerDisplayUtility\obj\x64\Debug\PowerDisplayUtility.csprojResolveAssemblyReference.cache
 C:\Users\Thomas\documents\visual studio 2017\Projects\DroneScriptv0.3\PowerDisplayUtility\obj\x64\Debug\PowerDisplayUtility.exe
 C:\Users\Thomas\documents\visual studio 2017\Projects\DroneScriptv0.3\PowerDisplayUtility\obj\x64\Debug\PowerDisplayUtility.pdb
+C:\Users\Thomas\Documents\Visual Studio 2017\Projects\SE Scripts\PowerDisplayUtility\bin\PowerDisplayUtility.exe
+C:\Users\Thomas\Documents\Visual Studio 2017\Projects\SE Scripts\PowerDisplayUtility\bin\PowerDisplayUtility.pdb
+C:\Users\Thomas\Documents\Visual Studio 2017\Projects\SE Scripts\PowerDisplayUtility\bin\MDKUtilities.dll
+C:\Users\Thomas\Documents\Visual Studio 2017\Projects\SE Scripts\PowerDisplayUtility\bin\HavokWrapper.dll
+C:\Users\Thomas\Documents\Visual Studio 2017\Projects\SE Scripts\PowerDisplayUtility\bin\VRage.Native.dll
+C:\Users\Thomas\Documents\Visual Studio 2017\Projects\SE Scripts\PowerDisplayUtility\bin\VRage.OpenVRWrapper.dll
+C:\Users\Thomas\Documents\Visual Studio 2017\Projects\SE Scripts\PowerDisplayUtility\bin\VRage.Ansel.dll
+C:\Users\Thomas\Documents\Visual Studio 2017\Projects\SE Scripts\PowerDisplayUtility\bin\SharpDX.dll
+C:\Users\Thomas\Documents\Visual Studio 2017\Projects\SE Scripts\PowerDisplayUtility\bin\SharpDX.Desktop.dll
+C:\Users\Thomas\Documents\Visual Studio 2017\Projects\SE Scripts\PowerDisplayUtility\bin\SharpDX.Mathematics.dll
+C:\Users\Thomas\Documents\Visual Studio 2017\Projects\SE Scripts\PowerDisplayUtility\bin\Microsoft.CodeAnalysis.dll
+C:\Users\Thomas\Documents\Visual Studio 2017\Projects\SE Scripts\PowerDisplayUtility\bin\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\Thomas\Documents\Visual Studio 2017\Projects\SE Scripts\PowerDisplayUtility\bin\System.Collections.Immutable.dll
+C:\Users\Thomas\Documents\Visual Studio 2017\Projects\SE Scripts\PowerDisplayUtility\bin\SharpDX.DirectInput.dll
+C:\Users\Thomas\Documents\Visual Studio 2017\Projects\SE Scripts\PowerDisplayUtility\bin\DirectShowLib-2005.dll
+C:\Users\Thomas\Documents\Visual Studio 2017\Projects\SE Scripts\PowerDisplayUtility\bin\System.Reflection.Metadata.dll
+C:\Users\Thomas\Documents\Visual Studio 2017\Projects\SE Scripts\PowerDisplayUtility\bin\SharpDX.xml
+C:\Users\Thomas\Documents\Visual Studio 2017\Projects\SE Scripts\PowerDisplayUtility\bin\SharpDX.Desktop.xml
+C:\Users\Thomas\Documents\Visual Studio 2017\Projects\SE Scripts\PowerDisplayUtility\bin\SharpDX.Mathematics.xml
+C:\Users\Thomas\Documents\Visual Studio 2017\Projects\SE Scripts\PowerDisplayUtility\bin\Microsoft.CodeAnalysis.xml
+C:\Users\Thomas\Documents\Visual Studio 2017\Projects\SE Scripts\PowerDisplayUtility\bin\Microsoft.CodeAnalysis.CSharp.xml
+C:\Users\Thomas\Documents\Visual Studio 2017\Projects\SE Scripts\PowerDisplayUtility\bin\System.Collections.Immutable.xml
+C:\Users\Thomas\Documents\Visual Studio 2017\Projects\SE Scripts\PowerDisplayUtility\bin\SharpDX.DirectInput.xml
+C:\Users\Thomas\Documents\Visual Studio 2017\Projects\SE Scripts\PowerDisplayUtility\bin\System.Reflection.Metadata.xml
+C:\Users\Thomas\Documents\Visual Studio 2017\Projects\SE Scripts\PowerDisplayUtility\obj\x64\Debug\PowerDisplayUtility.csprojResolveAssemblyReference.cache
+C:\Users\Thomas\Documents\Visual Studio 2017\Projects\SE Scripts\PowerDisplayUtility\obj\x64\Debug\PowerDisplayUtility.exe
+C:\Users\Thomas\Documents\Visual Studio 2017\Projects\SE Scripts\PowerDisplayUtility\obj\x64\Debug\PowerDisplayUtility.pdb
