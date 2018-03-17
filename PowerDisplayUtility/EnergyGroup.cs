@@ -200,7 +200,7 @@ namespace IngameScript
 
             public void terminalDisplay() {
                 for(int i = 0; i < batteries.Count; i++) {
-                    string name = "*Power: Battery " + i + " ( " + Math.Round((batteries[i].CurrentStoredPower/batteries[i].MaxStoredPower) * 100,2) + "% )";
+                    string name = "*Power: Battery " + i + " ( " + Math.Round((batteries[i].CurrentStoredPower/batteries[i].MaxStoredPower) * 100,2) + "% " + (batteries[i].IsCharging ? "+" : "-")  + " )";
                     batteries[i].CustomName = name;
                 }
 

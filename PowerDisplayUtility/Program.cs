@@ -30,12 +30,13 @@ namespace IngameScript
 
         public Program()
         {
-            // Runtime.UpdateFrequency = UpdateFrequency.Update1;
+            Runtime.UpdateFrequency = UpdateFrequency.Update1;
 
             POWER = new EnergyGroup(this);
             getScriptBlocks();
 
             Me.CustomName = "Programmable Block [PowerDisplayUtility]";
+            Echo(DrawApp());
         }
 
         public void Save()
@@ -84,6 +85,18 @@ namespace IngameScript
                         break;
                 }
             }
+        }
+
+        string DrawApp()
+        {
+            StringBuilder output = new StringBuilder();
+
+            output.AppendLine("-- Power Display Utility --").AppendLine();
+            output.AppendLine("Reporting:").AppendLine(" - Solar: " + POWER.solars.Count).AppendLine(" - Batteries: " + POWER.batteries.Count).AppendLine(" - Reactors: " + POWER.reactors.Count);
+
+            output.AppendLine("Power Trend: " + ( POWER.mathConvertWatt(POWER.CurrentOutput)));
+
+            return output.ToString();
         }
     }
 }
