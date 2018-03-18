@@ -34,7 +34,7 @@ namespace IngameScript
         // =======================================================================================
         // Enter the offset value as a number plus 'f' (sets the number as a float)
         // Example: float OFFSET = 5f;
-        float OFFSET = 5f;
+        const float OFFSET = 5f;
 
         // =======================================================================================
 
