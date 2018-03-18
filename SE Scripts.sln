@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PowerDisplayUtility", "Powe
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DockStatusScript", "DockStatusScript\DockStatusScript.csproj", "{A6E1A989-5099-4390-9317-C630004F89FD}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InteriorLightOffsetScript", "InteriorLightOffsetScript\InteriorLightOffsetScript.csproj", "{913AAE4F-B337-496F-A817-B6C308B8DE5C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -24,6 +26,8 @@ Global
 		{5631C5E8-2C14-4CFE-B592-6D9B93AD02D0}.Debug|x64.Build.0 = Debug|x64
 		{A6E1A989-5099-4390-9317-C630004F89FD}.Debug|x64.ActiveCfg = Debug|x64
 		{A6E1A989-5099-4390-9317-C630004F89FD}.Debug|x64.Build.0 = Debug|x64
+		{913AAE4F-B337-496F-A817-B6C308B8DE5C}.Debug|x64.ActiveCfg = Debug|x64
+		{913AAE4F-B337-496F-A817-B6C308B8DE5C}.Debug|x64.Build.0 = Debug|x64
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
