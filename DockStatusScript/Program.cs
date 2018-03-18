@@ -59,15 +59,22 @@ namespace IngameScript
         }
 
         public void Main(string argument, UpdateType updateSource)
-        {             
-            errors = new StringBuilder();
-            notify = new StringBuilder();
-            
-            foreach(DockBayGroup g in myGroups)
-            {
-                g.update();
+        {
+            if (updateSource == UpdateType.Terminal) {
+                switch (argument.ToUpper())
+                {
+                    case "Add":
+
+                        break;
+                }
             }
-            
+            else
+            {
+                foreach (DockBayGroup g in myGroups)
+                {
+                    g.update();
+                }
+            }
             Echo(DrawApp());
         }
 
