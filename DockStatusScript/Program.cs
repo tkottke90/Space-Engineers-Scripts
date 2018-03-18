@@ -38,8 +38,8 @@ namespace IngameScript
         List<DockBayGroup> myGroups = new List<DockBayGroup>();
 
 
-        StringBuilder errors;
-        StringBuilder notify;
+        StringBuilder errors = new StringBuilder();
+        StringBuilder notify = new StringBuilder();
 
         public Program()
         {
@@ -48,6 +48,7 @@ namespace IngameScript
             Runtime.UpdateFrequency = UpdateFrequency.Update10;
             getBlockGroups();
 
+            Me.CustomName = "Programmable Block [DBM]";
         }
 
         [Flags]
@@ -129,9 +130,6 @@ namespace IngameScript
             }
 
             sb.AppendLine("Bays Managed: " + myGroups.Count);
-
-            sb.AppendLine().AppendLine(" -- Dev --");
-
             
 
             return sb.ToString();

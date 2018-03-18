@@ -99,17 +99,16 @@ namespace IngameScript
                 {
                     foreach(IMyTextPanel t in LCDPanels)
                     {
-                        t.ClearImagesFromSelection();
                         t.AddImageToSelection("Cross");
+                        t.RemoveImageFromSelection("Arrow");
                         
                     }
                 } else
                 {
                     foreach (IMyTextPanel t in LCDPanels)
                     {
-                        t.ClearImagesFromSelection();
                         t.AddImageToSelection("Arrow");
-                       
+                        t.RemoveImageFromSelection("Cross");
                     }
                 }
             }
