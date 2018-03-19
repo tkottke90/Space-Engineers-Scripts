@@ -48,8 +48,13 @@ namespace IngameScript
         public Program()
 
         {
+            // Sets UpdateFrequency property of the PB Runtime to run once
             Runtime.UpdateFrequency = UpdateFrequency.Once;
+
+            // Builds the Pattern used by the script to identify which blocks to grab
             tag_pattern = @"(\[" + SCRIPT_TAG + @")(\s\b[a-zA-z-]*\b)*(\s?\])";
+
+            // Creates the Regular Expression that will be used to check if a blocks name (Me.CustomName) has the tag
             tag_match = new System.Text.RegularExpressions.Regex(tag_pattern);
 
         }
@@ -57,27 +62,56 @@ namespace IngameScript
         public void Main()
 
         {
+            // Create a list that will store the interior lights that have the matching tag
             List<IMyInteriorLight> intLights = new List<IMyInteriorLight>();
+
+            // Method of the Grid the PB is attached to.  The GetBlocksofType allows for the selection of a specific block type which
+            //   allows us to be specific about the blocks we want to work with.
+            //
+            // GetBlocksOfType takes 1-2 parameters, the first is a list of the type of blocks that will be pulled.  This is what we created
+            //   the List<IMyInteriorLight> intLights for.  The second is an optional parameter that allows us to pass a function which will
+            //   allow us to evalue each item (block) found by the method.  
+
+            //  We cast the block found as a IMyInteriorLight and then use the lamba expression '=>' which is similar to using blocks '{ }', 
+            //    then give the method an evaluator.  In this case we are using the Regular Expression we setup in the Construction (Program()) to 
+            //    determine if the block's CustomName includes the tag for the script.  Example:
+            //
+            //      Interior Light 1
+            //      Interior Light 2 [AVLIGHT]
+            //      Interior Light Base [AVLIGHT]
+            //      Interior Light Hanger1
+            //
+            //  In the above list, only Interior Light 2 and Interior Light Base will be selected because they have the tag which means the IsMatch function
+            //    will evaluate true.
+            //
             GridTerminalSystem.GetBlocksOfType<IMyInteriorLight>(intLights, (IMyInteriorLight i) => tag_match.IsMatch(i.CustomName));
 
+            // Check if there were any interior lights found
             if (intLights.Count > 0)
             {
-                ITerminalProperty<float> x = intLights[0].GetProperty("Offset").AsFloat();
-
+                // If lights were found loop through all blocks in the intLights list and set the Offset Value to the Offset Value setup in the config.
                 foreach (IMyInteriorLight light in intLights)
                 {
-                    x.SetValue(light, OFFSET);
+                    // Since IMyInteriorLight does not currently have a Offset property available, the SetValue method has to be used.
+                    light.SetValue("Offset", OFFSET);
                 }
 
+                // Draw to the DetailedInfo space - will return successful run of the script
                 Echo(DrawApp());
             }
             else
             {
+                // Draw to the DetailedInfo space - will return error since no Interior Lights were found
                 Echo(DrawApp("No Lights Found!!\nPlease Tag Managed Lights and Click Run"));
             }
 
         }
 
+        /// <summary>
+        /// Method is designed to draw information into the DetailedInfo field of the Programmable Block using the Echo() method.
+        /// </summary>
+        /// <param name="message"></param>
+        /// <returns>Returns string formatted for the Echo Method</returns>
         public string DrawApp(string message = "")
         {
             StringBuilder output = new StringBuilder();

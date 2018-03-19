@@ -61,7 +61,9 @@ namespace IngameScript
         public void Main(string argument, UpdateType updateSource)
         {
             if (updateSource == UpdateType.Terminal) {
-                switch (argument.ToUpper())
+                string[] args = argument.Split(':');
+
+                switch (args[0].ToUpper())
                 {
                     case "Add":
 
