@@ -19,34 +19,40 @@ namespace IngameScript
     partial class Program : MyGridProgram
     {
         /*
-         *   CONFIG:
-         *   -------
-         *   
-         *   Edit these valiables to change how the script interacts with other blocks on your grid
-         */
+        *
+        *	N00bKeper Data Transmission Script
+        *
+        *	version: 1.0
+        *	last update: 3/19/2018
+        *
+        *	description: Script to allow the transmission of data to and from grid
+        *
+        */
 
-        // Grid Name - Used to let other grids know who is transmitting
+
+        // =======================================================================================
+        //                                                                            --- Configuration ---
+        // =======================================================================================
+
+        // --- Grid Name ---
+        // =======================================================================================
+        // Description: Used to give grid special name.  If blank will use CubeGrid ID
+        // Example: string GRID_NAME = "Gypsy Danger";
         string GRID_NAME = "";
 
-        // Script Tag - Used to label blocks used by this script (Recompile Required to Update)
+        // --- Script Tag ---
+        // =======================================================================================
+        // Description: Tag added to blocks controlled by this script.  By Default the value is RADIO.
+        // Example: const string SCRIPT_TAG = "TRANSMIT"
         const string SCRIPT_TAG = "RADIO";
 
 
-        // DO NOT EDIT BELOW THIS LINE!
-        /*----------------------------------------------------------------------------------------------------------------------------*/
-
+        
 
         // System
         const string VERSION = "v0.1";
         DateTime scriptStartTime;
         int runTimeCount = 0;
-
-        CustomDataStatus status;
-        public enum CustomDataStatus
-        {
-            Settings,
-            Message
-        }
 
         // Logging
         //StringBuilder debugSB = new StringBuilder();
@@ -61,10 +67,13 @@ namespace IngameScript
         System.Text.RegularExpressions.Regex tag_match;
 
         // Block Groups
-        LCDGroup display;
+        LCDGroup status;
 
         // Data
-        Queue<string> messages;
+        System.Text.RegularExpressions.Regex dataFlag = new System.Text.RegularExpressions.Regex(@"(<[a-zA-Z0-9]*>)([\sa-zA-Z0-9:\n\-\%]*)");
+
+        Queue<string> inbound;
+        Queue<string> outbound;
 
         
 
@@ -72,7 +81,6 @@ namespace IngameScript
         {
             // Setup System:
             scriptStartTime = DateTime.Now;
-            status = CustomDataStatus.Settings;
 
             logs.AddLog("Debug");
             logs.AddLog("Notify");
@@ -82,34 +90,44 @@ namespace IngameScript
             tag_match = new System.Text.RegularExpressions.Regex(tag_pattern);
 
             // Init Block Groups
-            display = new LCDGroup("Display", this);
+            status = new LCDGroup("Display", this);
 
             // Init Data
-            messages = new Queue<string>();
-
-            // Draw Screens
+            inbound = new Queue<string>();
+            outbound = new Queue<string>();
             
         }
 
         public void Save()
         {
-            // Called when the program needs to save its state. Use
-            // this method to save your state to the Storage field
-            // or some other means. 
-            // 
-            // This method is optional and can be removed if not
-            // needed.
+
         }
 
         public void Main(string argument, UpdateType updateSource)
         {
+
+            MyData test = new MyData("test");
+
+            Vector3D beta = new Vector3D(268, 21, 4660);
+            test.AddData("GPS-Location", beta.ToString());
+
+            Echo(test.ToString());
+
+            Me.CustomData = Storage;
+
+            Storage += test.ToString();
+
+
+
             // Check Update Source:
             if ((updateSource & UpdateType.Antenna) != 0)
             {
-                messages.Enqueue(argument);
+                inbound.Enqueue(argument);
             } else if((updateSource & UpdateType.Terminal) != 0)
             {
-                handleCommand(argument);
+                // handleCommand(argument);
+
+                
             } else if ((updateSource & (UpdateType.Update1 | UpdateType.Update10)) != 0)
             {
 
@@ -117,8 +135,8 @@ namespace IngameScript
 
             if (logs.LogSize("Notify") == 0 & OddBlocks.Count == 0) { Echo(DrawApp()); } else { Echo(DrawAppErrors()); }
             Echo(DrawDev());
-
-            runTimeCount++;
+            
+            runTimeCount++; 
         }
 
         public void handleMessage(string message)
@@ -147,7 +165,7 @@ namespace IngameScript
                 {
                     Storage = data.Replace(result, "");
                 } catch (Exception e) { Echo("Empty Result"); }
-                Echo(runCount);
+                Echo(runTimeCount.ToString());
                 Echo("Pattern: " + dat.ToString());
                 Echo("Tag: " + tag);
                 Echo(Storage);
@@ -165,7 +183,7 @@ namespace IngameScript
             switch (args[0])
             {
                 case "CONFIG":
-                    status = CustomDataStatus.Settings;
+                    //status = CustomDataStatus.Settings;
                     Me.CustomData = DrawConfig();
                     break;
                 case "Save":
@@ -210,7 +228,7 @@ namespace IngameScript
                                     //LCDDebug.Add((IMyTextPanel)b);
                                     break;
                                 case "DISPLAY":
-                                    display.Add((IMyTextPanel)b);
+                                    status.Add((IMyTextPanel)b);
                                     break;
                             }
                         }
