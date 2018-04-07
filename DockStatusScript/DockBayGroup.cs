@@ -23,6 +23,9 @@ namespace IngameScript
 
         public class DockBayGroup
         {
+            bool debug = false;
+            Program p;
+
             IMySensorBlock sensor;
             IMyShipConnector connector;
             List<IMyTextPanel> LCDPanels;
@@ -32,9 +35,10 @@ namespace IngameScript
                 none = 0,
                 sensor = 1,
                 connector = 2,
+                all = sensor | connector
             }
 
-            bool prevState = false;
+            bool prevState;
             public States state = States.none;
 
             public DockBayGroup(IMySensorBlock s, List<IMyTextPanel> p) {
@@ -55,6 +59,8 @@ namespace IngameScript
                 LCDPanels = p;
                 Setup();
             }
+
+            public void DEBUG(Program _program) { p = _program; debug = true; }
 
             private void Setup() {
                 foreach (IMyTextPanel t in LCDPanels)
@@ -82,14 +88,10 @@ namespace IngameScript
                     state &= ~States.connector;
                 }
 
-                bool currentState = (state & States.sensor) != 0 || (state & States.connector) != 0;
-
-                if (prevState != currentState)
-                {
-                    DrawLCD(currentState);
-                    
-                }
-
+                bool currentState = (state | States.none) != 0;
+                                
+                DrawLCD(currentState);
+              
                 prevState = currentState;
 
             }
@@ -111,6 +113,19 @@ namespace IngameScript
                         t.RemoveImageFromSelection("Cross");
                     }
                 }
+            }
+
+            public string DrawDebug() {
+                StringBuilder sb = new StringBuilder;
+                sb.AppendLine("DEBUG: ");
+                sb.AppendLine("Sensor Active: " + sensor.IsActive);
+                sb.AppendLine("Connector Status: " + (connector.Status == MyShipConnectorStatus.Connected));
+                sb.AppendLine("State: " + state);
+                sb.AppendLine("Current State: " + ((state | States.none) != 0));
+                sb.AppendLine("Current Image: " + LCDPanels[0].CurrentlyShownImage);
+                sb.AppendLine("Bit Math: " + (state | States.none));
+                sb.AppendLine("");
+                return sb.ToString();
             }
         }
     }

@@ -71,6 +71,8 @@ namespace IngameScript
             getBlockGroups();
 
             Me.CustomName = "Programmable Block [DBM]";
+
+            
         }
 
         [Flags]
@@ -86,6 +88,7 @@ namespace IngameScript
             foreach (DockBayGroup g in myGroups)
             {
                 g.update();
+                g.DEBUG(this);
             }
             
             Echo(DrawApp());
