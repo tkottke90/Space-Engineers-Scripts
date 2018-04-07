@@ -69,7 +69,7 @@ namespace IngameScript
                     t.SetShowOnScreen(0);
                 }
 
-                update();
+                DrawLCD(false);
             }
 
             public void update() {
