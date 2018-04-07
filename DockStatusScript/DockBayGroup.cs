@@ -38,7 +38,7 @@ namespace IngameScript
                 all = sensor | connector
             }
 
-            bool prevState;
+            bool prevState = false;
             public States state = States.none;
 
             public DockBayGroup(IMySensorBlock s, List<IMyTextPanel> p) {
@@ -68,6 +68,8 @@ namespace IngameScript
                     t.ClearImagesFromSelection();
                     t.SetShowOnScreen(0);
                 }
+
+                update();
             }
 
             public void update() {
@@ -89,8 +91,8 @@ namespace IngameScript
                 }
 
                 bool currentState = (state | States.none) != 0;
-                                
-                DrawLCD(currentState);
+
+                if (prevState != currentState) { DrawLCD(currentState); }
               
                 prevState = currentState;
 
@@ -101,6 +103,7 @@ namespace IngameScript
                 {
                     foreach(IMyTextPanel t in LCDPanels)
                     {
+                        
                         t.AddImageToSelection("Cross");
                         t.RemoveImageFromSelection("Arrow");
                         
@@ -116,7 +119,7 @@ namespace IngameScript
             }
 
             public string DrawDebug() {
-                StringBuilder sb = new StringBuilder;
+                StringBuilder sb = new StringBuilder();
                 sb.AppendLine("DEBUG: ");
                 sb.AppendLine("Sensor Active: " + sensor.IsActive);
                 sb.AppendLine("Connector Status: " + (connector.Status == MyShipConnectorStatus.Connected));

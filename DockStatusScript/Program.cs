@@ -84,14 +84,17 @@ namespace IngameScript
 
         public void Main(string argument, UpdateType updateSource)
         {
-            
+
+            Echo(DrawApp());
+
             foreach (DockBayGroup g in myGroups)
             {
                 g.update();
-                g.DEBUG(this);
+                Echo(g.DrawDebug());
             }
             
-            Echo(DrawApp());
+            
+            
         }
 
         void getBlockGroups()
