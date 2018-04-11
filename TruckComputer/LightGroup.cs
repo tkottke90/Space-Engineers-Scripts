@@ -38,7 +38,7 @@ namespace IngameScript
             public void AddLight(IMyInteriorLight IL) {
                 lights.Add(IL);
                 IL.SetValue("Offset", 0.5f);
-                IL.Color = groupColor;
+                IL.Color = groupColor; 
             }
 
             public void SetColor(float red, float green, float blue)

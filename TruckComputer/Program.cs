@@ -105,14 +105,25 @@ namespace IngameScript
         // Example with list: string[] controler = { "Remote Control" };
         string controler = "";
 
+        // --- In Terminal Power Display ---
+        // =======================================================================================
+        // Description: Included in this script is an Energy Group script that watches the power
+        //              systems.  This group has the ability to display the current power level and
+        //              trend of the power in the terminal of the blocks custom name
+        //  
+        //              *Power: Battery 0 (54.47% -)
+        //
+        // Example: bool TerminalPowerDisplay = true;
+        bool TerminalPowerDisplay = false;
+
         // DO NOT EDIT BELOW THIS LINE!!
         // =======================================================================================
         //                                                                            --- Script ---
         // =======================================================================================
 
         // System
-            // Block Tag (Regex)
-            string TLTAG_pattern;
+        // Block Tag (Regex)
+        string TLTAG_pattern;
             string RNTAG_pattern;
             string RLTAG_pattern;
 
@@ -134,6 +145,9 @@ namespace IngameScript
             IMyRemoteControl Remote;
             IMyShipController Cockpit;
 
+            // Power Detection
+            EnergyGroup Power;
+
         public Program()
         {
             // Runtime.UpdateFrequency = UpdateFrequency
@@ -142,12 +156,68 @@ namespace IngameScript
             ReverseLights = new LightGroup();
             TailLights = new LightGroup();
 
+            Power = new EnergyGroup(this);
+
             checkOptions();
         }
 
         public void Save() { }
 
         public void Main(string argument, UpdateType updateSource) {
+
+
+            List<IMyCockpit> cockpit = new List<IMyCockpit>();
+            GridTerminalSystem.GetBlocksOfType<IMyCockpit>(cockpit);
+
+            List<IMyTextPanel> lcd = new List<IMyTextPanel>();
+            GridTerminalSystem.GetBlocksOfType<IMyTextPanel>(lcd);
+
+            List<IMyMotorSuspension> wheels = new List<IMyMotorSuspension>();
+            GridTerminalSystem.GetBlocksOfType<IMyMotorSuspension>(wheels);
+
+
+
+            Vector3D prev = new Vector3D(0, 0, 0);
+
+            IMyCockpit c = cockpit[0];
+            double prevspeed = 0.0;
+            // -------------------------------
+            if ((runcount - updatecount) > 200) { 
+                    MyBlockOrientation or = c.Orientation;
+
+                double curspeed = c.GetShipSpeed();
+
+                IMyMotorSuspension x;
+
+                
+
+                Vector3D cur = c.GetPosition();
+
+                Vector3D delta = cur - prev;
+
+                StringBuilder sb = new StringBuilder();
+
+                string[] values = {
+                        (delta.X/delta.Normalize()).ToString("N2"),
+                        (delta.Y/delta.Normalize()).ToString("N2"),
+                        (delta.Z / delta.Normalize()).ToString("N2")
+                    };
+
+                sb.AppendFormat(" Delta:\n  X  |  Y  |  Z  |\n{0,5}|{1,5}|{2,5}|", values).AppendLine();
+                sb.AppendFormat("Speed:\n  P  |  C  |  D  |\n{0,5}|{1,5}|{2,5}", prevspeed.ToString("N2"), curspeed.ToString("N2"), (curspeed - prevspeed).ToString("N2")).AppendLine();
+
+                if ((curspeed - prevspeed) < -1.0) sb.AppendLine("BRAKE");
+
+                prev = cur;
+                prevspeed = curspeed;
+                LCD.WritePublicText(sb.ToString(), false);
+                LCD.ShowPublicTextOnScreen();
+                updatecount = runcount;
+            }
+            Echo("Script Running");
+
+            runcount++;
+
             OnUpdate(argument, updateSource);
             checkOptions();
         }
@@ -178,14 +248,44 @@ namespace IngameScript
 
                 GridTerminalSystem.GetBlocksOfType<IMyInteriorLight>(blocks, (IMyInteriorLight i) => TLTAG_match.IsMatch(i.CustomName));
                 foreach (IMyInteriorLight i in blocks) { TailLights.AddLight(i); }
-
             }
             else
             {
                 foreach(string blk in reverse_lights)
                 {
-                    GridTerminalSystem.GetBlockWithName
+                    
 
+                }
+            }
+
+            List<IMyTerminalBlock> tblocks = new List<IMyTerminalBlock>();
+            GridTerminalSystem.GetBlocksOfType<IMyTerminalBlock>(tblocks);
+
+            foreach (IMyTerminalBlock t in tblocks)
+            {
+                string[] BlockType = t.GetType().ToString().Split('.');
+
+                switch (BlockType[BlockType.Length - 1])
+                {
+                    case "MyRemoteControl":
+                        break;
+                    case "MyCockpit":
+                        
+                        break;
+                    case "MyBatteryBlock":
+                        Power.addBattery((IMyBatteryBlock)t);
+                        break;
+                    case "MySolarPanel":
+                        Power.addSolar((IMySolarPanel)t);
+                        break;
+                    case "MyReactor":
+                        Power.addReactor((IMyReactor)t);
+                        break;
+                    case "MyMotorSuspension":
+                        break;
+                    default:
+
+                        break;
                 }
             }
         }
