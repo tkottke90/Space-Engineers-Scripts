@@ -44,8 +44,15 @@ namespace IngameScript
         {
             StringBuilder output = new StringBuilder();
             output.AppendLine().AppendLine("Dev Values:");
+            output.AppendFormat("UpdateType: {0}", temp).AppendLine();
             output.AppendFormat("Instruction Count: {0,3}", Runtime.CurrentInstructionCount).AppendLine();
             output.AppendFormat("Last Run Time (milliseconds): {0,5:N}", Runtime.LastRunTimeMs).AppendLine();
+            output.AppendFormat("Logger Events: {0}", logs.LogSize("Event")).AppendLine();
+            output.AppendFormat("Logger Notify: {0}", logs.LogSize("Notify")).AppendLine();
+            output.AppendFormat("Logger Debug: {0}", logs.LogSize("Debug")).AppendLine();
+
+            // output.AppendLine(this.logs.ReadLog("Event"));
+                
             return output.ToString();
         }
 
@@ -72,7 +79,9 @@ namespace IngameScript
             string[] config = Me.CustomData.Split('\n');
 
             // Grid Name
-            GRID_NAME = config[1].Split(':')[1]; 
+            GRID_NAME = config[1].Split(':')[1];
+
+            Me.CustomData = "";
         }
     }
 }

@@ -29,7 +29,6 @@ namespace IngameScript
         *
         */
 
-
         // =======================================================================================
         //                                                                            --- Configuration ---
         // =======================================================================================
@@ -46,8 +45,10 @@ namespace IngameScript
         // Example: const string SCRIPT_TAG = "TRANSMIT"
         const string SCRIPT_TAG = "RADIO";
 
-
-        
+        // DO NOT EDIT BELOW THIS LINE!!
+        // =======================================================================================
+        //                                                                            --- Script ---
+        // =======================================================================================
 
         // System
         const string VERSION = "v0.1";
@@ -63,11 +64,11 @@ namespace IngameScript
         MyLogger logs = new MyLogger();
 
         // Script Tags
-        string tag_pattern = @"(\[" + SCRIPT_TAG + @")(\s\b[a-zA-z-]*\b)*(\s?\])";
         System.Text.RegularExpressions.Regex tag_match;
 
         // Block Groups
         LCDGroup status;
+        LCDGroup debug;
 
         // Data
         System.Text.RegularExpressions.Regex dataFlag = new System.Text.RegularExpressions.Regex(@"(<[a-zA-Z0-9]*>)([\sa-zA-Z0-9:\n\-\%]*)");
@@ -75,8 +76,7 @@ namespace IngameScript
         Queue<string> inbound;
         Queue<string> outbound;
 
-        
-
+        UpdateType temp;
         public Program()
         {
             // Setup System:
@@ -87,10 +87,14 @@ namespace IngameScript
             logs.AddLog("Event");
 
             // Init Script Tags
-            tag_match = new System.Text.RegularExpressions.Regex(tag_pattern);
+            if (GRID_NAME == "") {
+                GRID_NAME = Me.CubeGrid.CustomName;
+            }
+            tag_match = new System.Text.RegularExpressions.Regex(generateTag(SCRIPT_TAG));
 
             // Init Block Groups
             status = new LCDGroup("Display", this);
+            debug = new LCDGroup("Debug", this);
 
             // Init Data
             inbound = new Queue<string>();
@@ -105,27 +109,46 @@ namespace IngameScript
 
         public void Main(string argument, UpdateType updateSource)
         {
+            temp = updateSource;
+            /* 
+             
+            if (GRID_NUMBER == 1)
+            {
+                MyData test = new MyData("test");
 
-            MyData test = new MyData("test");
+                Vector3D beta = new Vector3D(268, 21, 4660);
+                test.AddData("GPS-Location", beta.ToString());
 
-            Vector3D beta = new Vector3D(268, 21, 4660);
-            test.AddData("GPS-Location", beta.ToString());
+                Echo(test.ToString());
 
-            Echo(test.ToString());
+                Me.CustomData = Storage;
 
-            Me.CustomData = Storage;
+                Storage += test.ToString();
 
-            Storage += test.ToString();
+                List<IMyRadioAntenna> radio = new List<IMyRadioAntenna>();
+                GridTerminalSystem.GetBlocksOfType<IMyRadioAntenna>(radio);
 
+                radio[0].TransmitMessage(test.ToString());
+                
+            }
+            else {
+                string[] message = argument.Split('\n');
+
+                status.writeToLine(argument);
+                Me.CustomData = argument;
+            }
+            */
 
 
             // Check Update Source:
             if ((updateSource & UpdateType.Antenna) != 0)
             {
-                inbound.Enqueue(argument);
+                MyData data = new MyData(argument);
+                logs.WriteLog("Event", String.Format("Message Received: {0}", data.name));
+
             } else if((updateSource & UpdateType.Terminal) != 0)
             {
-                // handleCommand(argument);
+                handleCommand(argument);
 
                 
             } else if ((updateSource & (UpdateType.Update1 | UpdateType.Update10)) != 0)
@@ -135,8 +158,15 @@ namespace IngameScript
 
             if (logs.LogSize("Notify") == 0 & OddBlocks.Count == 0) { Echo(DrawApp()); } else { Echo(DrawAppErrors()); }
             Echo(DrawDev());
-            
+
+            debug.writeToLCD(DrawDev());
+
             runTimeCount++; 
+        }
+
+        public string generateTag(string tag)
+        {
+            return @"(\[NKTC:" + tag + @")(\s\b[a-zA-Z]*\b)*(\s?\])";
         }
 
         public void handleMessage(string message)
@@ -177,16 +207,20 @@ namespace IngameScript
 
         public void handleCommand(string argument)
         {
-            eventLog.Add(eventLog.Count, argument);
+            
 
             string[] args = argument.ToUpper().Split(':');
+            logs.WriteLog("Event", String.Format("Command Entered From Terminal: {0}", args[0]) );
             switch (args[0])
             {
+                case "":
+
+                    break;
                 case "CONFIG":
                     //status = CustomDataStatus.Settings;
                     Me.CustomData = DrawConfig();
                     break;
-                case "Save":
+                case "SAVE-CONFIG":
                     ReadConfig();
                     break;
                 case "NEW":
@@ -195,9 +229,14 @@ namespace IngameScript
                 case "TRANSMIT":
                     
                     break;
-                
+                case "LASER-TRANSMIT":
+
+                    break;
+                case "CLEAR-LOG":
+
+                    break;
                 default:
-                    eventLog.Add(eventLog.Count, "**** NO COMMAND FOUND: " + argument + " ****");
+                    logs.WriteLog("Notify", String.Format("Invalid Command Entered: {0}", args[0]));
                     break;  
             }
         }
@@ -225,7 +264,7 @@ namespace IngameScript
                             switch (args1)
                             {
                                 case "DEBUG":
-                                    //LCDDebug.Add((IMyTextPanel)b);
+                                    debug.Add((IMyTextPanel)b);
                                     break;
                                 case "DISPLAY":
                                     status.Add((IMyTextPanel)b);
@@ -236,7 +275,7 @@ namespace IngameScript
                         break;
                     default:
                         OddBlocks.Add(b);
-                        logs.WriteLog("Debug", b.CustomName + " is not used by this script");
+                        logs.WriteLog("Notify", b.CustomName + " is not used by this script");
                         break;
                 }
             }

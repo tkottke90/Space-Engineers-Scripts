@@ -37,7 +37,7 @@ namespace IngameScript
 
             public void WriteLog(string logName, string logData)
             {
-                logs[logName].AppendLine(DateTime.Now.ToString() + ": " + logData);
+                logs[logName].AppendFormat("{0}:{1}", DateTime.Now.ToString(), logData).AppendLine();
             }
 
             public string ReadLog(string logName)
@@ -52,7 +52,7 @@ namespace IngameScript
 
             public int LogSize(string logName)
             {
-                return logs[logName].Length;
+                return logs[logName].Length > 0 ? logs[logName].ToString().Split('\n').Length : 0;
             }
         }
     }

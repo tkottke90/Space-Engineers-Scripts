@@ -1,0 +1,56 @@
+[
+    {
+        "Current_Goal": {
+            "name": "CollectResources",
+            "relivancy": 0.3,
+            "goal": {
+                "consumptionRange": {
+                    "Min": 0,
+                    "Max": 0.1
+                }
+            }
+        },
+        "States": {
+            "Damage_Taken": 0,
+            "Power_Avail": 1,
+            "Inv_Used": 0,
+            "Ast_Count": 0
+        }
+    },
+    {
+        "Current_Goal": {
+            "name": "CollectResources",
+            "relivancy": 0.3,
+            "goal": {
+                "consumptionRange": {
+                    "Min": 0,
+                    "Max": 0.1
+                }
+            }
+        },
+        "States": {
+            "Damage_Taken": 0,
+            "Power_Avail": 1,
+            "Inv_Used": 0,
+            "Ast_Count": 0
+        }
+    },
+    {
+        "Current_Goal": {
+            "name": "CollectResources",
+            "relivancy": 0.3,
+            "goal": {
+                "consumptionRange": {
+                    "Min": 0,
+                    "Max": 0.1
+                }
+            }
+        },
+        "States": {
+            "Damage_Taken": 0,
+            "Power_Avail": 1,
+            "Inv_Used": 0,
+            "Ast_Count": 0
+        }
+    }
+]

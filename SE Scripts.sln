@@ -15,6 +15,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InteriorLightOffsetScript",
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TruckComputer", "TruckComputer\TruckComputer.csproj", "{B08AF891-8FAE-4F65-864D-DA768A0FB9F1}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KeperMiningDrone", "KeperMiningDrone\KeperMiningDrone.csproj", "{AEB67C97-3F94-4E57-957D-D744A5D1BF33}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -32,6 +34,8 @@ Global
 		{913AAE4F-B337-496F-A817-B6C308B8DE5C}.Debug|x64.Build.0 = Debug|x64
 		{B08AF891-8FAE-4F65-864D-DA768A0FB9F1}.Debug|x64.ActiveCfg = Debug|x64
 		{B08AF891-8FAE-4F65-864D-DA768A0FB9F1}.Debug|x64.Build.0 = Debug|x64
+		{AEB67C97-3F94-4E57-957D-D744A5D1BF33}.Debug|x64.ActiveCfg = Debug|x64
+		{AEB67C97-3F94-4E57-957D-D744A5D1BF33}.Debug|x64.Build.0 = Debug|x64
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

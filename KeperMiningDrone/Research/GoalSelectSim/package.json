@@ -1,0 +1,17 @@
+{
+  "name": "goalselectsim",
+  "version": "1.0.0",
+  "description": "",
+  "main": "GoalSelect.js",
+  "scripts": {
+    "build": "tsc GoalSelect.ts && node GoalSelect.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@types/node": "^9.6.6",
+    "body-parser": "^1.18.2",
+    "express": "^4.16.3"
+  }
+}

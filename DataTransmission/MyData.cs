@@ -20,7 +20,7 @@ namespace IngameScript
     {
         public class MyData
         {
-            string name = "";
+            public string name = "";
             Dictionary<string, string> data = new Dictionary<string, string>();
 
             System.Text.RegularExpressions.Regex approvedChars = new System.Text.RegularExpressions.Regex(@"([\sa-zA-Z0-9\-\%] *)");
@@ -68,6 +68,11 @@ namespace IngameScript
             {
                 return data.Remove(id);
             }
+
+            //public string[] Parse(string) {
+                
+            //}
+
             override
             public string ToString()
             {
