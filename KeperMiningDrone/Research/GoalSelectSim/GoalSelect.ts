@@ -7,103 +7,49 @@ import * as Goals from './lib/Goal.type';
 const defaultVals: number[] = [ 0, 1, 0, 0 ];
 const thresholds = Goals.thresholds;
 
-
-class WorldState {
-    Damage_Taken: number;
-    Power_Avail: number;
-    Inv_Used: number;
-    Ast_Count: number;
-
-    constructor(vals: number[]){
-        this.Damage_Taken = vals[0];
-        this.Power_Avail = vals[1];
-        this.Inv_Used = vals[2];
-        this.Ast_Count = vals[3];
-    }
-}
- 
-
-interface Goal {
-    normilze(thresholdArr: object ,val: number, val2?: number): number;
-    // result(): WorldState;
-}
-
-class StayAlive implements Goal {
-
-    normilze(thresholds: Goals.threshold ,dmgLevel:number): number {
-        if(dmgLevel > thresholds['StayAlive']){
-            return ((dmgLevel-thresholds['StayAlive'])/(1-thresholds['StayAlive']));
-        } else { return 0; }
-    }
-
-
-    action(){
-
-    }
-}
-
-class StayAwake implements Goal {
-
-    normilze(thresholds: Goals.threshold, pwrAvailable:number): number {
-        if(pwrAvailable < thresholds['StayAwake']){
-            return Math.abs((((pwrAvailable-thresholds['StayAwakeCrit'])/thresholds['StayAwakeCrit'])*0.5)-0.5);
-        } else { return 0; } 
-    }
-}
-
-class Collect implements Goal {
-    
-    normilze(threshholds: Goals.threshold, invUsed: number, astLocated: number): number {
-        let outputVal = 0.0;
-        if (astLocated >= thresholds['Find']){
-            outputVal += 0.7;
-        }
-
-        if(invUsed >= thresholds['Collect']){
-            outputVal += (1 - ((invUsed - thresholds['Collect'])/thresholds['Collect'])) * 0.3;
-        } else { outputVal += 0.3; }
-
-        return outputVal;
-    }
-}
+const ModifierValues = [3, 1, 1];
 
 class AIModule {
     
-    MyState: WorldState;
+    MyState: Goals.WorldState;
     MyThresholds: object;
-    MyGoal: object = {};
+    MyGoal: Goals.RelevancyObject;
 
-    AvailableGoals: Goal[] = [
-        new StayAlive(),
-        new StayAwake(),
-        new Collect()
+    tempList: Goals.RelevancyObject[];
+
+    AvailableGoals: Goals.Goal[] = [
+        new Goals.StayAlive(),
+        new Goals.StayAwake(),
+        new Goals.Collect()
     ];
 
-    constructor(defaultThresholds: object, state: WorldState){
+    constructor(defaultThresholds: object, state: Goals.WorldState){
         this.MyState = state;
         this.MyThresholds = defaultThresholds;
-        this.MyGoal;
+        this.MyGoal = new Goals.RelevancyObject('StayAlive', 0, new Goals.StayAlive());
     }
 
-    run() {
+    run(): Goals.RelevancyObject {
 
         let goalRel = [
-            { name: 'StayAlive', relivancy: this.AvailableGoals[0].normilze(this.MyThresholds, this.MyState.Damage_Taken), goal: this.AvailableGoals[0] },
-            { name: 'StayAwake', relivancy: this.AvailableGoals[1].normilze(this.MyThresholds, this.MyState.Power_Avail), goal: this.AvailableGoals[1] },
-            { name: 'CollectResources', relivancy: this.AvailableGoals[2].normilze(this.MyThresholds, this.MyState.Inv_Used, this.MyState.Ast_Count), goal: this.AvailableGoals[2] }
+            new Goals.RelevancyObject('StayAlive', (this.AvailableGoals[0].normilze(this.MyThresholds, this.MyState.Damage_Taken) * ModifierValues[0]), this.AvailableGoals[0]),
+            new Goals.RelevancyObject('StayAwake', (this.AvailableGoals[1].normilze(this.MyThresholds, this.MyState.Power_Avail) * ModifierValues[1]), this.AvailableGoals[1]),
+            new Goals.RelevancyObject(
+                'CollectResources', 
+                (this.AvailableGoals[2].normilze(
+                    this.MyThresholds, 
+                    this.MyState.Inv_Used, 
+                    this.MyState.Ast_Count) 
+                * ModifierValues[2]), 
+                this.AvailableGoals[2])
         ];
-
-        let selectedGoal: object;
-        for (let i = 0; i < goalRel.length; i++){
-            if(selectedGoal){
-                selectedGoal = selectedGoal['relivancy'] > goalRel[i]['relivancy'] ? selectedGoal : goalRel[i]; 
-            } else {
-                selectedGoal = goalRel[i];
-            }
-            
+        this.tempList = goalRel;
+        let selectedGoal: Goals.RelevancyObject = goalRel[0];
+        for (let i = 1; i < goalRel.length; i++){
+            selectedGoal = selectedGoal.relevancy > goalRel[i].relevancy ? selectedGoal : goalRel[i]; 
         }
         
-        this.MyGoal = selectedGoal;
+        return selectedGoal;
     }
 }
 
@@ -111,22 +57,72 @@ class AIModule {
 //              Main
 // =====================================
 
-let NewWorld = new WorldState(defaultVals);
+let NewWorld = new Goals.WorldState(defaultVals);
 let AI = new AIModule(thresholds, NewWorld);
 
 let outputData = [];
 let outputPath = './data/datafile.json'
+let logData = []
+let logPath = './data/logfile.json';
 
-for(let i = 0; i < 3; i++){
-    AI.run();
+for(let i = 0; i < 500; i++){
+    let prevGoal = AI.MyGoal;
+    let newGoal = AI.run();
+
+    if(prevGoal.name != newGoal.name){
+        AI.MyGoal = newGoal;
+        logData.push({
+            'RunCount': i,
+            'Timestamp': new Date(Date.now()).toTimeString(),
+            'Event' : `New Goal Selected: ${AI.MyGoal.name}`
+        });
+    }
 
     outputData.push({
+        'RunCount': i,
         'Current_Goal' : AI.MyGoal,
-        'States' : AI.MyState
+        'Relivancy_Scores': {
+            'StayAlive' : AI.tempList[0].relevancy,
+            'StayAwake' : AI.tempList[1].relevancy,
+            'Collect' : AI.tempList[2].relevancy
+        },
+        'States' : AI.MyState.output()
+        
     });
+
+    AI.MyState = AI.MyGoal['goal'].action(AI.MyState);
+
+    if(AI.MyState.Damage_Taken >= 1){
+        logData.push({
+            'RunCount': i,
+            'Timestamp': new Date(Date.now()).toTimeString(),
+            'Event' : "Drone Sustained Too Much Damage and Died"
+        });
+        break;
+    } else if(AI.MyState.Power_Avail <= 0){
+        logData.push({
+            'RunCount': i,
+            'Timestamp': new Date(Date.now()).toTimeString(),
+            'Event': 'Drone out of energy, simulation failed'
+        });
+        break;
+    } else if(AI.MyState.Inv_Used >= 1){
+        logData.push({
+            'RunCount': i,
+            'Timestamp': new Date(Date.now()).toTimeString(),
+            'Event': 'Inventory Full - Returning to Base'
+        });
+    }
 }
 
 fs.writeFile(outputPath, JSON.stringify(outputData),(err) => {
     if(err){ console.log(err) }
     else { console.log(`Data written successfully to: ${outputPath}`); }
 });
+
+if (logData.length > 0) {
+    fs.writeFile(logPath, JSON.stringify(logData),(err) => {
+        if(err){ console.log(err) }
+        else { console.log(`Data written successfully to: ${logPath}`); }   
+    });
+} else {  console.log("No Logs Written"); }

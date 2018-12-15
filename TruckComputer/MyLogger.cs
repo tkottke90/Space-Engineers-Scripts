@@ -28,6 +28,10 @@ namespace IngameScript
                 name = n;
             }
 
+            public void addLog(string s) {
+                this.logs.Add(s);
+            }
+
             public string DrawLog() {
                 StringBuilder output = new StringBuilder();
                 output.AppendFormat("-- Logger ({0}) Output --", name);

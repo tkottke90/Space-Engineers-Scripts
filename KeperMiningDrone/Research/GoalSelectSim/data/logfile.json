@@ -1,0 +1,42 @@
+[
+    {
+        "RunCount": 0,
+        "Timestamp": "19:06:20 GMT-0500 (Central Daylight Time)",
+        "Event": "New Goal Selected: CollectResources"
+    },
+    {
+        "RunCount": 25,
+        "Timestamp": "19:06:20 GMT-0500 (Central Daylight Time)",
+        "Event": "Inventory Full - Returning to Base"
+    },
+    {
+        "RunCount": 51,
+        "Timestamp": "19:06:20 GMT-0500 (Central Daylight Time)",
+        "Event": "Inventory Full - Returning to Base"
+    },
+    {
+        "RunCount": 73,
+        "Timestamp": "19:06:20 GMT-0500 (Central Daylight Time)",
+        "Event": "Inventory Full - Returning to Base"
+    },
+    {
+        "RunCount": 97,
+        "Timestamp": "19:06:20 GMT-0500 (Central Daylight Time)",
+        "Event": "Inventory Full - Returning to Base"
+    },
+    {
+        "RunCount": 120,
+        "Timestamp": "19:06:20 GMT-0500 (Central Daylight Time)",
+        "Event": "Inventory Full - Returning to Base"
+    },
+    {
+        "RunCount": 135,
+        "Timestamp": "19:06:20 GMT-0500 (Central Daylight Time)",
+        "Event": "New Goal Selected: StayAlive"
+    },
+    {
+        "RunCount": 189,
+        "Timestamp": "19:06:20 GMT-0500 (Central Daylight Time)",
+        "Event": "Drone out of energy, simulation failed"
+    }
+]

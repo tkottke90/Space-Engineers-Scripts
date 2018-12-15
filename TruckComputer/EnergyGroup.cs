@@ -148,7 +148,7 @@ namespace IngameScript
                 }
                 catch (Exception e)
                 {
-                    _program.debugSB.AppendLine("Error in Energy Group: UpdateBatteries(): " + e);
+                    _program.debug.addLog("Error in Energy Group: UpdateBatteries(): " + e);
                     return false;
                 }
 
@@ -179,7 +179,7 @@ namespace IngameScript
                 }
                 catch (Exception e)
                 {
-                    _program.debugSB.AppendLine("Error in Energy Group: UpdateOutput(): " + e);
+                    _program.debug.addLog("Error in Energy Group: UpdateOutput(): " + e);
                     return false;
                 }
             }

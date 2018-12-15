@@ -29,8 +29,6 @@ namespace IngameScript
 
         public abstract class State
         {
-            public abstract
-
             public abstract bool Run();
             public virtual void Init() { }
             public virtual void Init(string arg) { }

@@ -20,10 +20,10 @@ namespace IngameScript
     {
         /*
         *
-        *	N00bKeper Script Template
+        *	N00bKeper Truck Script
         *
-        *	version: 1.0
-        *	last update: 3/19/2018
+        *	version: 1.01
+        / 	last update: 3/19/2018/ 10:35
         *
         *	description: Template for creating new Space Engineers Scripts
         *
@@ -58,6 +58,12 @@ namespace IngameScript
         // Example with Tag: bool useTag = true  => Interior Light [NKTC:TailLight]
         bool useTag = true;
 
+        // --- Default Ride Height ---
+        // =======================================================================================
+        // Description: Sets the default wheel height for the 
+        // Example with Tag: bool useTag = true  => Interior Light [NKTC:TailLight]
+        float defaultWheelHeight = 0.2f;
+
 
         // --- Tail Lights ---
         // =======================================================================================
@@ -83,7 +89,7 @@ namespace IngameScript
         // --- Running Light Color ---
         // =======================================================================================
         // Description: Manages Running Lights Color.
-        Color run_light_Color = new Color(255f, 128f, 0f);
+        Color run_light_Color = new Color(255f, 128.0f, 0f);
 
         // --- Reverse Lights ---
         // =======================================================================================
@@ -122,6 +128,11 @@ namespace IngameScript
         // =======================================================================================
 
         // System
+        int runcount = 0;
+        int updateCount = 0;
+
+        int TEN_SECONDS = 60 * 10;
+
         // Block Tag (Regex)
         string TLTAG_pattern;
             string RNTAG_pattern;
@@ -148,17 +159,49 @@ namespace IngameScript
             // Power Detection
             EnergyGroup Power;
 
+            // Wheel Configuration
+            WheelGroup Wheels;
+
         public Program()
         {
-            // Runtime.UpdateFrequency = UpdateFrequency
+            Runtime.UpdateFrequency = UpdateFrequency.Update1;
 
-            RunningLights = new LightGroup();
-            ReverseLights = new LightGroup();
-            TailLights = new LightGroup();
+            Me.CustomName = "PB [NKTC]";
 
             Power = new EnergyGroup(this);
 
+
+            List<IMyMotorSuspension> wheels = new List<IMyMotorSuspension>();
+            GridTerminalSystem.GetBlocksOfType<IMyMotorSuspension>(wheels);
+
+            List<ITerminalProperty> wheelProp = new List<ITerminalProperty>();
+            wheels[0].GetProperties(wheelProp);
+
+            List<ITerminalAction> wheelActions = new List<ITerminalAction>();
+            wheels[0].GetActions(wheelActions);
+
+            StringBuilder sb = new StringBuilder();
+
+            sb.AppendLine("Properties: ");
+            foreach(ITerminalProperty t in wheelProp)
+            {
+                sb.AppendFormat("\t{0}", t.Id).AppendLine();
+            }
+
+            sb.AppendLine("Actions: ");
+            foreach(ITerminalAction a in wheelActions)
+            {
+                sb.AppendFormat("\t{0} ({1})", a.Name, a.Id).AppendLine();
+                
+            }
+
+            sb.AppendFormat("\nHeight: {0}", wheels[0].Height).AppendLine();
+
+            Me.CustomData = sb.ToString();
+
             checkOptions();
+            getBlocks();
+            Echo(DrawApp());
         }
 
         public void Save() { }
@@ -166,60 +209,11 @@ namespace IngameScript
         public void Main(string argument, UpdateType updateSource) {
 
 
-            List<IMyCockpit> cockpit = new List<IMyCockpit>();
-            GridTerminalSystem.GetBlocksOfType<IMyCockpit>(cockpit);
-
-            List<IMyTextPanel> lcd = new List<IMyTextPanel>();
-            GridTerminalSystem.GetBlocksOfType<IMyTextPanel>(lcd);
-
-            List<IMyMotorSuspension> wheels = new List<IMyMotorSuspension>();
-            GridTerminalSystem.GetBlocksOfType<IMyMotorSuspension>(wheels);
-
-
-
-            Vector3D prev = new Vector3D(0, 0, 0);
-
-            IMyCockpit c = cockpit[0];
-            double prevspeed = 0.0;
-            // -------------------------------
-            if ((runcount - updatecount) > 200) { 
-                    MyBlockOrientation or = c.Orientation;
-
-                double curspeed = c.GetShipSpeed();
-
-                IMyMotorSuspension x;
-
-                
-
-                Vector3D cur = c.GetPosition();
-
-                Vector3D delta = cur - prev;
-
-                StringBuilder sb = new StringBuilder();
-
-                string[] values = {
-                        (delta.X/delta.Normalize()).ToString("N2"),
-                        (delta.Y/delta.Normalize()).ToString("N2"),
-                        (delta.Z / delta.Normalize()).ToString("N2")
-                    };
-
-                sb.AppendFormat(" Delta:\n  X  |  Y  |  Z  |\n{0,5}|{1,5}|{2,5}|", values).AppendLine();
-                sb.AppendFormat("Speed:\n  P  |  C  |  D  |\n{0,5}|{1,5}|{2,5}", prevspeed.ToString("N2"), curspeed.ToString("N2"), (curspeed - prevspeed).ToString("N2")).AppendLine();
-
-                if ((curspeed - prevspeed) < -1.0) sb.AppendLine("BRAKE");
-
-                prev = cur;
-                prevspeed = curspeed;
-                LCD.WritePublicText(sb.ToString(), false);
-                LCD.ShowPublicTextOnScreen();
-                updatecount = runcount;
-            }
-            Echo("Script Running");
-
-            runcount++;
-
             OnUpdate(argument, updateSource);
             checkOptions();
+
+            // Draw Methods
+            Echo(DrawApp());
         }
 
         public void OnUpdate(string arg, UpdateType updateSource)
@@ -228,9 +222,37 @@ namespace IngameScript
             {
                 case UpdateType.Terminal:
 
+                    string[] argList = arg.Split(':');
+
+                    switch (argList[0])
+                    {
+                        case "pause":
+                            Runtime.UpdateFrequency &= ~UpdateFrequency.Update1;
+                            break;
+                        case "resume":
+                            Runtime.UpdateFrequency |= UpdateFrequency.Update1;
+                            break;
+                        case "wheels":
+                            switch (argList[1])
+                            {
+                                case "min":
+
+                                   break;
+                            }
+                            break;
+                    }
+
                     break;
                 case UpdateType.Update1:
+                    if (updateCount >= TEN_SECONDS)
+                    {
+                        updateCount = 0;
+                        checkOptions();
+                        getBlocks();
+                    }
 
+                    updateCount++;
+                    runcount++;
                     break;
             }
         }
@@ -239,27 +261,28 @@ namespace IngameScript
 
             if (useTag)
             {
+                StringBuilder sb = new StringBuilder();
                 List<IMyInteriorLight> blocks = new List<IMyInteriorLight>();
                 GridTerminalSystem.GetBlocksOfType<IMyInteriorLight>(blocks, (IMyInteriorLight i) => RLTAG_match.IsMatch(i.CustomName));
+                ReverseLights = new LightGroup(reverse_light_Color);
                 foreach(IMyInteriorLight i in blocks) { ReverseLights.AddLight(i); }
+                ReverseLights.SetIntensity();
 
                 GridTerminalSystem.GetBlocksOfType<IMyInteriorLight>(blocks, (IMyInteriorLight i) => RNTAG_match.IsMatch(i.CustomName));
+                RunningLights = new LightGroup(run_light_Color);
                 foreach (IMyInteriorLight i in blocks) { RunningLights.AddLight(i); }
+                RunningLights.SetIntensity();
 
                 GridTerminalSystem.GetBlocksOfType<IMyInteriorLight>(blocks, (IMyInteriorLight i) => TLTAG_match.IsMatch(i.CustomName));
+                TailLights = new LightGroup(tail_light_Color);
                 foreach (IMyInteriorLight i in blocks) { TailLights.AddLight(i); }
-            }
-            else
-            {
-                foreach(string blk in reverse_lights)
-                {
-                    
-
-                }
+                TailLights.SetIntensity();
             }
 
             List<IMyTerminalBlock> tblocks = new List<IMyTerminalBlock>();
             GridTerminalSystem.GetBlocksOfType<IMyTerminalBlock>(tblocks);
+
+            Wheels = new WheelGroup(defaultWheelHeight);
 
             foreach (IMyTerminalBlock t in tblocks)
             {
@@ -271,6 +294,7 @@ namespace IngameScript
                         break;
                     case "MyCockpit":
                         
+
                         break;
                     case "MyBatteryBlock":
                         Power.addBattery((IMyBatteryBlock)t);
@@ -282,6 +306,7 @@ namespace IngameScript
                         Power.addReactor((IMyReactor)t);
                         break;
                     case "MyMotorSuspension":
+
                         break;
                     default:
 
@@ -316,10 +341,19 @@ namespace IngameScript
         public string DrawApp() {
             StringBuilder sb = new StringBuilder();
             sb.AppendLine("-- NoobKeper Truck Control --").AppendLine();
+
+            int runtime = runcount / 60;
+            int runRemainder = runcount % 60;
+            sb.AppendFormat("Uptime: {0}:{1}", runtime, runRemainder).AppendLine();
+
+            int updateTime = 10 - (updateCount / 60);
+            int updateRemainder = updateCount % 60;
+            sb.AppendFormat("Next Update: {0}:{1} Sec", updateTime, updateRemainder).AppendLine().AppendLine();
+
             sb.AppendLine("Managing: ");
-            sb.AppendFormat("Running Lights: {0}", RunningLights.lights.Count);
-            sb.AppendFormat("Reverse Lights: {0}", ReverseLights.lights.Count);
-            sb.AppendFormat("Tail Lights: {0}", ReverseLights.lights.Count);
+            sb.AppendFormat("Running Lights: {0}\n", RunningLights.lights.Count);
+            sb.AppendFormat("Reverse Lights: {0}\n", ReverseLights.lights.Count);
+            sb.AppendFormat("Tail Lights: {0}\n", TailLights.lights.Count);
 
             return sb.ToString();
         }

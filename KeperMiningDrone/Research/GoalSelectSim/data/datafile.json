@@ -1,56 +1,3722 @@
 [
     {
+        "RunCount": 0,
         "Current_Goal": {
             "name": "CollectResources",
-            "relivancy": 0.3,
-            "goal": {
-                "consumptionRange": {
-                    "Min": 0,
-                    "Max": 0.1
-                }
-            }
+            "relevancy": 0.3,
+            "goal": {}
+        },
+        "Relivancy_Scores": {
+            "StayAlive": 0,
+            "StayAwake": 0,
+            "Collect": 0.3
         },
         "States": {
-            "Damage_Taken": 0,
-            "Power_Avail": 1,
-            "Inv_Used": 0,
-            "Ast_Count": 0
+            "Damage": 0,
+            "Power": 1,
+            "Inventory": 0,
+            "Asteriod": 0
         }
     },
     {
+        "RunCount": 1,
         "Current_Goal": {
             "name": "CollectResources",
-            "relivancy": 0.3,
-            "goal": {
-                "consumptionRange": {
-                    "Min": 0,
-                    "Max": 0.1
-                }
-            }
+            "relevancy": 0.3,
+            "goal": {}
+        },
+        "Relivancy_Scores": {
+            "StayAlive": 0,
+            "StayAwake": 0,
+            "Collect": 1
         },
         "States": {
-            "Damage_Taken": 0,
-            "Power_Avail": 1,
-            "Inv_Used": 0,
-            "Ast_Count": 0
+            "Damage": 0,
+            "Power": 0.9,
+            "Inventory": 0,
+            "Asteriod": 1
         }
     },
     {
+        "RunCount": 2,
         "Current_Goal": {
             "name": "CollectResources",
-            "relivancy": 0.3,
-            "goal": {
-                "consumptionRange": {
-                    "Min": 0,
-                    "Max": 0.1
-                }
-            }
+            "relevancy": 0.3,
+            "goal": {}
+        },
+        "Relivancy_Scores": {
+            "StayAlive": 0,
+            "StayAwake": 0,
+            "Collect": 1
         },
         "States": {
-            "Damage_Taken": 0,
-            "Power_Avail": 1,
-            "Inv_Used": 0,
-            "Ast_Count": 0
+            "Damage": 0,
+            "Power": 0.889419462568514,
+            "Inventory": 0.02402666569289349,
+            "Asteriod": 1
+        }
+    },
+    {
+        "RunCount": 3,
+        "Current_Goal": {
+            "name": "CollectResources",
+            "relevancy": 0.3,
+            "goal": {}
+        },
+        "Relivancy_Scores": {
+            "StayAlive": 0,
+            "StayAwake": 0,
+            "Collect": 1
+        },
+        "States": {
+            "Damage": 0,
+            "Power": 0.8746753372035435,
+            "Inventory": 0.08999611745569801,
+            "Asteriod": 1
+        }
+    },
+    {
+        "RunCount": 4,
+        "Current_Goal": {
+            "name": "CollectResources",
+            "relevancy": 0.3,
+            "goal": {}
+        },
+        "Relivancy_Scores": {
+            "StayAlive": 0,
+            "StayAwake": 0,
+            "Collect": 1
+        },
+        "States": {
+            "Damage": 0,
+            "Power": 0.8599225888281181,
+            "Inventory": 0.15397385986511025,
+            "Asteriod": 1
+        }
+    },
+    {
+        "RunCount": 5,
+        "Current_Goal": {
+            "name": "CollectResources",
+            "relevancy": 0.3,
+            "goal": {}
+        },
+        "Relivancy_Scores": {
+            "StayAlive": 0,
+            "StayAwake": 0,
+            "Collect": 1
+        },
+        "States": {
+            "Damage": 0,
+            "Power": 0.8439023899964682,
+            "Inventory": 0.17811799654743282,
+            "Asteriod": 1
+        }
+    },
+    {
+        "RunCount": 6,
+        "Current_Goal": {
+            "name": "CollectResources",
+            "relevancy": 0.3,
+            "goal": {}
+        },
+        "Relivancy_Scores": {
+            "StayAlive": 0,
+            "StayAwake": 0,
+            "Collect": 1
+        },
+        "States": {
+            "Damage": 0,
+            "Power": 0.8291865401288876,
+            "Inventory": 0.20467338019757242,
+            "Asteriod": 1
+        }
+    },
+    {
+        "RunCount": 7,
+        "Current_Goal": {
+            "name": "CollectResources",
+            "relevancy": 0.3,
+            "goal": {}
+        },
+        "Relivancy_Scores": {
+            "StayAlive": 0,
+            "StayAwake": 0,
+            "Collect": 1
+        },
+        "States": {
+            "Damage": 0,
+            "Power": 0.815467920988787,
+            "Inventory": 0.2322677006431681,
+            "Asteriod": 1
+        }
+    },
+    {
+        "RunCount": 8,
+        "Current_Goal": {
+            "name": "CollectResources",
+            "relevancy": 0.3,
+            "goal": {}
+        },
+        "Relivancy_Scores": {
+            "StayAlive": 0,
+            "StayAwake": 0,
+            "Collect": 1
+        },
+        "States": {
+            "Damage": 0,
+            "Power": 0.7955394059305787,
+            "Inventory": 0.3173710448145104,
+            "Asteriod": 1
+        }
+    },
+    {
+        "RunCount": 9,
+        "Current_Goal": {
+            "name": "CollectResources",
+            "relevancy": 0.3,
+            "goal": {}
+        },
+        "Relivancy_Scores": {
+            "StayAlive": 0,
+            "StayAwake": 0,
+            "Collect": 1
+        },
+        "States": {
+            "Damage": 0,
+            "Power": 0.7773593593493391,
+            "Inventory": 0.3955780412741483,
+            "Asteriod": 1
+        }
+    },
+    {
+        "RunCount": 10,
+        "Current_Goal": {
+            "name": "CollectResources",
+            "relevancy": 0.3,
+            "goal": {}
+        },
+        "Relivancy_Scores": {
+            "StayAlive": 0,
+            "StayAwake": 0,
+            "Collect": 1
+        },
+        "States": {
+            "Damage": 0,
+            "Power": 0.7598536071016903,
+            "Inventory": 0.41540915887321395,
+            "Asteriod": 1
+        }
+    },
+    {
+        "RunCount": 11,
+        "Current_Goal": {
+            "name": "CollectResources",
+            "relevancy": 0.3,
+            "goal": {}
+        },
+        "Relivancy_Scores": {
+            "StayAlive": 0,
+            "StayAwake": 0,
+            "Collect": 1
+        },
+        "States": {
+            "Damage": 0,
+            "Power": 0.7457508640262916,
+            "Inventory": 0.4506916785248751,
+            "Asteriod": 1
+        }
+    },
+    {
+        "RunCount": 12,
+        "Current_Goal": {
+            "name": "CollectResources",
+            "relevancy": 0.3,
+            "goal": {}
+        },
+        "Relivancy_Scores": {
+            "StayAlive": 0,
+            "StayAwake": 0,
+            "Collect": 1
+        },
+        "States": {
+            "Damage": 0,
+            "Power": 0.7275163658514094,
+            "Inventory": 0.4624566218470806,
+            "Asteriod": 1
+        }
+    },
+    {
+        "RunCount": 13,
+        "Current_Goal": {
+            "name": "CollectResources",
+            "relevancy": 0.3,
+            "goal": {}
+        },
+        "Relivancy_Scores": {
+            "StayAlive": 0,
+            "StayAwake": 0,
+            "Collect": 1
+        },
+        "States": {
+            "Damage": 0.07666696472294446,
+            "Power": 0.7116131924514194,
+            "Inventory": 0.46621043679971624,
+            "Asteriod": 1
+        }
+    },
+    {
+        "RunCount": 14,
+        "Current_Goal": {
+            "name": "CollectResources",
+            "relevancy": 0.3,
+            "goal": {}
+        },
+        "Relivancy_Scores": {
+            "StayAlive": 0,
+            "StayAwake": 0,
+            "Collect": 1
+        },
+        "States": {
+            "Damage": 0.07666696472294446,
+            "Power": 0.6983908921772736,
+            "Inventory": 0.49075631689083493,
+            "Asteriod": 1
+        }
+    },
+    {
+        "RunCount": 15,
+        "Current_Goal": {
+            "name": "CollectResources",
+            "relevancy": 0.3,
+            "goal": {}
+        },
+        "Relivancy_Scores": {
+            "StayAlive": 0,
+            "StayAwake": 0,
+            "Collect": 0.9632602287279199
+        },
+        "States": {
+            "Damage": 0.07666696472294446,
+            "Power": 0.6853767644225017,
+            "Inventory": 0.5612329521201334,
+            "Asteriod": 1
+        }
+    },
+    {
+        "RunCount": 16,
+        "Current_Goal": {
+            "name": "CollectResources",
+            "relevancy": 0.3,
+            "goal": {}
+        },
+        "Relivancy_Scores": {
+            "StayAlive": 0,
+            "StayAwake": 0,
+            "Collect": 0.9462208814737075
+        },
+        "States": {
+            "Damage": 0.07666696472294446,
+            "Power": 0.667731924566979,
+            "Inventory": 0.5896318642104873,
+            "Asteriod": 1
+        }
+    },
+    {
+        "RunCount": 17,
+        "Current_Goal": {
+            "name": "CollectResources",
+            "relevancy": 0.3,
+            "goal": {}
+        },
+        "Relivancy_Scores": {
+            "StayAlive": 0,
+            "StayAwake": 0,
+            "Collect": 0.944888813054843
+        },
+        "States": {
+            "Damage": 0.07666696472294446,
+            "Power": 0.6529238766139701,
+            "Inventory": 0.5918519782419283,
+            "Asteriod": 1
+        }
+    },
+    {
+        "RunCount": 18,
+        "Current_Goal": {
+            "name": "CollectResources",
+            "relevancy": 0.3,
+            "goal": {}
+        },
+        "Relivancy_Scores": {
+            "StayAlive": 0,
+            "StayAwake": 0,
+            "Collect": 0.9154336843324834
+        },
+        "States": {
+            "Damage": 0.07666696472294446,
+            "Power": 0.6410408240844896,
+            "Inventory": 0.640943859445861,
+            "Asteriod": 1
+        }
+    },
+    {
+        "RunCount": 19,
+        "Current_Goal": {
+            "name": "CollectResources",
+            "relevancy": 0.3,
+            "goal": {}
+        },
+        "Relivancy_Scores": {
+            "StayAlive": 0,
+            "StayAwake": 0,
+            "Collect": 0.870819294402722
+        },
+        "States": {
+            "Damage": 0.07666696472294446,
+            "Power": 0.6245434903778124,
+            "Inventory": 0.7153011759954632,
+            "Asteriod": 1
+        }
+    },
+    {
+        "RunCount": 20,
+        "Current_Goal": {
+            "name": "CollectResources",
+            "relevancy": 0.3,
+            "goal": {}
+        },
+        "Relivancy_Scores": {
+            "StayAlive": 0,
+            "StayAwake": 0,
+            "Collect": 0.8436612560894179
+        },
+        "States": {
+            "Damage": 0.07666696472294446,
+            "Power": 0.6102315209557148,
+            "Inventory": 0.7605645731843034,
+            "Asteriod": 1
+        }
+    },
+    {
+        "RunCount": 21,
+        "Current_Goal": {
+            "name": "CollectResources",
+            "relevancy": 0.3,
+            "goal": {}
+        },
+        "Relivancy_Scores": {
+            "StayAlive": 0,
+            "StayAwake": 0,
+            "Collect": 0.8132071723486469
+        },
+        "States": {
+            "Damage": 0.10786509459226257,
+            "Power": 0.5932618419941486,
+            "Inventory": 0.8113213794189218,
+            "Asteriod": 1
+        }
+    },
+    {
+        "RunCount": 22,
+        "Current_Goal": {
+            "name": "CollectResources",
+            "relevancy": 0.3,
+            "goal": {}
+        },
+        "Relivancy_Scores": {
+            "StayAlive": 0,
+            "StayAwake": 0,
+            "Collect": 0.8098910630142894
+        },
+        "States": {
+            "Damage": 0.10786509459226257,
+            "Power": 0.57646353638243,
+            "Inventory": 0.8168482283095176,
+            "Asteriod": 1
+        }
+    },
+    {
+        "RunCount": 23,
+        "Current_Goal": {
+            "name": "CollectResources",
+            "relevancy": 0.3,
+            "goal": {}
+        },
+        "Relivancy_Scores": {
+            "StayAlive": 0,
+            "StayAwake": 0,
+            "Collect": 0.7622934907396642
+        },
+        "States": {
+            "Damage": 0.10786509459226257,
+            "Power": 0.5568272289168864,
+            "Inventory": 0.8961775154338929,
+            "Asteriod": 1
+        }
+    },
+    {
+        "RunCount": 24,
+        "Current_Goal": {
+            "name": "CollectResources",
+            "relevancy": 0.3,
+            "goal": {}
+        },
+        "Relivancy_Scores": {
+            "StayAlive": 0,
+            "StayAwake": 0,
+            "Collect": 0.7538190281995042
+        },
+        "States": {
+            "Damage": 0.10786509459226257,
+            "Power": 0.5424734167762734,
+            "Inventory": 0.9103016196674929,
+            "Asteriod": 1
+        }
+    },
+    {
+        "RunCount": 25,
+        "Current_Goal": {
+            "name": "CollectResources",
+            "relevancy": 0.3,
+            "goal": {}
+        },
+        "Relivancy_Scores": {
+            "StayAlive": 0,
+            "StayAwake": 0,
+            "Collect": 0.7309384054762254
+        },
+        "States": {
+            "Damage": 0.10786509459226257,
+            "Power": 0.5237709750970535,
+            "Inventory": 0.9484359908729577,
+            "Asteriod": 1
+        }
+    },
+    {
+        "RunCount": 26,
+        "Current_Goal": {
+            "name": "CollectResources",
+            "relevancy": 0.3,
+            "goal": {}
+        },
+        "Relivancy_Scores": {
+            "StayAlive": 0,
+            "StayAwake": 0,
+            "Collect": 0.6754634294569607
+        },
+        "States": {
+            "Damage": 0.10786509459226257,
+            "Power": 0.5110383959918553,
+            "Inventory": 1.0408942842383988,
+            "Asteriod": 1
+        }
+    },
+    {
+        "RunCount": 27,
+        "Current_Goal": {
+            "name": "CollectResources",
+            "relevancy": 0.3,
+            "goal": {}
+        },
+        "Relivancy_Scores": {
+            "StayAlive": 0,
+            "StayAwake": 0,
+            "Collect": 1
+        },
+        "States": {
+            "Damage": 0.10786509459226257,
+            "Power": 1,
+            "Inventory": 0,
+            "Asteriod": 1
+        }
+    },
+    {
+        "RunCount": 28,
+        "Current_Goal": {
+            "name": "CollectResources",
+            "relevancy": 0.3,
+            "goal": {}
+        },
+        "Relivancy_Scores": {
+            "StayAlive": 0,
+            "StayAwake": 0,
+            "Collect": 1
+        },
+        "States": {
+            "Damage": 0.10786509459226257,
+            "Power": 0.9845784350464152,
+            "Inventory": 0.0169127291072839,
+            "Asteriod": 1
+        }
+    },
+    {
+        "RunCount": 29,
+        "Current_Goal": {
+            "name": "CollectResources",
+            "relevancy": 0.3,
+            "goal": {}
+        },
+        "Relivancy_Scores": {
+            "StayAlive": 0,
+            "StayAwake": 0,
+            "Collect": 1
+        },
+        "States": {
+            "Damage": 0.10786509459226257,
+            "Power": 0.9731590747041224,
+            "Inventory": 0.047429016097153665,
+            "Asteriod": 1
+        }
+    },
+    {
+        "RunCount": 30,
+        "Current_Goal": {
+            "name": "CollectResources",
+            "relevancy": 0.3,
+            "goal": {}
+        },
+        "Relivancy_Scores": {
+            "StayAlive": 0,
+            "StayAwake": 0,
+            "Collect": 1
+        },
+        "States": {
+            "Damage": 0.10786509459226257,
+            "Power": 0.9626553354512135,
+            "Inventory": 0.07538527916040853,
+            "Asteriod": 1
+        }
+    },
+    {
+        "RunCount": 31,
+        "Current_Goal": {
+            "name": "CollectResources",
+            "relevancy": 0.3,
+            "goal": {}
+        },
+        "Relivancy_Scores": {
+            "StayAlive": 0,
+            "StayAwake": 0,
+            "Collect": 1
+        },
+        "States": {
+            "Damage": 0.10786509459226257,
+            "Power": 0.9506289092893638,
+            "Inventory": 0.1233938784248799,
+            "Asteriod": 1
+        }
+    },
+    {
+        "RunCount": 32,
+        "Current_Goal": {
+            "name": "CollectResources",
+            "relevancy": 0.3,
+            "goal": {}
+        },
+        "Relivancy_Scores": {
+            "StayAlive": 0,
+            "StayAwake": 0,
+            "Collect": 1
+        },
+        "States": {
+            "Damage": 0.10786509459226257,
+            "Power": 0.9404469722479742,
+            "Inventory": 0.1389238590019934,
+            "Asteriod": 1
+        }
+    },
+    {
+        "RunCount": 33,
+        "Current_Goal": {
+            "name": "CollectResources",
+            "relevancy": 0.3,
+            "goal": {}
+        },
+        "Relivancy_Scores": {
+            "StayAlive": 0,
+            "StayAwake": 0,
+            "Collect": 1
+        },
+        "States": {
+            "Damage": 0.10786509459226257,
+            "Power": 0.9249396988530454,
+            "Inventory": 0.2181759431140769,
+            "Asteriod": 1
+        }
+    },
+    {
+        "RunCount": 34,
+        "Current_Goal": {
+            "name": "CollectResources",
+            "relevancy": 0.3,
+            "goal": {}
+        },
+        "Relivancy_Scores": {
+            "StayAlive": 0,
+            "StayAwake": 0,
+            "Collect": 1
+        },
+        "States": {
+            "Damage": 0.10786509459226257,
+            "Power": 0.9112836707218048,
+            "Inventory": 0.2619002336032621,
+            "Asteriod": 1
+        }
+    },
+    {
+        "RunCount": 35,
+        "Current_Goal": {
+            "name": "CollectResources",
+            "relevancy": 0.3,
+            "goal": {}
+        },
+        "Relivancy_Scores": {
+            "StayAlive": 0,
+            "StayAwake": 0,
+            "Collect": 1
+        },
+        "States": {
+            "Damage": 0.10786509459226257,
+            "Power": 0.8975881178683741,
+            "Inventory": 0.2924403861534605,
+            "Asteriod": 1
+        }
+    },
+    {
+        "RunCount": 36,
+        "Current_Goal": {
+            "name": "CollectResources",
+            "relevancy": 0.3,
+            "goal": {}
+        },
+        "Relivancy_Scores": {
+            "StayAlive": 0,
+            "StayAwake": 0,
+            "Collect": 1
+        },
+        "States": {
+            "Damage": 0.17750433952359151,
+            "Power": 0.8795058628987897,
+            "Inventory": 0.29764764749679756,
+            "Asteriod": 1
+        }
+    },
+    {
+        "RunCount": 37,
+        "Current_Goal": {
+            "name": "CollectResources",
+            "relevancy": 0.3,
+            "goal": {}
+        },
+        "Relivancy_Scores": {
+            "StayAlive": 0,
+            "StayAwake": 0,
+            "Collect": 1
+        },
+        "States": {
+            "Damage": 0.17750433952359151,
+            "Power": 0.8690392140916744,
+            "Inventory": 0.3718343495586489,
+            "Asteriod": 1
+        }
+    },
+    {
+        "RunCount": 38,
+        "Current_Goal": {
+            "name": "CollectResources",
+            "relevancy": 0.3,
+            "goal": {}
+        },
+        "Relivancy_Scores": {
+            "StayAlive": 0,
+            "StayAwake": 0,
+            "Collect": 1
+        },
+        "States": {
+            "Damage": 0.17750433952359151,
+            "Power": 0.8573277203144374,
+            "Inventory": 0.3934659886367745,
+            "Asteriod": 1
+        }
+    },
+    {
+        "RunCount": 39,
+        "Current_Goal": {
+            "name": "CollectResources",
+            "relevancy": 0.3,
+            "goal": {}
+        },
+        "Relivancy_Scores": {
+            "StayAlive": 0,
+            "StayAwake": 0,
+            "Collect": 1
+        },
+        "States": {
+            "Damage": 0.17750433952359151,
+            "Power": 0.8421573010225967,
+            "Inventory": 0.44270784656580425,
+            "Asteriod": 1
+        }
+    },
+    {
+        "RunCount": 40,
+        "Current_Goal": {
+            "name": "CollectResources",
+            "relevancy": 0.3,
+            "goal": {}
+        },
+        "Relivancy_Scores": {
+            "StayAlive": 0,
+            "StayAwake": 0,
+            "Collect": 1
+        },
+        "States": {
+            "Damage": 0.17750433952359151,
+            "Power": 0.8281969402544971,
+            "Inventory": 0.4731774144380034,
+            "Asteriod": 1
+        }
+    },
+    {
+        "RunCount": 41,
+        "Current_Goal": {
+            "name": "CollectResources",
+            "relevancy": 0.3,
+            "goal": {}
+        },
+        "Relivancy_Scores": {
+            "StayAlive": 0,
+            "StayAwake": 0,
+            "Collect": 0.9969654654813785
+        },
+        "States": {
+            "Damage": 0.17750433952359151,
+            "Power": 0.8161165036547133,
+            "Inventory": 0.5050575575310357,
+            "Asteriod": 1
+        }
+    },
+    {
+        "RunCount": 42,
+        "Current_Goal": {
+            "name": "CollectResources",
+            "relevancy": 0.3,
+            "goal": {}
+        },
+        "Relivancy_Scores": {
+            "StayAlive": 0,
+            "StayAwake": 0,
+            "Collect": 0.9398898671143276
+        },
+        "States": {
+            "Damage": 0.17750433952359151,
+            "Power": 0.7986655306494224,
+            "Inventory": 0.6001835548094538,
+            "Asteriod": 1
+        }
+    },
+    {
+        "RunCount": 43,
+        "Current_Goal": {
+            "name": "CollectResources",
+            "relevancy": 0.3,
+            "goal": {}
+        },
+        "Relivancy_Scores": {
+            "StayAlive": 0,
+            "StayAwake": 0,
+            "Collect": 0.8982674264681418
+        },
+        "States": {
+            "Damage": 0.21025933286771076,
+            "Power": 0.7802675784211066,
+            "Inventory": 0.6695542892197636,
+            "Asteriod": 1
+        }
+    },
+    {
+        "RunCount": 44,
+        "Current_Goal": {
+            "name": "CollectResources",
+            "relevancy": 0.3,
+            "goal": {}
+        },
+        "Relivancy_Scores": {
+            "StayAlive": 0,
+            "StayAwake": 0,
+            "Collect": 0.8786820171421348
+        },
+        "States": {
+            "Damage": 0.21025933286771076,
+            "Power": 0.7605602718792445,
+            "Inventory": 0.7021966380964418,
+            "Asteriod": 1
+        }
+    },
+    {
+        "RunCount": 45,
+        "Current_Goal": {
+            "name": "CollectResources",
+            "relevancy": 0.3,
+            "goal": {}
+        },
+        "Relivancy_Scores": {
+            "StayAlive": 0,
+            "StayAwake": 0,
+            "Collect": 0.871298094555787
+        },
+        "States": {
+            "Damage": 0.21025933286771076,
+            "Power": 0.7422865843491672,
+            "Inventory": 0.7145031757403549,
+            "Asteriod": 1
+        }
+    },
+    {
+        "RunCount": 46,
+        "Current_Goal": {
+            "name": "CollectResources",
+            "relevancy": 0.3,
+            "goal": {}
+        },
+        "Relivancy_Scores": {
+            "StayAlive": 0,
+            "StayAwake": 0,
+            "Collect": 0.8362831550608332
+        },
+        "States": {
+            "Damage": 0.21025933286771076,
+            "Power": 0.7236142843064162,
+            "Inventory": 0.7728614082319447,
+            "Asteriod": 1
+        }
+    },
+    {
+        "RunCount": 47,
+        "Current_Goal": {
+            "name": "CollectResources",
+            "relevancy": 0.3,
+            "goal": {}
+        },
+        "Relivancy_Scores": {
+            "StayAlive": 0,
+            "StayAwake": 0,
+            "Collect": 0.8303743852471044
+        },
+        "States": {
+            "Damage": 0.21025933286771076,
+            "Power": 0.7037770784285083,
+            "Inventory": 0.7827093579214927,
+            "Asteriod": 1
+        }
+    },
+    {
+        "RunCount": 48,
+        "Current_Goal": {
+            "name": "CollectResources",
+            "relevancy": 0.3,
+            "goal": {}
+        },
+        "Relivancy_Scores": {
+            "StayAlive": 0,
+            "StayAwake": 0,
+            "Collect": 0.8277886325395427
+        },
+        "States": {
+            "Damage": 0.21025933286771076,
+            "Power": 0.6878637462040896,
+            "Inventory": 0.7870189457674288,
+            "Asteriod": 1
+        }
+    },
+    {
+        "RunCount": 49,
+        "Current_Goal": {
+            "name": "CollectResources",
+            "relevancy": 0.3,
+            "goal": {}
+        },
+        "Relivancy_Scores": {
+            "StayAlive": 0,
+            "StayAwake": 0,
+            "Collect": 0.7684941071380932
+        },
+        "States": {
+            "Damage": 0.21025933286771076,
+            "Power": 0.6704844962947559,
+            "Inventory": 0.8858431547698447,
+            "Asteriod": 1
+        }
+    },
+    {
+        "RunCount": 50,
+        "Current_Goal": {
+            "name": "CollectResources",
+            "relevancy": 0.3,
+            "goal": {}
+        },
+        "Relivancy_Scores": {
+            "StayAlive": 0,
+            "StayAwake": 0,
+            "Collect": 0.7218864734499143
+        },
+        "States": {
+            "Damage": 0.21025933286771076,
+            "Power": 0.6582312109127171,
+            "Inventory": 0.9635225442501427,
+            "Asteriod": 1
+        }
+    },
+    {
+        "RunCount": 51,
+        "Current_Goal": {
+            "name": "CollectResources",
+            "relevancy": 0.3,
+            "goal": {}
+        },
+        "Relivancy_Scores": {
+            "StayAlive": 0,
+            "StayAwake": 0,
+            "Collect": 0.7185932654494208
+        },
+        "States": {
+            "Damage": 0.21025933286771076,
+            "Power": 0.6470983435045352,
+            "Inventory": 0.9690112242509652,
+            "Asteriod": 1
+        }
+    },
+    {
+        "RunCount": 52,
+        "Current_Goal": {
+            "name": "CollectResources",
+            "relevancy": 0.3,
+            "goal": {}
+        },
+        "Relivancy_Scores": {
+            "StayAlive": 0,
+            "StayAwake": 0,
+            "Collect": 0.6739982505459233
+        },
+        "States": {
+            "Damage": 0.21025933286771076,
+            "Power": 0.631862856508863,
+            "Inventory": 1.0433362490901277,
+            "Asteriod": 1
+        }
+    },
+    {
+        "RunCount": 53,
+        "Current_Goal": {
+            "name": "CollectResources",
+            "relevancy": 0.3,
+            "goal": {}
+        },
+        "Relivancy_Scores": {
+            "StayAlive": 0,
+            "StayAwake": 0,
+            "Collect": 1
+        },
+        "States": {
+            "Damage": 0.21025933286771076,
+            "Power": 1,
+            "Inventory": 0,
+            "Asteriod": 1
+        }
+    },
+    {
+        "RunCount": 54,
+        "Current_Goal": {
+            "name": "CollectResources",
+            "relevancy": 0.3,
+            "goal": {}
+        },
+        "Relivancy_Scores": {
+            "StayAlive": 0,
+            "StayAwake": 0,
+            "Collect": 1
+        },
+        "States": {
+            "Damage": 0.21025933286771076,
+            "Power": 0.9802832466642374,
+            "Inventory": 0.07957112365803685,
+            "Asteriod": 1
+        }
+    },
+    {
+        "RunCount": 55,
+        "Current_Goal": {
+            "name": "CollectResources",
+            "relevancy": 0.3,
+            "goal": {}
+        },
+        "Relivancy_Scores": {
+            "StayAlive": 0,
+            "StayAwake": 0,
+            "Collect": 1
+        },
+        "States": {
+            "Damage": 0.21025933286771076,
+            "Power": 0.9610724664263337,
+            "Inventory": 0.15275412264174945,
+            "Asteriod": 1
+        }
+    },
+    {
+        "RunCount": 56,
+        "Current_Goal": {
+            "name": "CollectResources",
+            "relevancy": 0.3,
+            "goal": {}
+        },
+        "Relivancy_Scores": {
+            "StayAlive": 0,
+            "StayAwake": 0,
+            "Collect": 1
+        },
+        "States": {
+            "Damage": 0.21025933286771076,
+            "Power": 0.9493244112790297,
+            "Inventory": 0.23931577578399704,
+            "Asteriod": 1
+        }
+    },
+    {
+        "RunCount": 57,
+        "Current_Goal": {
+            "name": "CollectResources",
+            "relevancy": 0.3,
+            "goal": {}
+        },
+        "Relivancy_Scores": {
+            "StayAlive": 0,
+            "StayAwake": 0,
+            "Collect": 1
+        },
+        "States": {
+            "Damage": 0.21025933286771076,
+            "Power": 0.9310863786332046,
+            "Inventory": 0.2493641974214379,
+            "Asteriod": 1
+        }
+    },
+    {
+        "RunCount": 58,
+        "Current_Goal": {
+            "name": "CollectResources",
+            "relevancy": 0.3,
+            "goal": {}
+        },
+        "Relivancy_Scores": {
+            "StayAlive": 0,
+            "StayAwake": 0,
+            "Collect": 1
+        },
+        "States": {
+            "Damage": 0.21025933286771076,
+            "Power": 0.9174616010675195,
+            "Inventory": 0.26988418094592487,
+            "Asteriod": 1
+        }
+    },
+    {
+        "RunCount": 59,
+        "Current_Goal": {
+            "name": "CollectResources",
+            "relevancy": 0.3,
+            "goal": {}
+        },
+        "Relivancy_Scores": {
+            "StayAlive": 0,
+            "StayAwake": 0,
+            "Collect": 1
+        },
+        "States": {
+            "Damage": 0.21025933286771076,
+            "Power": 0.9007028610477525,
+            "Inventory": 0.366777889272999,
+            "Asteriod": 1
+        }
+    },
+    {
+        "RunCount": 60,
+        "Current_Goal": {
+            "name": "CollectResources",
+            "relevancy": 0.3,
+            "goal": {}
+        },
+        "Relivancy_Scores": {
+            "StayAlive": 0,
+            "StayAwake": 0,
+            "Collect": 1
+        },
+        "States": {
+            "Damage": 0.21025933286771076,
+            "Power": 0.8900057596736928,
+            "Inventory": 0.4595828359767161,
+            "Asteriod": 1
+        }
+    },
+    {
+        "RunCount": 61,
+        "Current_Goal": {
+            "name": "CollectResources",
+            "relevancy": 0.3,
+            "goal": {}
+        },
+        "Relivancy_Scores": {
+            "StayAlive": 0,
+            "StayAwake": 0,
+            "Collect": 1
+        },
+        "States": {
+            "Damage": 0.21025933286771076,
+            "Power": 0.8747879570767239,
+            "Inventory": 0.48107539871280064,
+            "Asteriod": 1
+        }
+    },
+    {
+        "RunCount": 62,
+        "Current_Goal": {
+            "name": "CollectResources",
+            "relevancy": 0.3,
+            "goal": {}
+        },
+        "Relivancy_Scores": {
+            "StayAlive": 0,
+            "StayAwake": 0,
+            "Collect": 0.9810440007052428
+        },
+        "States": {
+            "Damage": 0.21025933286771076,
+            "Power": 0.8595589334114089,
+            "Inventory": 0.5315933321579285,
+            "Asteriod": 1
+        }
+    },
+    {
+        "RunCount": 63,
+        "Current_Goal": {
+            "name": "CollectResources",
+            "relevancy": 0.3,
+            "goal": {}
+        },
+        "Relivancy_Scores": {
+            "StayAlive": 0,
+            "StayAwake": 0,
+            "Collect": 0.9476891774356457
+        },
+        "States": {
+            "Damage": 0.21025933286771076,
+            "Power": 0.845309188647096,
+            "Inventory": 0.5871847042739237,
+            "Asteriod": 1
+        }
+    },
+    {
+        "RunCount": 64,
+        "Current_Goal": {
+            "name": "CollectResources",
+            "relevancy": 0.3,
+            "goal": {}
+        },
+        "Relivancy_Scores": {
+            "StayAlive": 0,
+            "StayAwake": 0,
+            "Collect": 0.9268683613462335
+        },
+        "States": {
+            "Damage": 0.21025933286771076,
+            "Power": 0.8289225453103826,
+            "Inventory": 0.621886064422944,
+            "Asteriod": 1
+        }
+    },
+    {
+        "RunCount": 65,
+        "Current_Goal": {
+            "name": "CollectResources",
+            "relevancy": 0.3,
+            "goal": {}
+        },
+        "Relivancy_Scores": {
+            "StayAlive": 0.12653395790532018,
+            "StayAwake": 0,
+            "Collect": 0.925070564190763
+        },
+        "States": {
+            "Damage": 0.28163348947633005,
+            "Power": 0.8164223534378293,
+            "Inventory": 0.6248823930153949,
+            "Asteriod": 1
+        }
+    },
+    {
+        "RunCount": 66,
+        "Current_Goal": {
+            "name": "CollectResources",
+            "relevancy": 0.3,
+            "goal": {}
+        },
+        "Relivancy_Scores": {
+            "StayAlive": 0.12653395790532018,
+            "StayAwake": 0,
+            "Collect": 0.9102925214182476
+        },
+        "States": {
+            "Damage": 0.28163348947633005,
+            "Power": 0.7981821540173974,
+            "Inventory": 0.6495124643029206,
+            "Asteriod": 1
+        }
+    },
+    {
+        "RunCount": 67,
+        "Current_Goal": {
+            "name": "CollectResources",
+            "relevancy": 0.3,
+            "goal": {}
+        },
+        "Relivancy_Scores": {
+            "StayAlive": 0.12653395790532018,
+            "StayAwake": 0,
+            "Collect": 0.8676273721742536
+        },
+        "States": {
+            "Damage": 0.28163348947633005,
+            "Power": 0.7878718729474649,
+            "Inventory": 0.7206210463762439,
+            "Asteriod": 1
+        }
+    },
+    {
+        "RunCount": 68,
+        "Current_Goal": {
+            "name": "CollectResources",
+            "relevancy": 0.3,
+            "goal": {}
+        },
+        "Relivancy_Scores": {
+            "StayAlive": 0.12653395790532018,
+            "StayAwake": 0,
+            "Collect": 0.8204598691073055
+        },
+        "States": {
+            "Damage": 0.28163348947633005,
+            "Power": 0.7729992106701992,
+            "Inventory": 0.799233551487824,
+            "Asteriod": 1
+        }
+    },
+    {
+        "RunCount": 69,
+        "Current_Goal": {
+            "name": "CollectResources",
+            "relevancy": 0.3,
+            "goal": {}
+        },
+        "Relivancy_Scores": {
+            "StayAlive": 0.12653395790532018,
+            "StayAwake": 0,
+            "Collect": 0.7826804408686253
+        },
+        "States": {
+            "Damage": 0.28163348947633005,
+            "Power": 0.7532201057995261,
+            "Inventory": 0.8621992652189577,
+            "Asteriod": 1
+        }
+    },
+    {
+        "RunCount": 70,
+        "Current_Goal": {
+            "name": "CollectResources",
+            "relevancy": 0.3,
+            "goal": {}
+        },
+        "Relivancy_Scores": {
+            "StayAlive": 0.12653395790532018,
+            "StayAwake": 0,
+            "Collect": 0.7750558410813809
+        },
+        "States": {
+            "Damage": 0.28163348947633005,
+            "Power": 0.7400123303571576,
+            "Inventory": 0.8749069315310317,
+            "Asteriod": 1
+        }
+    },
+    {
+        "RunCount": 71,
+        "Current_Goal": {
+            "name": "CollectResources",
+            "relevancy": 0.3,
+            "goal": {}
+        },
+        "Relivancy_Scores": {
+            "StayAlive": 0.12653395790532018,
+            "StayAwake": 0,
+            "Collect": 0.7677627869028387
+        },
+        "States": {
+            "Damage": 0.28163348947633005,
+            "Power": 0.7280405177047058,
+            "Inventory": 0.887062021828602,
+            "Asteriod": 1
+        }
+    },
+    {
+        "RunCount": 72,
+        "Current_Goal": {
+            "name": "CollectResources",
+            "relevancy": 0.3,
+            "goal": {}
+        },
+        "Relivancy_Scores": {
+            "StayAlive": 0.12653395790532018,
+            "StayAwake": 0,
+            "Collect": 0.7215108399645398
+        },
+        "States": {
+            "Damage": 0.28163348947633005,
+            "Power": 0.716861962226387,
+            "Inventory": 0.9641486000591002,
+            "Asteriod": 1
+        }
+    },
+    {
+        "RunCount": 73,
+        "Current_Goal": {
+            "name": "CollectResources",
+            "relevancy": 0.3,
+            "goal": {}
+        },
+        "Relivancy_Scores": {
+            "StayAlive": 0.12653395790532018,
+            "StayAwake": 0,
+            "Collect": 0.7012813483205191
+        },
+        "States": {
+            "Damage": 0.28163348947633005,
+            "Power": 0.7014740953719395,
+            "Inventory": 0.9978644194658013,
+            "Asteriod": 1
+        }
+    },
+    {
+        "RunCount": 74,
+        "Current_Goal": {
+            "name": "CollectResources",
+            "relevancy": 0.3,
+            "goal": {}
+        },
+        "Relivancy_Scores": {
+            "StayAlive": 0.12653395790532018,
+            "StayAwake": 0,
+            "Collect": 0.647137896307503
+        },
+        "States": {
+            "Damage": 0.28163348947633005,
+            "Power": 0.6835835586232075,
+            "Inventory": 1.0881035061541617,
+            "Asteriod": 1
+        }
+    },
+    {
+        "RunCount": 75,
+        "Current_Goal": {
+            "name": "CollectResources",
+            "relevancy": 0.3,
+            "goal": {}
+        },
+        "Relivancy_Scores": {
+            "StayAlive": 0.12653395790532018,
+            "StayAwake": 0,
+            "Collect": 1
+        },
+        "States": {
+            "Damage": 0.28163348947633005,
+            "Power": 1,
+            "Inventory": 0,
+            "Asteriod": 1
+        }
+    },
+    {
+        "RunCount": 76,
+        "Current_Goal": {
+            "name": "CollectResources",
+            "relevancy": 0.3,
+            "goal": {}
+        },
+        "Relivancy_Scores": {
+            "StayAlive": 0.3726982272802717,
+            "StayAwake": 0,
+            "Collect": 1
+        },
+        "States": {
+            "Damage": 0.3431745568200679,
+            "Power": 0.9811374560065783,
+            "Inventory": 0.05537971577348795,
+            "Asteriod": 1
+        }
+    },
+    {
+        "RunCount": 77,
+        "Current_Goal": {
+            "name": "CollectResources",
+            "relevancy": 0.3,
+            "goal": {}
+        },
+        "Relivancy_Scores": {
+            "StayAlive": 0.3726982272802717,
+            "StayAwake": 0,
+            "Collect": 1
+        },
+        "States": {
+            "Damage": 0.3431745568200679,
+            "Power": 0.9700297889602698,
+            "Inventory": 0.1050905619465113,
+            "Asteriod": 1
+        }
+    },
+    {
+        "RunCount": 78,
+        "Current_Goal": {
+            "name": "CollectResources",
+            "relevancy": 0.3,
+            "goal": {}
+        },
+        "Relivancy_Scores": {
+            "StayAlive": 0.3726982272802717,
+            "StayAwake": 0,
+            "Collect": 1
+        },
+        "States": {
+            "Damage": 0.3431745568200679,
+            "Power": 0.9581199285070804,
+            "Inventory": 0.17719904797863542,
+            "Asteriod": 1
+        }
+    },
+    {
+        "RunCount": 79,
+        "Current_Goal": {
+            "name": "CollectResources",
+            "relevancy": 0.3,
+            "goal": {}
+        },
+        "Relivancy_Scores": {
+            "StayAlive": 0.3726982272802717,
+            "StayAwake": 0,
+            "Collect": 1
+        },
+        "States": {
+            "Damage": 0.3431745568200679,
+            "Power": 0.9410949201284713,
+            "Inventory": 0.2246455882398853,
+            "Asteriod": 1
+        }
+    },
+    {
+        "RunCount": 80,
+        "Current_Goal": {
+            "name": "CollectResources",
+            "relevancy": 0.3,
+            "goal": {}
+        },
+        "Relivancy_Scores": {
+            "StayAlive": 0.3726982272802717,
+            "StayAwake": 0,
+            "Collect": 1
+        },
+        "States": {
+            "Damage": 0.3431745568200679,
+            "Power": 0.9248115727605923,
+            "Inventory": 0.28696517492157897,
+            "Asteriod": 1
+        }
+    },
+    {
+        "RunCount": 81,
+        "Current_Goal": {
+            "name": "CollectResources",
+            "relevancy": 0.3,
+            "goal": {}
+        },
+        "Relivancy_Scores": {
+            "StayAlive": 0.3726982272802717,
+            "StayAwake": 0,
+            "Collect": 1
+        },
+        "States": {
+            "Damage": 0.3431745568200679,
+            "Power": 0.9056125543287286,
+            "Inventory": 0.31416987063491286,
+            "Asteriod": 1
+        }
+    },
+    {
+        "RunCount": 82,
+        "Current_Goal": {
+            "name": "CollectResources",
+            "relevancy": 0.3,
+            "goal": {}
+        },
+        "Relivancy_Scores": {
+            "StayAlive": 0.3726982272802717,
+            "StayAwake": 0,
+            "Collect": 1
+        },
+        "States": {
+            "Damage": 0.3431745568200679,
+            "Power": 0.8873964366369615,
+            "Inventory": 0.3202140240991497,
+            "Asteriod": 1
+        }
+    },
+    {
+        "RunCount": 83,
+        "Current_Goal": {
+            "name": "CollectResources",
+            "relevancy": 0.3,
+            "goal": {}
+        },
+        "Relivancy_Scores": {
+            "StayAlive": 0.3726982272802717,
+            "StayAwake": 0,
+            "Collect": 1
+        },
+        "States": {
+            "Damage": 0.3431745568200679,
+            "Power": 0.8689652576852037,
+            "Inventory": 0.3828646609649488,
+            "Asteriod": 1
+        }
+    },
+    {
+        "RunCount": 84,
+        "Current_Goal": {
+            "name": "CollectResources",
+            "relevancy": 0.3,
+            "goal": {}
+        },
+        "Relivancy_Scores": {
+            "StayAlive": 0.3726982272802717,
+            "StayAwake": 0,
+            "Collect": 1
+        },
+        "States": {
+            "Damage": 0.3431745568200679,
+            "Power": 0.8535275398331763,
+            "Inventory": 0.463317358916223,
+            "Asteriod": 1
+        }
+    },
+    {
+        "RunCount": 85,
+        "Current_Goal": {
+            "name": "CollectResources",
+            "relevancy": 0.3,
+            "goal": {}
+        },
+        "Relivancy_Scores": {
+            "StayAlive": 0.3726982272802717,
+            "StayAwake": 0,
+            "Collect": 1
+        },
+        "States": {
+            "Damage": 0.3431745568200679,
+            "Power": 0.8336261469401337,
+            "Inventory": 0.46447028181578,
+            "Asteriod": 1
+        }
+    },
+    {
+        "RunCount": 86,
+        "Current_Goal": {
+            "name": "CollectResources",
+            "relevancy": 0.3,
+            "goal": {}
+        },
+        "Relivancy_Scores": {
+            "StayAlive": 0.3726982272802717,
+            "StayAwake": 0,
+            "Collect": 1
+        },
+        "States": {
+            "Damage": 0.3431745568200679,
+            "Power": 0.8178228703447082,
+            "Inventory": 0.49501043902414865,
+            "Asteriod": 1
+        }
+    },
+    {
+        "RunCount": 87,
+        "Current_Goal": {
+            "name": "CollectResources",
+            "relevancy": 0.3,
+            "goal": {}
+        },
+        "Relivancy_Scores": {
+            "StayAlive": 0.3726982272802717,
+            "StayAwake": 0,
+            "Collect": 0.9567004771273637
+        },
+        "States": {
+            "Damage": 0.3431745568200679,
+            "Power": 0.8046182322956107,
+            "Inventory": 0.5721658714543936,
+            "Asteriod": 1
+        }
+    },
+    {
+        "RunCount": 88,
+        "Current_Goal": {
+            "name": "CollectResources",
+            "relevancy": 0.3,
+            "goal": {}
+        },
+        "Relivancy_Scores": {
+            "StayAlive": 0.3726982272802717,
+            "StayAwake": 0,
+            "Collect": 0.9514704800205582
+        },
+        "States": {
+            "Damage": 0.3431745568200679,
+            "Power": 0.7914606520598614,
+            "Inventory": 0.5808825332990696,
+            "Asteriod": 1
+        }
+    },
+    {
+        "RunCount": 89,
+        "Current_Goal": {
+            "name": "CollectResources",
+            "relevancy": 0.3,
+            "goal": {}
+        },
+        "Relivancy_Scores": {
+            "StayAlive": 0.3726982272802717,
+            "StayAwake": 0,
+            "Collect": 0.8930653080652013
+        },
+        "States": {
+            "Damage": 0.3431745568200679,
+            "Power": 0.7718145189551334,
+            "Inventory": 0.6782244865579977,
+            "Asteriod": 1
+        }
+    },
+    {
+        "RunCount": 90,
+        "Current_Goal": {
+            "name": "CollectResources",
+            "relevancy": 0.3,
+            "goal": {}
+        },
+        "Relivancy_Scores": {
+            "StayAlive": 0.3726982272802717,
+            "StayAwake": 0,
+            "Collect": 0.8339922209660582
+        },
+        "States": {
+            "Damage": 0.3431745568200679,
+            "Power": 0.7611221202170275,
+            "Inventory": 0.7766796317232362,
+            "Asteriod": 1
+        }
+    },
+    {
+        "RunCount": 91,
+        "Current_Goal": {
+            "name": "CollectResources",
+            "relevancy": 0.3,
+            "goal": {}
+        },
+        "Relivancy_Scores": {
+            "StayAlive": 0.3726982272802717,
+            "StayAwake": 0,
+            "Collect": 0.8309298682309385
+        },
+        "States": {
+            "Damage": 0.3431745568200679,
+            "Power": 0.7472968851309164,
+            "Inventory": 0.7817835529484358,
+            "Asteriod": 1
+        }
+    },
+    {
+        "RunCount": 92,
+        "Current_Goal": {
+            "name": "CollectResources",
+            "relevancy": 0.3,
+            "goal": {}
+        },
+        "Relivancy_Scores": {
+            "StayAlive": 0.3726982272802717,
+            "StayAwake": 0,
+            "Collect": 0.8263721508451978
+        },
+        "States": {
+            "Damage": 0.3431745568200679,
+            "Power": 0.7290225132955465,
+            "Inventory": 0.789379748591337,
+            "Asteriod": 1
+        }
+    },
+    {
+        "RunCount": 93,
+        "Current_Goal": {
+            "name": "CollectResources",
+            "relevancy": 0.3,
+            "goal": {}
+        },
+        "Relivancy_Scores": {
+            "StayAlive": 0.3726982272802717,
+            "StayAwake": 0,
+            "Collect": 0.8011156699855864
+        },
+        "States": {
+            "Damage": 0.3431745568200679,
+            "Power": 0.7138452034053434,
+            "Inventory": 0.8314738833573561,
+            "Asteriod": 1
+        }
+    },
+    {
+        "RunCount": 94,
+        "Current_Goal": {
+            "name": "CollectResources",
+            "relevancy": 0.3,
+            "goal": {}
+        },
+        "Relivancy_Scores": {
+            "StayAlive": 0.3726982272802717,
+            "StayAwake": 0,
+            "Collect": 0.756509205817238
+        },
+        "States": {
+            "Damage": 0.3431745568200679,
+            "Power": 0.6957692264049293,
+            "Inventory": 0.9058179903046032,
+            "Asteriod": 1
+        }
+    },
+    {
+        "RunCount": 95,
+        "Current_Goal": {
+            "name": "CollectResources",
+            "relevancy": 0.3,
+            "goal": {}
+        },
+        "Relivancy_Scores": {
+            "StayAlive": 0.3726982272802717,
+            "StayAwake": 0,
+            "Collect": 0.7298662493332474
+        },
+        "States": {
+            "Damage": 0.3431745568200679,
+            "Power": 0.6759666650312259,
+            "Inventory": 0.9502229177779209,
+            "Asteriod": 1
+        }
+    },
+    {
+        "RunCount": 96,
+        "Current_Goal": {
+            "name": "CollectResources",
+            "relevancy": 0.3,
+            "goal": {}
+        },
+        "Relivancy_Scores": {
+            "StayAlive": 0.3726982272802717,
+            "StayAwake": 0,
+            "Collect": 0.7127908568562854
+        },
+        "States": {
+            "Damage": 0.3431745568200679,
+            "Power": 0.6649496589099522,
+            "Inventory": 0.9786819052395243,
+            "Asteriod": 1
+        }
+    },
+    {
+        "RunCount": 97,
+        "Current_Goal": {
+            "name": "CollectResources",
+            "relevancy": 0.3,
+            "goal": {}
+        },
+        "Relivancy_Scores": {
+            "StayAlive": 0.3726982272802717,
+            "StayAwake": 0,
+            "Collect": 0.705002776725273
+        },
+        "States": {
+            "Damage": 0.3431745568200679,
+            "Power": 0.6500980459317233,
+            "Inventory": 0.9916620387912116,
+            "Asteriod": 1
+        }
+    },
+    {
+        "RunCount": 98,
+        "Current_Goal": {
+            "name": "CollectResources",
+            "relevancy": 0.3,
+            "goal": {}
+        },
+        "Relivancy_Scores": {
+            "StayAlive": 0.3726982272802717,
+            "StayAwake": 0,
+            "Collect": 0.696889406947007
+        },
+        "States": {
+            "Damage": 0.3431745568200679,
+            "Power": 0.6327879721601041,
+            "Inventory": 1.0051843217549883,
+            "Asteriod": 1
+        }
+    },
+    {
+        "RunCount": 99,
+        "Current_Goal": {
+            "name": "CollectResources",
+            "relevancy": 0.3,
+            "goal": {}
+        },
+        "Relivancy_Scores": {
+            "StayAlive": 0.3726982272802717,
+            "StayAwake": 0,
+            "Collect": 1
+        },
+        "States": {
+            "Damage": 0.3431745568200679,
+            "Power": 1,
+            "Inventory": 0,
+            "Asteriod": 1
+        }
+    },
+    {
+        "RunCount": 100,
+        "Current_Goal": {
+            "name": "CollectResources",
+            "relevancy": 0.3,
+            "goal": {}
+        },
+        "Relivancy_Scores": {
+            "StayAlive": 0.3726982272802717,
+            "StayAwake": 0,
+            "Collect": 1
+        },
+        "States": {
+            "Damage": 0.3431745568200679,
+            "Power": 0.9806191241346567,
+            "Inventory": 0.009358636768908269,
+            "Asteriod": 1
+        }
+    },
+    {
+        "RunCount": 101,
+        "Current_Goal": {
+            "name": "CollectResources",
+            "relevancy": 0.3,
+            "goal": {}
+        },
+        "Relivancy_Scores": {
+            "StayAlive": 0.3726982272802717,
+            "StayAwake": 0,
+            "Collect": 1
+        },
+        "States": {
+            "Damage": 0.3431745568200679,
+            "Power": 0.9681762261546683,
+            "Inventory": 0.03113186461648785,
+            "Asteriod": 1
+        }
+    },
+    {
+        "RunCount": 102,
+        "Current_Goal": {
+            "name": "CollectResources",
+            "relevancy": 0.3,
+            "goal": {}
+        },
+        "Relivancy_Scores": {
+            "StayAlive": 0.3726982272802717,
+            "StayAwake": 0,
+            "Collect": 1
+        },
+        "States": {
+            "Damage": 0.3431745568200679,
+            "Power": 0.953968988675964,
+            "Inventory": 0.08389982856666711,
+            "Asteriod": 1
+        }
+    },
+    {
+        "RunCount": 103,
+        "Current_Goal": {
+            "name": "CollectResources",
+            "relevancy": 0.3,
+            "goal": {}
+        },
+        "Relivancy_Scores": {
+            "StayAlive": 0.3726982272802717,
+            "StayAwake": 0,
+            "Collect": 1
+        },
+        "States": {
+            "Damage": 0.3431745568200679,
+            "Power": 0.9344324381046413,
+            "Inventory": 0.15354438764443645,
+            "Asteriod": 1
+        }
+    },
+    {
+        "RunCount": 104,
+        "Current_Goal": {
+            "name": "CollectResources",
+            "relevancy": 0.3,
+            "goal": {}
+        },
+        "Relivancy_Scores": {
+            "StayAlive": 0.3726982272802717,
+            "StayAwake": 0,
+            "Collect": 1
+        },
+        "States": {
+            "Damage": 0.3431745568200679,
+            "Power": 0.9147465073761635,
+            "Inventory": 0.23821209391989046,
+            "Asteriod": 1
+        }
+    },
+    {
+        "RunCount": 105,
+        "Current_Goal": {
+            "name": "CollectResources",
+            "relevancy": 0.3,
+            "goal": {}
+        },
+        "Relivancy_Scores": {
+            "StayAlive": 0.3726982272802717,
+            "StayAwake": 0,
+            "Collect": 1
+        },
+        "States": {
+            "Damage": 0.3431745568200679,
+            "Power": 0.8974341048983971,
+            "Inventory": 0.283550681905871,
+            "Asteriod": 1
+        }
+    },
+    {
+        "RunCount": 106,
+        "Current_Goal": {
+            "name": "CollectResources",
+            "relevancy": 0.3,
+            "goal": {}
+        },
+        "Relivancy_Scores": {
+            "StayAlive": 0.3726982272802717,
+            "StayAwake": 0,
+            "Collect": 1
+        },
+        "States": {
+            "Damage": 0.3431745568200679,
+            "Power": 0.881423316636193,
+            "Inventory": 0.31607322087015827,
+            "Asteriod": 1
+        }
+    },
+    {
+        "RunCount": 107,
+        "Current_Goal": {
+            "name": "CollectResources",
+            "relevancy": 0.3,
+            "goal": {}
+        },
+        "Relivancy_Scores": {
+            "StayAlive": 0.3726982272802717,
+            "StayAwake": 0,
+            "Collect": 1
+        },
+        "States": {
+            "Damage": 0.3431745568200679,
+            "Power": 0.8713974401668583,
+            "Inventory": 0.31698698336342085,
+            "Asteriod": 1
+        }
+    },
+    {
+        "RunCount": 108,
+        "Current_Goal": {
+            "name": "CollectResources",
+            "relevancy": 0.3,
+            "goal": {}
+        },
+        "Relivancy_Scores": {
+            "StayAlive": 0.3726982272802717,
+            "StayAwake": 0,
+            "Collect": 1
+        },
+        "States": {
+            "Damage": 0.3431745568200679,
+            "Power": 0.8574332820726196,
+            "Inventory": 0.32609909625942785,
+            "Asteriod": 1
+        }
+    },
+    {
+        "RunCount": 109,
+        "Current_Goal": {
+            "name": "CollectResources",
+            "relevancy": 0.3,
+            "goal": {}
+        },
+        "Relivancy_Scores": {
+            "StayAlive": 0.3726982272802717,
+            "StayAwake": 0,
+            "Collect": 1
+        },
+        "States": {
+            "Damage": 0.3431745568200679,
+            "Power": 0.8447016523173853,
+            "Inventory": 0.34318044666980324,
+            "Asteriod": 1
+        }
+    },
+    {
+        "RunCount": 110,
+        "Current_Goal": {
+            "name": "CollectResources",
+            "relevancy": 0.3,
+            "goal": {}
+        },
+        "Relivancy_Scores": {
+            "StayAlive": 0.3726982272802717,
+            "StayAwake": 0,
+            "Collect": 1
+        },
+        "States": {
+            "Damage": 0.3431745568200679,
+            "Power": 0.8325579430525275,
+            "Inventory": 0.3754760426725719,
+            "Asteriod": 1
+        }
+    },
+    {
+        "RunCount": 111,
+        "Current_Goal": {
+            "name": "CollectResources",
+            "relevancy": 0.3,
+            "goal": {}
+        },
+        "Relivancy_Scores": {
+            "StayAlive": 0.3726982272802717,
+            "StayAwake": 0,
+            "Collect": 1
+        },
+        "States": {
+            "Damage": 0.3431745568200679,
+            "Power": 0.8183816202824287,
+            "Inventory": 0.4163297848160788,
+            "Asteriod": 1
+        }
+    },
+    {
+        "RunCount": 112,
+        "Current_Goal": {
+            "name": "CollectResources",
+            "relevancy": 0.3,
+            "goal": {}
+        },
+        "Relivancy_Scores": {
+            "StayAlive": 0.3726982272802717,
+            "StayAwake": 0,
+            "Collect": 1
+        },
+        "States": {
+            "Damage": 0.3431745568200679,
+            "Power": 0.8015093606771326,
+            "Inventory": 0.49658550887746383,
+            "Asteriod": 1
+        }
+    },
+    {
+        "RunCount": 113,
+        "Current_Goal": {
+            "name": "CollectResources",
+            "relevancy": 0.3,
+            "goal": {}
+        },
+        "Relivancy_Scores": {
+            "StayAlive": 0.3726982272802717,
+            "StayAwake": 0,
+            "Collect": 0.9549817633367261
+        },
+        "States": {
+            "Damage": 0.3431745568200679,
+            "Power": 0.7843828307075836,
+            "Inventory": 0.5750303944387897,
+            "Asteriod": 1
+        }
+    },
+    {
+        "RunCount": 114,
+        "Current_Goal": {
+            "name": "CollectResources",
+            "relevancy": 0.3,
+            "goal": {}
+        },
+        "Relivancy_Scores": {
+            "StayAlive": 0.3726982272802717,
+            "StayAwake": 0,
+            "Collect": 0.9194759191175949
+        },
+        "States": {
+            "Damage": 0.3431745568200679,
+            "Power": 0.7714726913687259,
+            "Inventory": 0.6342068014706751,
+            "Asteriod": 1
+        }
+    },
+    {
+        "RunCount": 115,
+        "Current_Goal": {
+            "name": "CollectResources",
+            "relevancy": 0.3,
+            "goal": {}
+        },
+        "Relivancy_Scores": {
+            "StayAlive": 0.3726982272802717,
+            "StayAwake": 0,
+            "Collect": 0.8665802986656075
+        },
+        "States": {
+            "Damage": 0.3431745568200679,
+            "Power": 0.7521901409921103,
+            "Inventory": 0.7223661688906542,
+            "Asteriod": 1
+        }
+    },
+    {
+        "RunCount": 116,
+        "Current_Goal": {
+            "name": "CollectResources",
+            "relevancy": 0.3,
+            "goal": {}
+        },
+        "Relivancy_Scores": {
+            "StayAlive": 0.3726982272802717,
+            "StayAwake": 0,
+            "Collect": 0.8239442175346932
+        },
+        "States": {
+            "Damage": 0.3431745568200679,
+            "Power": 0.7323157693885655,
+            "Inventory": 0.7934263041088446,
+            "Asteriod": 1
+        }
+    },
+    {
+        "RunCount": 117,
+        "Current_Goal": {
+            "name": "CollectResources",
+            "relevancy": 0.3,
+            "goal": {}
+        },
+        "Relivancy_Scores": {
+            "StayAlive": 0.3726982272802717,
+            "StayAwake": 0,
+            "Collect": 0.7924498189152426
+        },
+        "States": {
+            "Damage": 0.3431745568200679,
+            "Power": 0.7123331420904294,
+            "Inventory": 0.8459169684745956,
+            "Asteriod": 1
+        }
+    },
+    {
+        "RunCount": 118,
+        "Current_Goal": {
+            "name": "CollectResources",
+            "relevancy": 0.3,
+            "goal": {}
+        },
+        "Relivancy_Scores": {
+            "StayAlive": 0.3726982272802717,
+            "StayAwake": 0,
+            "Collect": 0.7527531387591508
+        },
+        "States": {
+            "Damage": 0.3431745568200679,
+            "Power": 0.692337114994344,
+            "Inventory": 0.9120781020680818,
+            "Asteriod": 1
+        }
+    },
+    {
+        "RunCount": 119,
+        "Current_Goal": {
+            "name": "CollectResources",
+            "relevancy": 0.3,
+            "goal": {}
+        },
+        "Relivancy_Scores": {
+            "StayAlive": 0.3726982272802717,
+            "StayAwake": 0,
+            "Collect": 0.7209042985464181
+        },
+        "States": {
+            "Damage": 0.3431745568200679,
+            "Power": 0.6789335432852841,
+            "Inventory": 0.9651595024226364,
+            "Asteriod": 1
+        }
+    },
+    {
+        "RunCount": 120,
+        "Current_Goal": {
+            "name": "CollectResources",
+            "relevancy": 0.3,
+            "goal": {}
+        },
+        "Relivancy_Scores": {
+            "StayAlive": 0.3726982272802717,
+            "StayAwake": 0,
+            "Collect": 0.7176331106312984
+        },
+        "States": {
+            "Damage": 0.3431745568200679,
+            "Power": 0.6603546800791356,
+            "Inventory": 0.9706114822811692,
+            "Asteriod": 1
+        }
+    },
+    {
+        "RunCount": 121,
+        "Current_Goal": {
+            "name": "CollectResources",
+            "relevancy": 0.3,
+            "goal": {}
+        },
+        "Relivancy_Scores": {
+            "StayAlive": 0.3726982272802717,
+            "StayAwake": 0,
+            "Collect": 0.6720675245053883
+        },
+        "States": {
+            "Damage": 0.3431745568200679,
+            "Power": 0.6423331269070858,
+            "Inventory": 1.0465541258243527,
+            "Asteriod": 1
+        }
+    },
+    {
+        "RunCount": 122,
+        "Current_Goal": {
+            "name": "CollectResources",
+            "relevancy": 0.3,
+            "goal": {}
+        },
+        "Relivancy_Scores": {
+            "StayAlive": 0.3726982272802717,
+            "StayAwake": 0,
+            "Collect": 1
+        },
+        "States": {
+            "Damage": 0.3431745568200679,
+            "Power": 1,
+            "Inventory": 0,
+            "Asteriod": 1
+        }
+    },
+    {
+        "RunCount": 123,
+        "Current_Goal": {
+            "name": "CollectResources",
+            "relevancy": 0.3,
+            "goal": {}
+        },
+        "Relivancy_Scores": {
+            "StayAlive": 0.3726982272802717,
+            "StayAwake": 0,
+            "Collect": 1
+        },
+        "States": {
+            "Damage": 0.3431745568200679,
+            "Power": 0.9814327874840043,
+            "Inventory": 0.07367484860555773,
+            "Asteriod": 1
+        }
+    },
+    {
+        "RunCount": 124,
+        "Current_Goal": {
+            "name": "CollectResources",
+            "relevancy": 0.3,
+            "goal": {}
+        },
+        "Relivancy_Scores": {
+            "StayAlive": 0.3726982272802717,
+            "StayAwake": 0,
+            "Collect": 1
+        },
+        "States": {
+            "Damage": 0.3431745568200679,
+            "Power": 0.9665895681795142,
+            "Inventory": 0.11030447982985742,
+            "Asteriod": 1
+        }
+    },
+    {
+        "RunCount": 125,
+        "Current_Goal": {
+            "name": "CollectResources",
+            "relevancy": 0.3,
+            "goal": {}
+        },
+        "Relivancy_Scores": {
+            "StayAlive": 0.3726982272802717,
+            "StayAwake": 0,
+            "Collect": 1
+        },
+        "States": {
+            "Damage": 0.3431745568200679,
+            "Power": 0.9527925144070584,
+            "Inventory": 0.19323434916367316,
+            "Asteriod": 1
+        }
+    },
+    {
+        "RunCount": 126,
+        "Current_Goal": {
+            "name": "CollectResources",
+            "relevancy": 0.3,
+            "goal": {}
+        },
+        "Relivancy_Scores": {
+            "StayAlive": 0.52278303101231,
+            "StayAwake": 0,
+            "Collect": 1
+        },
+        "States": {
+            "Damage": 0.3806957577530775,
+            "Power": 0.9392741175044419,
+            "Inventory": 0.2846674807929062,
+            "Asteriod": 1
+        }
+    },
+    {
+        "RunCount": 127,
+        "Current_Goal": {
+            "name": "CollectResources",
+            "relevancy": 0.3,
+            "goal": {}
+        },
+        "Relivancy_Scores": {
+            "StayAlive": 0.52278303101231,
+            "StayAwake": 0,
+            "Collect": 1
+        },
+        "States": {
+            "Damage": 0.3806957577530775,
+            "Power": 0.9283222790327312,
+            "Inventory": 0.37771123412680324,
+            "Asteriod": 1
+        }
+    },
+    {
+        "RunCount": 128,
+        "Current_Goal": {
+            "name": "CollectResources",
+            "relevancy": 0.3,
+            "goal": {}
+        },
+        "Relivancy_Scores": {
+            "StayAlive": 0.52278303101231,
+            "StayAwake": 0,
+            "Collect": 1
+        },
+        "States": {
+            "Damage": 0.3806957577530775,
+            "Power": 0.911416598090788,
+            "Inventory": 0.4570986420948336,
+            "Asteriod": 1
+        }
+    },
+    {
+        "RunCount": 129,
+        "Current_Goal": {
+            "name": "CollectResources",
+            "relevancy": 0.3,
+            "goal": {}
+        },
+        "Relivancy_Scores": {
+            "StayAlive": 0.52278303101231,
+            "StayAwake": 0,
+            "Collect": 1
+        },
+        "States": {
+            "Damage": 0.3806957577530775,
+            "Power": 0.8916988964297574,
+            "Inventory": 0.4976625338185935,
+            "Asteriod": 1
+        }
+    },
+    {
+        "RunCount": 130,
+        "Current_Goal": {
+            "name": "CollectResources",
+            "relevancy": 0.3,
+            "goal": {}
+        },
+        "Relivancy_Scores": {
+            "StayAlive": 0.52278303101231,
+            "StayAwake": 0,
+            "Collect": 0.972447740349893
+        },
+        "States": {
+            "Damage": 0.3806957577530775,
+            "Power": 0.8769241233864861,
+            "Inventory": 0.5459204327501783,
+            "Asteriod": 1
+        }
+    },
+    {
+        "RunCount": 131,
+        "Current_Goal": {
+            "name": "CollectResources",
+            "relevancy": 0.3,
+            "goal": {}
+        },
+        "Relivancy_Scores": {
+            "StayAlive": 0.52278303101231,
+            "StayAwake": 0,
+            "Collect": 0.9207692641037102
+        },
+        "States": {
+            "Damage": 0.3806957577530775,
+            "Power": 0.8605267446255139,
+            "Inventory": 0.6320512264938163,
+            "Asteriod": 1
+        }
+    },
+    {
+        "RunCount": 132,
+        "Current_Goal": {
+            "name": "CollectResources",
+            "relevancy": 0.3,
+            "goal": {}
+        },
+        "Relivancy_Scores": {
+            "StayAlive": 0.52278303101231,
+            "StayAwake": 0,
+            "Collect": 0.8639139114272952
+        },
+        "States": {
+            "Damage": 0.3806957577530775,
+            "Power": 0.8408876658274659,
+            "Inventory": 0.7268101476211745,
+            "Asteriod": 1
+        }
+    },
+    {
+        "RunCount": 133,
+        "Current_Goal": {
+            "name": "CollectResources",
+            "relevancy": 0.3,
+            "goal": {}
+        },
+        "Relivancy_Scores": {
+            "StayAlive": 0.7653385033348901,
+            "StayAwake": 0,
+            "Collect": 0.8361659569539732
+        },
+        "States": {
+            "Damage": 0.4413346258337225,
+            "Power": 0.8261674009579495,
+            "Inventory": 0.7730567384100445,
+            "Asteriod": 1
+        }
+    },
+    {
+        "RunCount": 134,
+        "Current_Goal": {
+            "name": "CollectResources",
+            "relevancy": 0.3,
+            "goal": {}
+        },
+        "Relivancy_Scores": {
+            "StayAlive": 0.7653385033348901,
+            "StayAwake": 0,
+            "Collect": 0.7959131487041978
+        },
+        "States": {
+            "Damage": 0.4413346258337225,
+            "Power": 0.8082289587108323,
+            "Inventory": 0.8401447521596702,
+            "Asteriod": 1
+        }
+    },
+    {
+        "RunCount": 135,
+        "Current_Goal": {
+            "name": "StayAlive",
+            "relevancy": 0.7653385033348901,
+            "goal": {
+                "underAttack": false
+            }
+        },
+        "Relivancy_Scores": {
+            "StayAlive": 0.7653385033348901,
+            "StayAwake": 0,
+            "Collect": 0.7419940314502194
+        },
+        "States": {
+            "Damage": 0.4413346258337225,
+            "Power": 0.7907549171955681,
+            "Inventory": 0.9300099475829676,
+            "Asteriod": 1
+        }
+    },
+    {
+        "RunCount": 136,
+        "Current_Goal": {
+            "name": "StayAlive",
+            "relevancy": 0.7653385033348901,
+            "goal": {
+                "underAttack": false
+            }
+        },
+        "Relivancy_Scores": {
+            "StayAlive": 0.7653385033348901,
+            "StayAwake": 0,
+            "Collect": 0.7419940314502194
+        },
+        "States": {
+            "Damage": 0.4413346258337225,
+            "Power": 0.7787366721802409,
+            "Inventory": 0.9300099475829676,
+            "Asteriod": 1
+        }
+    },
+    {
+        "RunCount": 137,
+        "Current_Goal": {
+            "name": "StayAlive",
+            "relevancy": 0.7653385033348901,
+            "goal": {
+                "underAttack": false
+            }
+        },
+        "Relivancy_Scores": {
+            "StayAlive": 0.7653385033348901,
+            "StayAwake": 0,
+            "Collect": 0.7419940314502194
+        },
+        "States": {
+            "Damage": 0.4413346258337225,
+            "Power": 0.7610539339547415,
+            "Inventory": 0.9300099475829676,
+            "Asteriod": 1
+        }
+    },
+    {
+        "RunCount": 138,
+        "Current_Goal": {
+            "name": "StayAlive",
+            "relevancy": 0.7653385033348901,
+            "goal": {
+                "underAttack": false
+            }
+        },
+        "Relivancy_Scores": {
+            "StayAlive": 0.7653385033348901,
+            "StayAwake": 0,
+            "Collect": 0.7419940314502194
+        },
+        "States": {
+            "Damage": 0.4413346258337225,
+            "Power": 0.7484439179299524,
+            "Inventory": 0.9300099475829676,
+            "Asteriod": 1
+        }
+    },
+    {
+        "RunCount": 139,
+        "Current_Goal": {
+            "name": "StayAlive",
+            "relevancy": 0.7653385033348901,
+            "goal": {
+                "underAttack": false
+            }
+        },
+        "Relivancy_Scores": {
+            "StayAlive": 0.7653385033348901,
+            "StayAwake": 0,
+            "Collect": 0.7419940314502194
+        },
+        "States": {
+            "Damage": 0.4413346258337225,
+            "Power": 0.7376194249126273,
+            "Inventory": 0.9300099475829676,
+            "Asteriod": 1
+        }
+    },
+    {
+        "RunCount": 140,
+        "Current_Goal": {
+            "name": "StayAlive",
+            "relevancy": 0.7653385033348901,
+            "goal": {
+                "underAttack": false
+            }
+        },
+        "Relivancy_Scores": {
+            "StayAlive": 0.7653385033348901,
+            "StayAwake": 0,
+            "Collect": 0.7419940314502194
+        },
+        "States": {
+            "Damage": 0.4413346258337225,
+            "Power": 0.7205856665709126,
+            "Inventory": 0.9300099475829676,
+            "Asteriod": 1
+        }
+    },
+    {
+        "RunCount": 141,
+        "Current_Goal": {
+            "name": "StayAlive",
+            "relevancy": 0.7653385033348901,
+            "goal": {
+                "underAttack": false
+            }
+        },
+        "Relivancy_Scores": {
+            "StayAlive": 0.7653385033348901,
+            "StayAwake": 0,
+            "Collect": 0.7419940314502194
+        },
+        "States": {
+            "Damage": 0.4413346258337225,
+            "Power": 0.7063943187857783,
+            "Inventory": 0.9300099475829676,
+            "Asteriod": 1
+        }
+    },
+    {
+        "RunCount": 142,
+        "Current_Goal": {
+            "name": "StayAlive",
+            "relevancy": 0.7653385033348901,
+            "goal": {
+                "underAttack": false
+            }
+        },
+        "Relivancy_Scores": {
+            "StayAlive": 0.7653385033348901,
+            "StayAwake": 0,
+            "Collect": 0.7419940314502194
+        },
+        "States": {
+            "Damage": 0.4413346258337225,
+            "Power": 0.6881492797709806,
+            "Inventory": 0.9300099475829676,
+            "Asteriod": 1
+        }
+    },
+    {
+        "RunCount": 143,
+        "Current_Goal": {
+            "name": "StayAlive",
+            "relevancy": 0.7653385033348901,
+            "goal": {
+                "underAttack": false
+            }
+        },
+        "Relivancy_Scores": {
+            "StayAlive": 0.7653385033348901,
+            "StayAwake": 0,
+            "Collect": 0.7419940314502194
+        },
+        "States": {
+            "Damage": 0.4413346258337225,
+            "Power": 0.669644814192643,
+            "Inventory": 0.9300099475829676,
+            "Asteriod": 1
+        }
+    },
+    {
+        "RunCount": 144,
+        "Current_Goal": {
+            "name": "StayAlive",
+            "relevancy": 0.7653385033348901,
+            "goal": {
+                "underAttack": false
+            }
+        },
+        "Relivancy_Scores": {
+            "StayAlive": 0.7653385033348901,
+            "StayAwake": 0,
+            "Collect": 0.7419940314502194
+        },
+        "States": {
+            "Damage": 0.4413346258337225,
+            "Power": 0.653049315362179,
+            "Inventory": 0.9300099475829676,
+            "Asteriod": 1
+        }
+    },
+    {
+        "RunCount": 145,
+        "Current_Goal": {
+            "name": "StayAlive",
+            "relevancy": 0.7653385033348901,
+            "goal": {
+                "underAttack": false
+            }
+        },
+        "Relivancy_Scores": {
+            "StayAlive": 0.7653385033348901,
+            "StayAwake": 0,
+            "Collect": 0.7419940314502194
+        },
+        "States": {
+            "Damage": 0.4413346258337225,
+            "Power": 0.6370650918448875,
+            "Inventory": 0.9300099475829676,
+            "Asteriod": 1
+        }
+    },
+    {
+        "RunCount": 146,
+        "Current_Goal": {
+            "name": "StayAlive",
+            "relevancy": 0.7653385033348901,
+            "goal": {
+                "underAttack": false
+            }
+        },
+        "Relivancy_Scores": {
+            "StayAlive": 0.7653385033348901,
+            "StayAwake": 0,
+            "Collect": 0.7419940314502194
+        },
+        "States": {
+            "Damage": 0.4413346258337225,
+            "Power": 0.6174327468296018,
+            "Inventory": 0.9300099475829676,
+            "Asteriod": 1
+        }
+    },
+    {
+        "RunCount": 147,
+        "Current_Goal": {
+            "name": "StayAlive",
+            "relevancy": 0.7653385033348901,
+            "goal": {
+                "underAttack": false
+            }
+        },
+        "Relivancy_Scores": {
+            "StayAlive": 0.7653385033348901,
+            "StayAwake": 0,
+            "Collect": 0.7419940314502194
+        },
+        "States": {
+            "Damage": 0.4413346258337225,
+            "Power": 0.5985691453624249,
+            "Inventory": 0.9300099475829676,
+            "Asteriod": 1
+        }
+    },
+    {
+        "RunCount": 148,
+        "Current_Goal": {
+            "name": "StayAlive",
+            "relevancy": 0.7653385033348901,
+            "goal": {
+                "underAttack": false
+            }
+        },
+        "Relivancy_Scores": {
+            "StayAlive": 0.7653385033348901,
+            "StayAwake": 0,
+            "Collect": 0.7419940314502194
+        },
+        "States": {
+            "Damage": 0.4413346258337225,
+            "Power": 0.5860509794063911,
+            "Inventory": 0.9300099475829676,
+            "Asteriod": 1
+        }
+    },
+    {
+        "RunCount": 149,
+        "Current_Goal": {
+            "name": "StayAlive",
+            "relevancy": 0.7653385033348901,
+            "goal": {
+                "underAttack": false
+            }
+        },
+        "Relivancy_Scores": {
+            "StayAlive": 0.7653385033348901,
+            "StayAwake": 0,
+            "Collect": 0.7419940314502194
+        },
+        "States": {
+            "Damage": 0.4413346258337225,
+            "Power": 0.5692454272150085,
+            "Inventory": 0.9300099475829676,
+            "Asteriod": 1
+        }
+    },
+    {
+        "RunCount": 150,
+        "Current_Goal": {
+            "name": "StayAlive",
+            "relevancy": 0.7653385033348901,
+            "goal": {
+                "underAttack": false
+            }
+        },
+        "Relivancy_Scores": {
+            "StayAlive": 0.7653385033348901,
+            "StayAwake": 0,
+            "Collect": 0.7419940314502194
+        },
+        "States": {
+            "Damage": 0.4413346258337225,
+            "Power": 0.5524884063372285,
+            "Inventory": 0.9300099475829676,
+            "Asteriod": 1
+        }
+    },
+    {
+        "RunCount": 151,
+        "Current_Goal": {
+            "name": "StayAlive",
+            "relevancy": 0.7653385033348901,
+            "goal": {
+                "underAttack": false
+            }
+        },
+        "Relivancy_Scores": {
+            "StayAlive": 0.7653385033348901,
+            "StayAwake": 0,
+            "Collect": 0.7419940314502194
+        },
+        "States": {
+            "Damage": 0.4413346258337225,
+            "Power": 0.5400007407244907,
+            "Inventory": 0.9300099475829676,
+            "Asteriod": 1
+        }
+    },
+    {
+        "RunCount": 152,
+        "Current_Goal": {
+            "name": "StayAlive",
+            "relevancy": 0.7653385033348901,
+            "goal": {
+                "underAttack": false
+            }
+        },
+        "Relivancy_Scores": {
+            "StayAlive": 0.7653385033348901,
+            "StayAwake": 0,
+            "Collect": 0.7419940314502194
+        },
+        "States": {
+            "Damage": 0.4413346258337225,
+            "Power": 0.5288953337994977,
+            "Inventory": 0.9300099475829676,
+            "Asteriod": 1
+        }
+    },
+    {
+        "RunCount": 153,
+        "Current_Goal": {
+            "name": "StayAlive",
+            "relevancy": 0.7653385033348901,
+            "goal": {
+                "underAttack": false
+            }
+        },
+        "Relivancy_Scores": {
+            "StayAlive": 0.7653385033348901,
+            "StayAwake": 0,
+            "Collect": 0.7419940314502194
+        },
+        "States": {
+            "Damage": 0.4413346258337225,
+            "Power": 0.5116149911617932,
+            "Inventory": 0.9300099475829676,
+            "Asteriod": 1
+        }
+    },
+    {
+        "RunCount": 154,
+        "Current_Goal": {
+            "name": "StayAlive",
+            "relevancy": 0.7653385033348901,
+            "goal": {
+                "underAttack": false
+            }
+        },
+        "Relivancy_Scores": {
+            "StayAlive": 0.7653385033348901,
+            "StayAwake": 0,
+            "Collect": 0.7419940314502194
+        },
+        "States": {
+            "Damage": 0.4413346258337225,
+            "Power": 0.5010196386845409,
+            "Inventory": 0.9300099475829676,
+            "Asteriod": 1
+        }
+    },
+    {
+        "RunCount": 155,
+        "Current_Goal": {
+            "name": "StayAlive",
+            "relevancy": 0.7653385033348901,
+            "goal": {
+                "underAttack": false
+            }
+        },
+        "Relivancy_Scores": {
+            "StayAlive": 0.7653385033348901,
+            "StayAwake": 0,
+            "Collect": 0.7419940314502194
+        },
+        "States": {
+            "Damage": 0.4413346258337225,
+            "Power": 0.48752654844631693,
+            "Inventory": 0.9300099475829676,
+            "Asteriod": 1
+        }
+    },
+    {
+        "RunCount": 156,
+        "Current_Goal": {
+            "name": "StayAlive",
+            "relevancy": 0.7653385033348901,
+            "goal": {
+                "underAttack": false
+            }
+        },
+        "Relivancy_Scores": {
+            "StayAlive": 0.7653385033348901,
+            "StayAwake": 0,
+            "Collect": 0.7419940314502194
+        },
+        "States": {
+            "Damage": 0.4413346258337225,
+            "Power": 0.47656777521186405,
+            "Inventory": 0.9300099475829676,
+            "Asteriod": 1
+        }
+    },
+    {
+        "RunCount": 157,
+        "Current_Goal": {
+            "name": "StayAlive",
+            "relevancy": 0.7653385033348901,
+            "goal": {
+                "underAttack": false
+            }
+        },
+        "Relivancy_Scores": {
+            "StayAlive": 1.0816018495428326,
+            "StayAwake": 0,
+            "Collect": 0.7419940314502194
+        },
+        "States": {
+            "Damage": 0.5204004623857081,
+            "Power": 0.46594587539956245,
+            "Inventory": 0.9300099475829676,
+            "Asteriod": 1
+        }
+    },
+    {
+        "RunCount": 158,
+        "Current_Goal": {
+            "name": "StayAlive",
+            "relevancy": 0.7653385033348901,
+            "goal": {
+                "underAttack": false
+            }
+        },
+        "Relivancy_Scores": {
+            "StayAlive": 1.0816018495428326,
+            "StayAwake": 0,
+            "Collect": 0.7419940314502194
+        },
+        "States": {
+            "Damage": 0.5204004623857081,
+            "Power": 0.45287977735482965,
+            "Inventory": 0.9300099475829676,
+            "Asteriod": 1
+        }
+    },
+    {
+        "RunCount": 159,
+        "Current_Goal": {
+            "name": "StayAlive",
+            "relevancy": 0.7653385033348901,
+            "goal": {
+                "underAttack": false
+            }
+        },
+        "Relivancy_Scores": {
+            "StayAlive": 1.0816018495428326,
+            "StayAwake": 0,
+            "Collect": 0.7419940314502194
+        },
+        "States": {
+            "Damage": 0.5204004623857081,
+            "Power": 0.43558873004288823,
+            "Inventory": 0.9300099475829676,
+            "Asteriod": 1
+        }
+    },
+    {
+        "RunCount": 160,
+        "Current_Goal": {
+            "name": "StayAlive",
+            "relevancy": 0.7653385033348901,
+            "goal": {
+                "underAttack": false
+            }
+        },
+        "Relivancy_Scores": {
+            "StayAlive": 1.0816018495428326,
+            "StayAwake": 0,
+            "Collect": 0.7419940314502194
+        },
+        "States": {
+            "Damage": 0.5204004623857081,
+            "Power": 0.42552154766919015,
+            "Inventory": 0.9300099475829676,
+            "Asteriod": 1
+        }
+    },
+    {
+        "RunCount": 161,
+        "Current_Goal": {
+            "name": "StayAlive",
+            "relevancy": 0.7653385033348901,
+            "goal": {
+                "underAttack": false
+            }
+        },
+        "Relivancy_Scores": {
+            "StayAlive": 1.0816018495428326,
+            "StayAwake": 0,
+            "Collect": 0.7419940314502194
+        },
+        "States": {
+            "Damage": 0.5204004623857081,
+            "Power": 0.4152191317823521,
+            "Inventory": 0.9300099475829676,
+            "Asteriod": 1
+        }
+    },
+    {
+        "RunCount": 162,
+        "Current_Goal": {
+            "name": "StayAlive",
+            "relevancy": 0.7653385033348901,
+            "goal": {
+                "underAttack": false
+            }
+        },
+        "Relivancy_Scores": {
+            "StayAlive": 1.0816018495428326,
+            "StayAwake": 0,
+            "Collect": 0.7419940314502194
+        },
+        "States": {
+            "Damage": 0.5204004623857081,
+            "Power": 0.404414706441328,
+            "Inventory": 0.9300099475829676,
+            "Asteriod": 1
+        }
+    },
+    {
+        "RunCount": 163,
+        "Current_Goal": {
+            "name": "StayAlive",
+            "relevancy": 0.7653385033348901,
+            "goal": {
+                "underAttack": false
+            }
+        },
+        "Relivancy_Scores": {
+            "StayAlive": 1.0816018495428326,
+            "StayAwake": 0,
+            "Collect": 0.7419940314502194
+        },
+        "States": {
+            "Damage": 0.5204004623857081,
+            "Power": 0.3923514618235809,
+            "Inventory": 0.9300099475829676,
+            "Asteriod": 1
+        }
+    },
+    {
+        "RunCount": 164,
+        "Current_Goal": {
+            "name": "StayAlive",
+            "relevancy": 0.7653385033348901,
+            "goal": {
+                "underAttack": false
+            }
+        },
+        "Relivancy_Scores": {
+            "StayAlive": 1.0816018495428326,
+            "StayAwake": 0,
+            "Collect": 0.7419940314502194
+        },
+        "States": {
+            "Damage": 0.5204004623857081,
+            "Power": 0.37467016142669046,
+            "Inventory": 0.9300099475829676,
+            "Asteriod": 1
+        }
+    },
+    {
+        "RunCount": 165,
+        "Current_Goal": {
+            "name": "StayAlive",
+            "relevancy": 0.7653385033348901,
+            "goal": {
+                "underAttack": false
+            }
+        },
+        "Relivancy_Scores": {
+            "StayAlive": 1.0816018495428326,
+            "StayAwake": 0,
+            "Collect": 0.7419940314502194
+        },
+        "States": {
+            "Damage": 0.5204004623857081,
+            "Power": 0.3625050253340797,
+            "Inventory": 0.9300099475829676,
+            "Asteriod": 1
+        }
+    },
+    {
+        "RunCount": 166,
+        "Current_Goal": {
+            "name": "StayAlive",
+            "relevancy": 0.7653385033348901,
+            "goal": {
+                "underAttack": false
+            }
+        },
+        "Relivancy_Scores": {
+            "StayAlive": 1.0816018495428326,
+            "StayAwake": 0.006489400204813867,
+            "Collect": 0.7419940314502194
+        },
+        "States": {
+            "Damage": 0.5204004623857081,
+            "Power": 0.3477287099283151,
+            "Inventory": 0.9300099475829676,
+            "Asteriod": 1
+        }
+    },
+    {
+        "RunCount": 167,
+        "Current_Goal": {
+            "name": "StayAlive",
+            "relevancy": 0.7653385033348901,
+            "goal": {
+                "underAttack": false
+            }
+        },
+        "Relivancy_Scores": {
+            "StayAlive": 1.0816018495428326,
+            "StayAwake": 0.05384742798336817,
+            "Collect": 0.7419940314502194
+        },
+        "States": {
+            "Damage": 0.5204004623857081,
+            "Power": 0.3311534002058211,
+            "Inventory": 0.9300099475829676,
+            "Asteriod": 1
+        }
+    },
+    {
+        "RunCount": 168,
+        "Current_Goal": {
+            "name": "StayAlive",
+            "relevancy": 0.7653385033348901,
+            "goal": {
+                "underAttack": false
+            }
+        },
+        "Relivancy_Scores": {
+            "StayAlive": 1.0816018495428326,
+            "StayAwake": 0.10855393667591856,
+            "Collect": 0.7419940314502194
+        },
+        "States": {
+            "Damage": 0.5204004623857081,
+            "Power": 0.3120061221634285,
+            "Inventory": 0.9300099475829676,
+            "Asteriod": 1
+        }
+    },
+    {
+        "RunCount": 169,
+        "Current_Goal": {
+            "name": "StayAlive",
+            "relevancy": 0.7653385033348901,
+            "goal": {
+                "underAttack": false
+            }
+        },
+        "Relivancy_Scores": {
+            "StayAlive": 1.0816018495428326,
+            "StayAwake": 0.15052832014667278,
+            "Collect": 0.7419940314502194
+        },
+        "States": {
+            "Damage": 0.5204004623857081,
+            "Power": 0.2973150879486645,
+            "Inventory": 0.9300099475829676,
+            "Asteriod": 1
+        }
+    },
+    {
+        "RunCount": 170,
+        "Current_Goal": {
+            "name": "StayAlive",
+            "relevancy": 0.7653385033348901,
+            "goal": {
+                "underAttack": false
+            }
+        },
+        "Relivancy_Scores": {
+            "StayAlive": 1.0816018495428326,
+            "StayAwake": 0.20155819261499203,
+            "Collect": 0.7419940314502194
+        },
+        "States": {
+            "Damage": 0.5204004623857081,
+            "Power": 0.2794546325847528,
+            "Inventory": 0.9300099475829676,
+            "Asteriod": 1
+        }
+    },
+    {
+        "RunCount": 171,
+        "Current_Goal": {
+            "name": "StayAlive",
+            "relevancy": 0.7653385033348901,
+            "goal": {
+                "underAttack": false
+            }
+        },
+        "Relivancy_Scores": {
+            "StayAlive": 1.0816018495428326,
+            "StayAwake": 0.2506292840387302,
+            "Collect": 0.7419940314502194
+        },
+        "States": {
+            "Damage": 0.5204004623857081,
+            "Power": 0.2622797505864444,
+            "Inventory": 0.9300099475829676,
+            "Asteriod": 1
+        }
+    },
+    {
+        "RunCount": 172,
+        "Current_Goal": {
+            "name": "StayAlive",
+            "relevancy": 0.7653385033348901,
+            "goal": {
+                "underAttack": false
+            }
+        },
+        "Relivancy_Scores": {
+            "StayAlive": 1.0816018495428326,
+            "StayAwake": 0.2970442911928799,
+            "Collect": 0.7419940314502194
+        },
+        "States": {
+            "Damage": 0.5204004623857081,
+            "Power": 0.24603449808249203,
+            "Inventory": 0.9300099475829676,
+            "Asteriod": 1
+        }
+    },
+    {
+        "RunCount": 173,
+        "Current_Goal": {
+            "name": "StayAlive",
+            "relevancy": 0.7653385033348901,
+            "goal": {
+                "underAttack": false
+            }
+        },
+        "Relivancy_Scores": {
+            "StayAlive": 1.0816018495428326,
+            "StayAwake": 0.3482091794865618,
+            "Collect": 0.7419940314502194
+        },
+        "States": {
+            "Damage": 0.5204004623857081,
+            "Power": 0.22812678717970333,
+            "Inventory": 0.9300099475829676,
+            "Asteriod": 1
+        }
+    },
+    {
+        "RunCount": 174,
+        "Current_Goal": {
+            "name": "StayAlive",
+            "relevancy": 0.7653385033348901,
+            "goal": {
+                "underAttack": false
+            }
+        },
+        "Relivancy_Scores": {
+            "StayAlive": 1.0816018495428326,
+            "StayAwake": 0.38439180779210064,
+            "Collect": 0.7419940314502194
+        },
+        "States": {
+            "Damage": 0.5204004623857081,
+            "Power": 0.21546286727276476,
+            "Inventory": 0.9300099475829676,
+            "Asteriod": 1
+        }
+    },
+    {
+        "RunCount": 175,
+        "Current_Goal": {
+            "name": "StayAlive",
+            "relevancy": 0.7653385033348901,
+            "goal": {
+                "underAttack": false
+            }
+        },
+        "Relivancy_Scores": {
+            "StayAlive": 1.0816018495428326,
+            "StayAwake": 0.43555466466296777,
+            "Collect": 0.7419940314502194
+        },
+        "States": {
+            "Damage": 0.5204004623857081,
+            "Power": 0.19755586736796127,
+            "Inventory": 0.9300099475829676,
+            "Asteriod": 1
+        }
+    },
+    {
+        "RunCount": 176,
+        "Current_Goal": {
+            "name": "StayAlive",
+            "relevancy": 0.7653385033348901,
+            "goal": {
+                "underAttack": false
+            }
+        },
+        "Relivancy_Scores": {
+            "StayAlive": 1.0816018495428326,
+            "StayAwake": 0.48358769216868225,
+            "Collect": 0.7419940314502194
+        },
+        "States": {
+            "Damage": 0.5204004623857081,
+            "Power": 0.1807443077409612,
+            "Inventory": 0.9300099475829676,
+            "Asteriod": 1
+        }
+    },
+    {
+        "RunCount": 177,
+        "Current_Goal": {
+            "name": "StayAlive",
+            "relevancy": 0.7653385033348901,
+            "goal": {
+                "underAttack": false
+            }
+        },
+        "Relivancy_Scores": {
+            "StayAlive": 1.3299315174376782,
+            "StayAwake": 0.5135819457020944,
+            "Collect": 0.7419940314502194
+        },
+        "States": {
+            "Damage": 0.5824828793594196,
+            "Power": 0.17024631900426695,
+            "Inventory": 0.9300099475829676,
+            "Asteriod": 1
+        }
+    },
+    {
+        "RunCount": 178,
+        "Current_Goal": {
+            "name": "StayAlive",
+            "relevancy": 0.7653385033348901,
+            "goal": {
+                "underAttack": false
+            }
+        },
+        "Relivancy_Scores": {
+            "StayAlive": 1.3299315174376782,
+            "StayAwake": 0.5641170704159628,
+            "Collect": 0.7419940314502194
+        },
+        "States": {
+            "Damage": 0.5824828793594196,
+            "Power": 0.152559025354413,
+            "Inventory": 0.9300099475829676,
+            "Asteriod": 1
+        }
+    },
+    {
+        "RunCount": 179,
+        "Current_Goal": {
+            "name": "StayAlive",
+            "relevancy": 0.7653385033348901,
+            "goal": {
+                "underAttack": false
+            }
+        },
+        "Relivancy_Scores": {
+            "StayAlive": 1.3299315174376782,
+            "StayAwake": 0.6124265182879858,
+            "Collect": 0.7419940314502194
+        },
+        "States": {
+            "Damage": 0.5824828793594196,
+            "Power": 0.13565071859920497,
+            "Inventory": 0.9300099475829676,
+            "Asteriod": 1
+        }
+    },
+    {
+        "RunCount": 180,
+        "Current_Goal": {
+            "name": "StayAlive",
+            "relevancy": 0.7653385033348901,
+            "goal": {
+                "underAttack": false
+            }
+        },
+        "Relivancy_Scores": {
+            "StayAlive": 1.3299315174376782,
+            "StayAwake": 0.6411480329947387,
+            "Collect": 0.7419940314502194
+        },
+        "States": {
+            "Damage": 0.5824828793594196,
+            "Power": 0.12559818845184145,
+            "Inventory": 0.9300099475829676,
+            "Asteriod": 1
+        }
+    },
+    {
+        "RunCount": 181,
+        "Current_Goal": {
+            "name": "StayAlive",
+            "relevancy": 0.7653385033348901,
+            "goal": {
+                "underAttack": false
+            }
+        },
+        "Relivancy_Scores": {
+            "StayAlive": 1.3299315174376782,
+            "StayAwake": 0.6739983387948906,
+            "Collect": 0.7419940314502194
+        },
+        "States": {
+            "Damage": 0.5824828793594196,
+            "Power": 0.11410058142178829,
+            "Inventory": 0.9300099475829676,
+            "Asteriod": 1
+        }
+    },
+    {
+        "RunCount": 182,
+        "Current_Goal": {
+            "name": "StayAlive",
+            "relevancy": 0.7653385033348901,
+            "goal": {
+                "underAttack": false
+            }
+        },
+        "Relivancy_Scores": {
+            "StayAlive": 1.3299315174376782,
+            "StayAwake": 0.7118342364709025,
+            "Collect": 0.7419940314502194
+        },
+        "States": {
+            "Damage": 0.5824828793594196,
+            "Power": 0.10085801723518414,
+            "Inventory": 0.9300099475829676,
+            "Asteriod": 1
+        }
+    },
+    {
+        "RunCount": 183,
+        "Current_Goal": {
+            "name": "StayAlive",
+            "relevancy": 0.7653385033348901,
+            "goal": {
+                "underAttack": false
+            }
+        },
+        "Relivancy_Scores": {
+            "StayAlive": 1.3299315174376782,
+            "StayAwake": 0.7677745089447419,
+            "Collect": 0.7419940314502194
+        },
+        "States": {
+            "Damage": 0.5824828793594196,
+            "Power": 0.08127892186934034,
+            "Inventory": 0.9300099475829676,
+            "Asteriod": 1
+        }
+    },
+    {
+        "RunCount": 184,
+        "Current_Goal": {
+            "name": "StayAlive",
+            "relevancy": 0.7653385033348901,
+            "goal": {
+                "underAttack": false
+            }
+        },
+        "Relivancy_Scores": {
+            "StayAlive": 1.3299315174376782,
+            "StayAwake": 0.8154915200912113,
+            "Collect": 0.7419940314502194
+        },
+        "States": {
+            "Damage": 0.5824828793594196,
+            "Power": 0.06457796796807605,
+            "Inventory": 0.9300099475829676,
+            "Asteriod": 1
+        }
+    },
+    {
+        "RunCount": 185,
+        "Current_Goal": {
+            "name": "StayAlive",
+            "relevancy": 0.7653385033348901,
+            "goal": {
+                "underAttack": false
+            }
+        },
+        "Relivancy_Scores": {
+            "StayAlive": 1.3299315174376782,
+            "StayAwake": 0.8520108758108234,
+            "Collect": 0.7419940314502194
+        },
+        "States": {
+            "Damage": 0.5824828793594196,
+            "Power": 0.051796193466211844,
+            "Inventory": 0.9300099475829676,
+            "Asteriod": 1
+        }
+    },
+    {
+        "RunCount": 186,
+        "Current_Goal": {
+            "name": "StayAlive",
+            "relevancy": 0.7653385033348901,
+            "goal": {
+                "underAttack": false
+            }
+        },
+        "Relivancy_Scores": {
+            "StayAlive": 1.3299315174376782,
+            "StayAwake": 0.8931645688305201,
+            "Collect": 0.7419940314502194
+        },
+        "States": {
+            "Damage": 0.5824828793594196,
+            "Power": 0.037392400909317974,
+            "Inventory": 0.9300099475829676,
+            "Asteriod": 1
+        }
+    },
+    {
+        "RunCount": 187,
+        "Current_Goal": {
+            "name": "StayAlive",
+            "relevancy": 0.7653385033348901,
+            "goal": {
+                "underAttack": false
+            }
+        },
+        "Relivancy_Scores": {
+            "StayAlive": 1.3299315174376782,
+            "StayAwake": 0.9361982317883715,
+            "Collect": 0.7419940314502194
+        },
+        "States": {
+            "Damage": 0.5824828793594196,
+            "Power": 0.02233061887407002,
+            "Inventory": 0.9300099475829676,
+            "Asteriod": 1
+        }
+    },
+    {
+        "RunCount": 188,
+        "Current_Goal": {
+            "name": "StayAlive",
+            "relevancy": 0.7653385033348901,
+            "goal": {
+                "underAttack": false
+            }
+        },
+        "Relivancy_Scores": {
+            "StayAlive": 1.3299315174376782,
+            "StayAwake": 0.9652516008338232,
+            "Collect": 0.7419940314502194
+        },
+        "States": {
+            "Damage": 0.5824828793594196,
+            "Power": 0.012161939708161904,
+            "Inventory": 0.9300099475829676,
+            "Asteriod": 1
+        }
+    },
+    {
+        "RunCount": 189,
+        "Current_Goal": {
+            "name": "StayAlive",
+            "relevancy": 0.7653385033348901,
+            "goal": {
+                "underAttack": false
+            }
+        },
+        "Relivancy_Scores": {
+            "StayAlive": 1.3299315174376782,
+            "StayAwake": 0.998573098393666,
+            "Collect": 0.7419940314502194
+        },
+        "States": {
+            "Damage": 0.5824828793594196,
+            "Power": 0.0004994155622169046,
+            "Inventory": 0.9300099475829676,
+            "Asteriod": 1
         }
     }
 ]

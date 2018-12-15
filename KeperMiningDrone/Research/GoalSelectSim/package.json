@@ -4,7 +4,7 @@
   "description": "",
   "main": "GoalSelect.js",
   "scripts": {
-    "build": "tsc GoalSelect.ts && node GoalSelect.js",
+    "build": "tsc && node ./dist/GoalSelect.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",

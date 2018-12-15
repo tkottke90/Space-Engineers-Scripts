@@ -17,6 +17,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TruckComputer", "TruckCompu
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KeperMiningDrone", "KeperMiningDrone\KeperMiningDrone.csproj", "{AEB67C97-3F94-4E57-957D-D744A5D1BF33}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RocketDrone", "IngameScript1\RocketDrone.csproj", "{4A72A535-F50F-4728-A085-34C87BE8157F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CMDCenter", "IngameScript2\CMDCenter.csproj", "{5D4108BE-2DA8-43B5-B16F-253F3C9C3AD2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SatScript", "IngameScript3\SatScript.csproj", "{EF3BA106-C55B-428A-A323-0DD27AFFD025}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -36,6 +42,12 @@ Global
 		{B08AF891-8FAE-4F65-864D-DA768A0FB9F1}.Debug|x64.Build.0 = Debug|x64
 		{AEB67C97-3F94-4E57-957D-D744A5D1BF33}.Debug|x64.ActiveCfg = Debug|x64
 		{AEB67C97-3F94-4E57-957D-D744A5D1BF33}.Debug|x64.Build.0 = Debug|x64
+		{4A72A535-F50F-4728-A085-34C87BE8157F}.Debug|x64.ActiveCfg = Debug|x64
+		{4A72A535-F50F-4728-A085-34C87BE8157F}.Debug|x64.Build.0 = Debug|x64
+		{5D4108BE-2DA8-43B5-B16F-253F3C9C3AD2}.Debug|x64.ActiveCfg = Debug|x64
+		{5D4108BE-2DA8-43B5-B16F-253F3C9C3AD2}.Debug|x64.Build.0 = Debug|x64
+		{EF3BA106-C55B-428A-A323-0DD27AFFD025}.Debug|x64.ActiveCfg = Debug|x64
+		{EF3BA106-C55B-428A-A323-0DD27AFFD025}.Debug|x64.Build.0 = Debug|x64
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

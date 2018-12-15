@@ -22,11 +22,13 @@ namespace IngameScript
         {
             public List<IMyInteriorLight> lights = new List<IMyInteriorLight>();
 
-            public Color groupColor = new Color(0, 0, 0);
+            public Color groupColor = new Color(0, 0, 0); 
 
             Dictionary<string, MyLogger> loggers = new Dictionary<string,MyLogger>();
 
-            public LightGroup() { }
+            public LightGroup(Color color) {
+                this.groupColor = color;
+            }
 
             public LightGroup( MyLogger[] logs ) {
                 foreach(MyLogger l in logs)
@@ -39,6 +41,14 @@ namespace IngameScript
                 lights.Add(IL);
                 IL.SetValue("Offset", 0.5f);
                 IL.Color = groupColor; 
+            }
+
+            public void ToggleOnOff()
+            {
+                foreach(IMyInteriorLight i in lights)
+                {
+                   
+                }
             }
 
             public void SetColor(float red, float green, float blue)

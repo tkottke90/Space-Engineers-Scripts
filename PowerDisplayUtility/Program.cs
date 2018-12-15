@@ -63,7 +63,7 @@ namespace IngameScript
         void getScriptBlocks()
         {
             List<IMyTerminalBlock> Script_Blocks = new List<IMyTerminalBlock>();
-            GridTerminalSystem.GetBlocksOfType<IMyTerminalBlock>(Script_Blocks);
+            GridTerminalSystem.GetBlocksOfType<IMyTerminalBlock>(Script_Blocks, (IMyTerminalBlock t) => t.CubeGrid == Me.CubeGrid);
 
             foreach (IMyTerminalBlock b in Script_Blocks)
             {

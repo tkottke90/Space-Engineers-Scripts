@@ -1,0 +1,27 @@
+C:\Users\Thomas\documents\visual studio 2017\Projects\SE Scripts\SE Scripts\bin\SE Scripts.exe
+C:\Users\Thomas\documents\visual studio 2017\Projects\SE Scripts\SE Scripts\bin\SE Scripts.pdb
+C:\Users\Thomas\documents\visual studio 2017\Projects\SE Scripts\SE Scripts\bin\MDKUtilities.dll
+C:\Users\Thomas\documents\visual studio 2017\Projects\SE Scripts\SE Scripts\bin\HavokWrapper.dll
+C:\Users\Thomas\documents\visual studio 2017\Projects\SE Scripts\SE Scripts\bin\VRage.Native.dll
+C:\Users\Thomas\documents\visual studio 2017\Projects\SE Scripts\SE Scripts\bin\VRage.OpenVRWrapper.dll
+C:\Users\Thomas\documents\visual studio 2017\Projects\SE Scripts\SE Scripts\bin\VRage.Ansel.dll
+C:\Users\Thomas\documents\visual studio 2017\Projects\SE Scripts\SE Scripts\bin\SharpDX.dll
+C:\Users\Thomas\documents\visual studio 2017\Projects\SE Scripts\SE Scripts\bin\SharpDX.Desktop.dll
+C:\Users\Thomas\documents\visual studio 2017\Projects\SE Scripts\SE Scripts\bin\SharpDX.Mathematics.dll
+C:\Users\Thomas\documents\visual studio 2017\Projects\SE Scripts\SE Scripts\bin\Microsoft.CodeAnalysis.dll
+C:\Users\Thomas\documents\visual studio 2017\Projects\SE Scripts\SE Scripts\bin\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\Thomas\documents\visual studio 2017\Projects\SE Scripts\SE Scripts\bin\System.Collections.Immutable.dll
+C:\Users\Thomas\documents\visual studio 2017\Projects\SE Scripts\SE Scripts\bin\SharpDX.DirectInput.dll
+C:\Users\Thomas\documents\visual studio 2017\Projects\SE Scripts\SE Scripts\bin\DirectShowLib-2005.dll
+C:\Users\Thomas\documents\visual studio 2017\Projects\SE Scripts\SE Scripts\bin\System.Reflection.Metadata.dll
+C:\Users\Thomas\documents\visual studio 2017\Projects\SE Scripts\SE Scripts\bin\SharpDX.xml
+C:\Users\Thomas\documents\visual studio 2017\Projects\SE Scripts\SE Scripts\bin\SharpDX.Desktop.xml
+C:\Users\Thomas\documents\visual studio 2017\Projects\SE Scripts\SE Scripts\bin\SharpDX.Mathematics.xml
+C:\Users\Thomas\documents\visual studio 2017\Projects\SE Scripts\SE Scripts\bin\Microsoft.CodeAnalysis.xml
+C:\Users\Thomas\documents\visual studio 2017\Projects\SE Scripts\SE Scripts\bin\Microsoft.CodeAnalysis.CSharp.xml
+C:\Users\Thomas\documents\visual studio 2017\Projects\SE Scripts\SE Scripts\bin\System.Collections.Immutable.xml
+C:\Users\Thomas\documents\visual studio 2017\Projects\SE Scripts\SE Scripts\bin\SharpDX.DirectInput.xml
+C:\Users\Thomas\documents\visual studio 2017\Projects\SE Scripts\SE Scripts\bin\System.Reflection.Metadata.xml
+C:\Users\Thomas\documents\visual studio 2017\Projects\SE Scripts\SE Scripts\obj\x64\Debug\SE Scripts.csprojResolveAssemblyReference.cache
+C:\Users\Thomas\documents\visual studio 2017\Projects\SE Scripts\SE Scripts\obj\x64\Debug\SE Scripts.exe
+C:\Users\Thomas\documents\visual studio 2017\Projects\SE Scripts\SE Scripts\obj\x64\Debug\SE Scripts.pdb
