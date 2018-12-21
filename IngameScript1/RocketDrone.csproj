@@ -96,6 +96,7 @@
     <Analyzer Include="C:\Users\Thomas\AppData\Local\Microsoft\VisualStudio\15.0_f7896ea2\Extensions\hjqjn2ve.u5n\Analyzers\MDKAnalyzer.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="MyData.cs" />
     <Compile Include="ThrusterGroup.class.cs" />
     <Compile Include="TankGroup.class.cs" />
     <Compile Include="LCDGroup.class.cs" />

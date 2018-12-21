@@ -107,6 +107,8 @@ namespace IngameScript
         // Log Lists
         List<string> debugLog = new List<string>();
         List<string> EventLog = new List<string>();
+        MyData log = null;
+        bool DUMP_STORAGE = false;
 
         // State Machine
         State _currentState;
@@ -115,26 +117,94 @@ namespace IngameScript
 
         public Program()
         {
-            // Generate Instance Key:
-            string chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
-            char[] charsArr = chars.ToCharArray();
-            DateTime start = DateTime.Now;
-            Random r = new Random();
-            string charKey = "";
-            for(int i = 0; i < 5; i++)
-            {
-                int next = r.Next(0, (chars.Length-1));
-                charKey += charsArr[next];
-            }
-
-            key = String.Format("{0}{1}-{2}-{3}{4}", start.Year, start.Month, charKey, start.Day, start.Hour);
-            Me.CustomData = key;
-
-            // Name Block Running Script
-            Me.CustomName= "PB [NK Rocket Script - " + key + "]";
+            Storage = "";
 
             // Init tag
             tag_match = new System.Text.RegularExpressions.Regex(generateTag(scriptName));
+            
+
+            if (!tag_match.IsMatch(Me.CustomName))
+            {
+                // Generate Instance Key:
+                GenerateInstanceKey();
+
+                // Name Block Running Script
+                Me.CustomName = $"PB [NKRS {key}]";
+            } else
+            {
+                string[] BlockTags = tag_match.Match(Me.CustomName).Value.Replace("[", "").Replace("]", "").ToUpper().Split(' ');
+                key = BlockTags[1];
+            }
+            Echo($"Key: {key}");
+
+            // Get Stored Data
+            if (!MyData.FindDataInstance(Me.CustomData, $"Log-{key}", out log))
+            {
+                log = new MyData($"Log-{key}");
+                log.AddData($"{CurrentLogTime()} - Boot", "New Log Created");
+                Echo("New Log Created");
+                Me.CustomData += log.ToString();
+            }
+            else
+            {
+                Echo("Stored Log Found");
+                Echo($"Log: {log.name}");
+                foreach(var keys in log.data.Keys)
+                {
+                    Echo($"  - {keys}");
+                }
+
+                log.AddData($"{CurrentLogTime()}-Boot", "Recompile Script");
+                string output = "";
+                if (MyData.UpdateDataInstance(Me.CustomData, log, out output))
+                {
+                    Me.CustomData = output;
+                }
+
+            }
+            
+
+            
+            
+            /*
+              MyData test = new MyData("log");
+
+              test.AddData("name", "My Ship");
+              test.AddData("position-X", Math.Round(Me.GetPosition().X, 2).ToString());
+
+            Me.CustomData = test.ToString();
+
+            MyData test2 = new MyData("log2");
+
+            test2.AddData("name", "My Other Ship");
+            test2.AddData("position", "Unknown");
+
+            Me.CustomData += test2.ToString();
+
+            List<MyData> customData = MyData.ParseStorage(Me.CustomData);
+
+            Echo($"Log Exists: [{(MyData.ParseStorage(Me.CustomData).Find(data => data.name == "dog") != null ? "X" : " ")}]");
+
+            MyData dogData;
+            if (!MyData.FindDataInstance(Me.CustomData, "dog", out dogData))
+            {
+                Echo($"Log Exists: [{(dogData != null ? "X" : " ")}]");
+                dogData = new MyData("Dog");
+            }
+            else
+            {
+                Echo($"Log Exists: [{(dogData != null ? "X" : " ")}]");
+            }
+
+            */
+             // Echo($" Storage Size: {MyData.ParseStorage(Me.CustomData, this)[0].data.Keys}");
+
+                
+            // System.Text.RegularExpressions.Regex elemStart, elemEnd;
+            // MyData.GenerateTagRegex("log", out elemStart, out elemEnd);
+            // Echo($"Match (</log>): {elemEnd.IsMatch("</log>")}");
+
+            // --------------
 
             // Init Block Groups
             debug = new LCDGroup("debug", this);
@@ -147,10 +217,15 @@ namespace IngameScript
             boosterThursters = new ThrusterGroup("BoosterThrust");
 
             // Init State Machine:
-            createStates();
+            // createStates();
         }
 
-        public void Save() { }
+
+        public void customSave() {
+        }
+        public void Save() {
+            
+        }
 
         public void Main(string argument, UpdateType updateSource) {
             OnUpdate(argument, updateSource);
@@ -163,6 +238,10 @@ namespace IngameScript
             {
                 _currentState.Next();
             }
+
+            // Echo(log.ToString());
+
+            Me.CustomData = Storage;
 
             // Draw displays
             Echo(DrawApp());
@@ -196,6 +275,21 @@ namespace IngameScript
             }
         }
 
+        private void GenerateInstanceKey()
+        {
+            string chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+            char[] charsArr = chars.ToCharArray();
+            DateTime start = DateTime.Now;
+            Random r = new Random();
+            string charKey = "";
+            for (int i = 0; i < 5; i++)
+            {
+                int next = r.Next(0, (chars.Length - 1));
+                charKey += charsArr[next];
+            }
+
+            key = String.Format("{0}{1}-{2}-{3}{4}", start.Year, start.Month, charKey, start.Day, start.Hour);
+        }
 
         public string getProperites(IMyTerminalBlock block) {
             List<ITerminalProperty> props = new List<ITerminalProperty>();
@@ -211,10 +305,14 @@ namespace IngameScript
             return sb.ToString();
         }
 
+        public long CurrentLogTime()
+        {
+            return (long)(DateTime.Now - new DateTime(1970, 1, 1)).TotalMilliseconds;
+        }
 
         public string generateTag(string tag)
         {
-            return @"(\[" + tag + @")(\s\b[a-zA-z-]*\b)*(\s?\])";
+            return @"(\[" + tag + @")(\s\b[a-zA-z0-9-]*\b)*(\s?\])";
         }
 
         // Broadcast Methods
@@ -298,11 +396,9 @@ namespace IngameScript
 
             sb.AppendLine("-- App Data -- ");
             sb.AppendFormat("  - State: {0}", Enum.GetName(typeof(ProgramStates), _currentState.state)).AppendLine();
-            sb.AppendFormat("  - State Complete: {0}", _currentState.TaskComplete);
+            sb.AppendFormat("  - State Complete: {0}", _currentState.TaskComplete).AppendLine();
 
-            sb.AppendFormat("  - Logs: {0}", EventLog.Count).AppendLine();
-            
-
+            sb.AppendFormat("  - Logs({1}): {0}", log.data.Count, log.name).AppendLine();
 
             return sb.ToString();
         }
