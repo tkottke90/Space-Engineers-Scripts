@@ -137,7 +137,26 @@ namespace IngameScript
             }
 
             
-            public static bool DeleteDataInstance(string storage, string dataName, )
+            public static bool DeleteDataInstance(string storage, string dataName, out string updatedStorage) 
+            {
+                MyData data;
+                if (FindDataInstance(storage, dataName, out data))
+                {
+                    List<MyData> existingData = ParseData(storage);
+
+                    if (existingData.Exists(data => data.name == dataName)){
+                        existingData.RemoveAt(existingData.FindIndex(data => data.name == dataName));
+                        updatedStorage = string.Join("", existingData);
+                        return true;
+                    } else {
+                        updatedStorage = string.Join("", existingData);
+                        return false;
+                    }
+                } else {
+                    updatedStorage = string.Join("", ParseData(storage));
+                    return false;
+                }
+            }
             
         }
     }
