@@ -94,7 +94,7 @@ namespace IngameScript
         IMyRadioAntenna radio;
         IMyLaserAntenna laser;
 
-        IMyShipMergeBlock rocketRelease;
+        IMyShipMergeBlock rocketRelease;z
         IMyShipMergeBlock cargoRelease;
 
         List<IMyParachute> chutes = new List<IMyParachute>();
@@ -108,7 +108,6 @@ namespace IngameScript
         List<string> debugLog = new List<string>();
         List<string> EventLog = new List<string>();
         MyData log = null;
-        bool DUMP_STORAGE = false;
 
         // State Machine
         State _currentState;
@@ -138,72 +137,9 @@ namespace IngameScript
             Echo($"Key: {key}");
 
             // Get Stored Data
-            if (!MyData.FindDataInstance(Me.CustomData, $"Log-{key}", out log))
-            {
-                log = new MyData($"Log-{key}");
-                log.AddData($"{CurrentLogTime()} - Boot", "New Log Created");
-                Echo("New Log Created");
-                Me.CustomData += log.ToString();
+            if (log == null) {
+                getStoredInformation();
             }
-            else
-            {
-                Echo("Stored Log Found");
-                Echo($"Log: {log.name}");
-                foreach(var keys in log.data.Keys)
-                {
-                    Echo($"  - {keys}");
-                }
-
-                log.AddData($"{CurrentLogTime()}-Boot", "Recompile Script");
-                string output = "";
-                if (MyData.UpdateDataInstance(Me.CustomData, log, out output))
-                {
-                    Me.CustomData = output;
-                }
-
-            }
-            
-
-            
-            
-            /*
-              MyData test = new MyData("log");
-
-              test.AddData("name", "My Ship");
-              test.AddData("position-X", Math.Round(Me.GetPosition().X, 2).ToString());
-
-            Me.CustomData = test.ToString();
-
-            MyData test2 = new MyData("log2");
-
-            test2.AddData("name", "My Other Ship");
-            test2.AddData("position", "Unknown");
-
-            Me.CustomData += test2.ToString();
-
-            List<MyData> customData = MyData.ParseStorage(Me.CustomData);
-
-            Echo($"Log Exists: [{(MyData.ParseStorage(Me.CustomData).Find(data => data.name == "dog") != null ? "X" : " ")}]");
-
-            MyData dogData;
-            if (!MyData.FindDataInstance(Me.CustomData, "dog", out dogData))
-            {
-                Echo($"Log Exists: [{(dogData != null ? "X" : " ")}]");
-                dogData = new MyData("Dog");
-            }
-            else
-            {
-                Echo($"Log Exists: [{(dogData != null ? "X" : " ")}]");
-            }
-
-            */
-             // Echo($" Storage Size: {MyData.ParseStorage(Me.CustomData, this)[0].data.Keys}");
-
-                
-            // System.Text.RegularExpressions.Regex elemStart, elemEnd;
-            // MyData.GenerateTagRegex("log", out elemStart, out elemEnd);
-            // Echo($"Match (</log>): {elemEnd.IsMatch("</log>")}");
-
             // --------------
 
             // Init Block Groups
@@ -221,10 +157,41 @@ namespace IngameScript
         }
 
 
-        public void customSave() {
+        public void getStoredInformation() {
+            if (!MyData.FindDataInstance(Me.CustomData, $"Log-{key}", out log))
+            {
+                log = new MyData($"Log-{key}");
+                log.AddData($"{CurrentLogTime()} - Boot", "New Log Created");
+                Echo("New Log Created");
+                Me.CustomData += log.ToString();
+            }
+            else
+            {
+                Echo("Stored Log Found");
+                Echo($"Log: {log.name}");
+                foreach(var keys in log.data.Keys)
+                {
+                    Echo($"  - {keys}");
+                }
+
+                log.AddData($"{CurrentLogTime()}-Boot", "Script Recompiled");
+                string output = "";
+                if (MyData.UpdateDataInstance(Me.CustomData, log, out output))
+                {
+                    Me.CustomData = output;
+                }
+            }
         }
+
+
         public void Save() {
-            
+            if (MyData.UpdateDataInstance(Me.CustomData, log, out output))
+            {
+                Me.CustomData = output;
+            } else {
+                Runtime.UpdateFrequency = UpdateFrequency.None;
+                Echo("Error Updating Storage");
+            }
         }
 
         public void Main(string argument, UpdateType updateSource) {
