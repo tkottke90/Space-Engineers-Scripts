@@ -94,7 +94,7 @@ namespace IngameScript
         IMyRadioAntenna radio;
         IMyLaserAntenna laser;
 
-        IMyShipMergeBlock rocketRelease;z
+        IMyShipMergeBlock rocketRelease;
         IMyShipMergeBlock cargoRelease;
 
         List<IMyParachute> chutes = new List<IMyParachute>();
