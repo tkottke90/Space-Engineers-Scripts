@@ -36,9 +36,15 @@ namespace IngameScript
                 this.data = newData;
             }
 
-            public void AddData(string key, string value)
+            public bool AddData(string key, string value)
             {
-                this.data.Add(key, value);
+                if (key != this.name && !this.data.ContainsKey(key))
+                {
+                    this.data.Add(key, value); 
+                    return true;
+                }
+
+                return false;
             }
 
             public void UpdateData(string key, string newValue)
@@ -91,10 +97,6 @@ namespace IngameScript
                 }
 
                 return d;
-            }
-
-            {
-
             }
 
             public static bool FindDataInstance(string storage, string name, out MyData returnData)
