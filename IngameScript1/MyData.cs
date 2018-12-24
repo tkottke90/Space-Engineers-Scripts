@@ -22,6 +22,7 @@ namespace IngameScript
         {
             public string name;
             public Dictionary<string, string> data;
+            public Dictionary<AttrTypes, string> attr;
 
 
             public MyData(string name)
@@ -47,6 +48,8 @@ namespace IngameScript
                 return false;
             }
 
+            public bool AddAttr() { return false; }
+
             public void UpdateData(string key, string newValue)
             {
                 this.data[key] = newValue;
@@ -70,8 +73,13 @@ namespace IngameScript
                 return sb.ToString();
             }
 
-            public static System.Text.RegularExpressions.Regex XMLTag = new System.Text.RegularExpressions.Regex(@"(<(?'tag'[a-zA-Z0-9-]*?)\s*(?'attr'[a-zA-Z0-9=]*?)>)(?'text'.*?)(</\k'tag'>)");
+            public enum AttrTypes {
+                data,
+                log,
+                message
+            }
 
+            public static System.Text.RegularExpressions.Regex XMLTag = new System.Text.RegularExpressions.Regex(@"(<(?'tag'[a-zA-Z0-9-]*?)\s*(?'attr'[a-zA-Z0-9=]*?)>)(?'text'.*?)(</\k'tag'>)");
 
             public static Dictionary<string, string> ReadDataProperties(System.Text.RegularExpressions.MatchCollection matches) {
                 Dictionary<string, string> props = new Dictionary<string, string>();
@@ -108,7 +116,7 @@ namespace IngameScript
 
             public static bool FindDataWithProperty(string storage, string property, out List<MyData> returnData) 
             {
-                returnData = ParseData(storage).Find(data => data.data.ContainsKey(property));
+                returnData = ParseData(storage).FindAll(data => data.data.ContainsKey(property));
 
                 return returnData.Count > 0;
             }
@@ -146,8 +154,8 @@ namespace IngameScript
                 {
                     List<MyData> existingData = ParseData(storage);
 
-                    if (existingData.Exists(data => data.name == dataName)){
-                        existingData.RemoveAt(existingData.FindIndex(data => data.name == dataName));
+                    if (existingData.Exists(dataInst => data.name == dataName)){
+                        existingData.RemoveAt(existingData.FindIndex(dataInst => dataInst.name == dataName));
                         updatedStorage = string.Join("", existingData);
                         return true;
                     } else {

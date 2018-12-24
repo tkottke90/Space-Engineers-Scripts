@@ -109,6 +109,9 @@ namespace IngameScript
         List<string> EventLog = new List<string>();
         MyData log = null;
 
+        // Config
+        // MyData userConfig = null;
+
         // State Machine
         State _currentState;
         Dictionary<ProgramStates, State> states = new Dictionary<ProgramStates, State>();
@@ -138,8 +141,10 @@ namespace IngameScript
 
             // Get Stored Data
             if (log == null) {
-                getStoredInformation();
+                getLogInformation($"Log-{key}", out log);
             }
+
+
             // --------------
 
             // Init Block Groups
@@ -153,15 +158,15 @@ namespace IngameScript
             boosterThursters = new ThrusterGroup("BoosterThrust");
 
             // Init State Machine:
-            // createStates();
+            createStates();
         }
 
 
-        public void getStoredInformation() {
-            if (!MyData.FindDataInstance(Me.CustomData, $"Log-{key}", out log))
+        public void getLogInformation(string dataName, out MyData foundData) {
+            if (!MyData.FindDataInstance(Me.CustomData, dataName, out foundData))
             {
-                log = new MyData($"Log-{key}");
-                log.AddData($"{CurrentLogTime()} - Boot", "New Log Created");
+                foundData = new MyData($"Log-{key}");
+                foundData.AddData($"{CurrentLogTime()} - Boot", "New Data Object Created");
                 Echo("New Log Created");
                 Me.CustomData += log.ToString();
             }
@@ -174,7 +179,7 @@ namespace IngameScript
                     Echo($"  - {keys}");
                 }
 
-                log.AddData($"{CurrentLogTime()}-Boot", "Script Recompiled");
+                foundData.AddData($"{CurrentLogTime()}-Boot", "Script Recompiled");
                 string output = "";
                 if (MyData.UpdateDataInstance(Me.CustomData, log, out output))
                 {
@@ -185,6 +190,7 @@ namespace IngameScript
 
 
         public void Save() {
+            string output;
             if (MyData.UpdateDataInstance(Me.CustomData, log, out output))
             {
                 Me.CustomData = output;
