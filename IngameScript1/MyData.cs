@@ -36,9 +36,15 @@ namespace IngameScript
                 this.data = newData;
             }
 
-            public void AddData(string key, string value)
+            public bool AddData(string key, string value)
             {
-                this.data.Add(key, value);
+                if (key != this.name && !this.data.ContainsKey(key))
+                {
+                    this.data.Add(key, value); 
+                    return true;
+                }
+
+                return false;
             }
 
             public void UpdateData(string key, string newValue)
@@ -64,7 +70,7 @@ namespace IngameScript
                 return sb.ToString();
             }
 
-            public static System.Text.RegularExpressions.Regex XMLTag = new System.Text.RegularExpressions.Regex(@"(<(?'tag'[a-zA-Z0-9-]*?)>)(?'text'.*?)(</\k'tag'>)"); // + @"(?'text'.*?)" + @"</\k'tag'>");
+            public static System.Text.RegularExpressions.Regex XMLTag = new System.Text.RegularExpressions.Regex(@"(<(?'tag'[a-zA-Z0-9-]*?)\s*(?'attr'[a-zA-Z0-9=]*?)>)(?'text'.*?)(</\k'tag'>)");
 
 
             public static Dictionary<string, string> ReadDataProperties(System.Text.RegularExpressions.MatchCollection matches) {
@@ -76,7 +82,7 @@ namespace IngameScript
                 return props;
             }
 
-            public static List<MyData> ParseStorage(string storage)
+            public static List<MyData> ParseData(string storage)
             {
                 List<MyData> d = new List<MyData>();
 
@@ -95,16 +101,23 @@ namespace IngameScript
 
             public static bool FindDataInstance(string storage, string name, out MyData returnData)
             {
-                returnData = ParseStorage(storage).Find((data) => data.name == name);
+                returnData = ParseData(storage).Find((data) => data.name == name);
 
                 return returnData != null;
+            }
+
+            public static bool FindDataWithProperty(string storage, string property, out List<MyData> returnData) 
+            {
+                returnData = ParseData(storage).Find(data => data.data.ContainsKey(property));
+
+                return returnData.Count > 0;
             }
 
             public static bool UpdateDataInstance(string storage, MyData newData, out string updatedStorage)
             {
                 try
                 {
-                    List<MyData> existingData = ParseStorage(storage);
+                    List<MyData> existingData = ParseData(storage);
 
                     if (existingData.Exists(data => data.name == newData.name))
                     {
@@ -119,12 +132,33 @@ namespace IngameScript
                     }
                 } catch (Exception e)
                 {
-                    updatedStorage = string.Join("", ParseStorage(storage));
+                    updatedStorage = string.Join("", ParseData(storage));
                     return false;
                 }
 
             }
 
+            
+            public static bool DeleteDataInstance(string storage, string dataName, out string updatedStorage) 
+            {
+                MyData data;
+                if (FindDataInstance(storage, dataName, out data))
+                {
+                    List<MyData> existingData = ParseData(storage);
+
+                    if (existingData.Exists(data => data.name == dataName)){
+                        existingData.RemoveAt(existingData.FindIndex(data => data.name == dataName));
+                        updatedStorage = string.Join("", existingData);
+                        return true;
+                    } else {
+                        updatedStorage = string.Join("", existingData);
+                        return false;
+                    }
+                } else {
+                    updatedStorage = string.Join("", ParseData(storage));
+                    return false;
+                }
+            }
             
         }
     }
